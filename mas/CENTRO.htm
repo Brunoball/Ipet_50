@@ -6,106 +6,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | CENTRO DE ESTUDIANTES</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="centro.css">
+    <link rel="stylesheet" href="gabinetes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <img class="fondo" src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50.jpg" alt="">
-    
-    <div class="contenedor">
-        <div class="box-menu">
-            <div class="menu">
-                <img class="escudo" src="../img/Escudo.png" alt="">
-                <h1 class="tituloprinc">Centro de Estudiantes</h1>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html#especialidades" class="nav-link">Formación Tecnica</a></li>
+                    <li><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li class="dropdown-container">
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+<section class="hero-section">
+    <div class="kenburns-slider">
+        <div class="kb-slides">
+            <div class="kb-slide active">
+                <img class="hero-image" src="../imgnuevas/centro.jpg" alt="Gabinetes y Oficinas IPET 50">
+            </div>
+            <div class="kb-slide">
+                <img class="hero-image" src="../imgnuevas/centro4.jpg" alt="Gabinetes y Oficinas IPET 50">
+            </div>
+            <div class="kb-slide">
+                <img class="hero-image" src="../imgnuevas/centro5.jpg" alt="Gabinetes y Oficinas IPET 50">
             </div>
         </div>
+        <div class="hero-overlay">
+            <h2 class="hero-title">Ceentro de Estudiantes</h2>
+        </div>
+        <div class="kb-dots"></div>
+    </div>
+</section>
 
-        <section>
-            <div class="contenedor-sobre-nosotros">
-                <div class="slider">
-                    <ul class="slides">
-                        <li class="slide"><img src="../imgnuevas/centro.jpg"></li>
-                        <li class="slide"><img src="../imgnuevas/centro2.jpg"></li>
-                        <li class="slide"><img src="../imgnuevas/centro3.jpg"></li>
-                        <li class="slide"><img src="../imgnuevas/centro4.jpg"></li>
-                        <li class="slide"><img src="../imgnuevas/centro5.jpg"></li>
-                        <li class="slide"><img src="../imgnuevas/centro6.jpg"></li>
-                    </ul>
-                    <div class="prev" onclick="prevSlide()">&#10094;</div>
-                    <div class="next" onclick="nextSlide()">&#10095;</div>
-                    <div class="puntos-container">
-                        <span class="punto" onclick="currentSlide(1)"></span>
-                        <span class="punto" onclick="currentSlide(2)"></span>
-                        <span class="punto" onclick="currentSlide(3)"></span>
-                        <span class="punto" onclick="currentSlide(4)"></span>
-                        <span class="punto" onclick="currentSlide(5)"></span>
-                        <span class="punto" onclick="currentSlide(6)"></span>
+  <main class="main-text">
+        <section class="content-section">
+            <div class="text-content">
+                <h2>Nuestro Centro de Estudiantes</h2>
+                <p>
+                    El IPET 50 cuenta desde hace años con un Centro de Estudiantes, el cual está formado actualmente por alumnos representantes de numerosos cursos de todas las carreras.
+                </p>
+                <p>
+                    Este Centro se caracteriza por apoyar a los quehaceres de la escuela como ser: Feria de ciencias, exposición de carreras en la Sociedad Rural, preparación y venta de locro, concientización a los alumnos sobre la seguridad e higiene, transmisión de inquietudes entre alumnos, profesores y Equipo Directivo, participación de las tareas de mantenimiento.
+                </p>
+                <p>
+                    Asimismo, organizan eventos como torneos de fútbol, venta de fideos y juegos para juntar fondos para adquirir bienes para la escuela.
+                </p>
+            </div>
+
+                <div class="slider-container">
+                    <div class="perfil-gallery-slider">
+                        <div class="slides">
+                            <div class="gallery-slide"><img src="../imgnuevas/centro.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro2.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro3.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro4.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro5.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro6.jpg" alt="Preceptorías"></div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-controls">
+                            <div class="gallery-dots"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contenido-textos">
-                    <p>
-                        El IPET 50 cuenta desde hace años con un Centro de Estudiantes, el cual está formado actualmente por alumnos representantes de numerosos cursos de todas las carreras.<br>
-                        Este Centro se caracteriza por apoyar a los quehaceres de la escuela como ser: Feria de ciencias, exposición de carreras en la Sociedad Rural, preparación y venta de locro, concientización a los alumnos sobre la seguridad e higiene, transmisión de inquietudes entre alumnos, profesores y Equipo Directivo, participación de las tareas de mantenimiento. Asimismo, organizan eventos como torneos de fútbol, venta de fideos y juegos para juntar fondos para adquirir bienes para la escuela.
-                    </p>
-                </div>
-
-                <div class="contenido-textos-mov">
-                    <p>
-                        El IPET 50 cuenta desde hace años con un Centro de Estudiantes, el cual está formado actualmente por alumnos representantes de numerosos cursos de todas las carreras.<br>
-                        Este Centro se caracteriza por apoyar a los quehaceres de la escuela como ser: Feria de ciencias, exposición de carreras en la Sociedad Rural, preparación y venta de locro, concientización a los alumnos sobre la seguridad e higiene, transmisión de inquietudes entre alumnos, profesores y Equipo Directivo, participación de las tareas de mantenimiento. Asimismo, organizan eventos como torneos de fútbol, venta de fideos y juegos para juntar fondos para adquirir bienes para la escuela.
-                    </p>
-                </div>   
-            </div>
-        </section> 
-
- 
-
-        <div class="footer">
-            <ul class="footer-list">
-                <li class="list"><a href="../WEB.htm">INICIO</a></li>
-                <li class="list">
-                    <a href="../WEB.htm#especialidades">FORMACIÓN TÉCNICA</a>
-                    <ul class="sublist">
-                        <li><a href="../Especialidades/ELECTRONICA.htm">Electrónica</a></li>
-                        <li><a href="../Especialidades/ELECTRICIDAD.htm">Electricidad</a></li>
-                        <li><a href="../Especialidades/MECANICA.htm">Mecánica</a></li>
-                        <li><a href="../Especialidades/AUTOMOTORES.htm">Automotores</a></li>
-                        <li><a href="../Especialidades/MMO.htm">Mmo</a></li>
-                        <li><a href="../Especialidades/IMM.htm">Imm</a></li>
-                    </ul>
-                </li>
-                <li class="list">
-                    <a href="../WEB.htm#formacion">FORMACIÓN ACADÉMICA</a>
-                    <ul class="sublist2">
-                        <li><a href="../Formacion academica/SOCIALES.htm">Dpto Sociales</a></li>
-                        <li><a href="../Formacion academica/ECONOMIA.htm">Dpto Economía</a></li>
-                        <li><a href="../Formacion academica/NATURALES.htm">Dpto Naturales</a></li>
-                        <li><a href="../Formacion academica/ARTES.htm">Dpto Artística</a></li>
-                        <li><a href="../Formacion academica/MATEMATICA.htm">Dpto Matemáticas</a></li>
-                        <li><a href="../Formacion academica/TECNOLOGIA.htm">Tecnología y Dt</a></li>
-                        <li><a href="../Formacion academica/INGLES.htm">Dpto Ingles</a></li>
-                        <li><a href="../Formacion academica/LENGUA.htm">Dpto Lengua</a></li>
-                        <li><a href="../Formacion academica/EDFISICA.htm">Dpto Ed Física</a></li>
-                    </ul>
-                </li>
-                <li class="list"><a href="../WEB.htm#nosotros">INSTITUCIONAL</a></li>
-                <li class="list"><a href="../WEB.htm#footer">CONTACTO</a></li>
-            </ul>
+            
+        </section>
+        <section class="text-content">
+    <h2>Consejo Estudiantil IPET 50</h2>
+    <p>El cuerpo de representantes estudiantiles está compuesto por alumnos de diversos cursos y carreras del instituto, participando activamente en la vida escolar.</p>
+    
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-users"></i></div>
+            <h3 class="feature-title">Representación Estudiantil</h3>
+            <p class="feature-text">Integrado por alumnos de diferentes cursos y especialidades, garantizando la participación democrática.</p>
         </div>
         
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+            <h3 class="feature-title">Apoyo Institucional</h3>
+            <p class="feature-text">Colaboran en eventos académicos como Ferias de Ciencias, exposiciones y mejoras de infraestructura.</p>
+        </div>
         
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bullhorn"></i></div>
+            <h3 class="feature-title">Promoción de Valores</h3>
+            <p class="feature-text">Fomentan la comunicación y concientización sobre seguridad, higiene y convivencia escolar.</p>
+        </div>
         
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3 class="feature-title">Acciones Solidarias</h3>
+            <p class="feature-text">Organizan torneos y eventos benéficos para recaudar fondos destinados a mejoras para la institución.</p>
+        </div>
     </div>
-    <script src="../scripts/movil.js"></script>
-    <script src="../scripts/slider-web.js"></script>
-    <script src="../scripts/slider_simple.js"></script>
+</section>
+        </main>
+    </main>
+<footer class="footer" id="contacto">
+    <!-- Nueva etiqueta img para la imagen de fondo -->
+    <img src="../imgnuevas/escuela3.jpg" alt="Fondo IPET 50" class="footer-background-img">
+    
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-decoration">
+                    <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                </div>
+                <div class="footer-brand-info">
+                    <h3 class="footer-title">IPET 50</h3>
+                    <p class="footer-slogan">Formando profesionales desde 1965</p>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <h4 class="social-title">Síguenos en redes</h4>
+                <div class="social-links">
+                    <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p class="copyright">&copy; 2023 IPET 50 - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <script src="../scripts/electronica.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.kb-slide');
+        const dotsContainer = document.querySelector('.kb-dots');
+        let currentIndex = 0;
+
+        // Crear indicadores de puntos
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('kb-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.kb-dot');
+
+        // Función para cambiar de slide
+        function goToSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            currentIndex = index;
+
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        // Cambio automático cada 4 segundos
+        function nextSlide() {
+            const newIndex = (currentIndex + 1) % slides.length;
+            goToSlide(newIndex);
+        }
+
+        let slideInterval = setInterval(nextSlide, 4000);
+
+        // Pausar al hacer hover (opcional, aún no implementado)
+    });
+</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 :root {
-    --primary: #C8102E;
+    --primary: #e30613;
     --primary-dark: #920000;
     --secondary: #1D428A;
     --dark: #2D2926;
@@ -512,20 +512,50 @@ header {
 
 
 
-
-/* Hero Section con efecto parallax */
 .hero {
+    position: relative;
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/img_menu_fondo.png') no-repeat center/cover;
-    background-attachment: fixed; /* Esto crea el efecto parallax */
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
-    margin-top: 0; /* Eliminamos el margen superior */
-    position: relative;
+    margin-top: 0;
     overflow: hidden;
+}
+
+.hero-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Efecto parallax */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Ajuste para dispositivos móviles */
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    z-index: 0;
 }
 
 .hero-content {
@@ -534,9 +564,10 @@ header {
     padding: 0 20px;
     position: relative;
     z-index: 2;
-    transform: translateY(0); /* Para posible animación */
+    transform: translateY(0);
     transition: transform 0.5s ease;
 }
+
 
 .hero h1 {
     font-size: 3rem;
@@ -575,8 +606,6 @@ header {
         transform: translateY(0);
     }
 }
-
-
 
 
 

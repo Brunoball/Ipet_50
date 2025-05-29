@@ -17,28 +17,57 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="logo-container">
-                <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-                <h1 class="titulo-principal">IPET 50</h1>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Educación Técnica Profesional</span>
+                </div>
             </div>
-            <nav>
-                <!-- Aquí podrías añadir un menú de navegación si es necesario -->
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html#especialidades" class="nav-link">Formación Tecnica</a></li>
+                    <li><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <li class="dropdown-container">
+
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
     
     <main class="main-content">
-        <section class="hero-section">
-            <img class="hero-image" src="../imgnuevas/gabinete2.jpg" alt="Gabinetes y Oficinas IPET 50">
-            <div class="hero-overlay">
-                <h2 class="hero-title">Gabinetes y Oficinas</h2>
-                <p class="hero-subtitle">Espacios dedicados al apoyo educativo y administrativo</p>
+<section class="hero-section">
+    <div class="kenburns-slider">
+        <div class="kb-slides">
+            <div class="kb-slide active">
+                <img class="hero-image" src="../imgnuevas/gabinete2.jpg" alt="Gabinetes y Oficinas IPET 50">
             </div>
-        </section>
-        
-        <section class="content-section">
+            <div class="kb-slide">
+                <img class="hero-image" src="../imgnuevas/gabinete3.jpg" alt="Gabinetes y Oficinas IPET 50">
+            </div>
+            <div class="kb-slide">
+                <img class="hero-image" src="../imgnuevas/gabinetes5.jpg" alt="Gabinetes y Oficinas IPET 50">
+            </div>
+        </div>
+        <div class="hero-overlay">
+            <h2 class="hero-title">Gabinetes y Oficinas</h2>
+            <p class="hero-subtitle">Espacios dedicados al apoyo educativo y administrativo</p>
+        </div>
+        <div class="kb-dots"></div>
+    </div>
+</section>
+        <main class="main-text"> 
+            <section class="content-section">
 
             
             <div class="text-content">
@@ -47,26 +76,22 @@
                 <p>También se dispone de un Laboratorio de Informática, equipado con 14 máquinas que es utilizado por numerosos docentes y un Laboratorio de Físico-Química, preparado para realizar diversos experimentos.</p>
                 <p>Desde las oficinas, se realiza la administración general de la institución, que cuenta con 829 alumnos y 220 docentes y no docentes.</p>
             </div>
-                        <div class="slider-container">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide"><img src="../imgnuevas/gabinete.jpg" alt="Gabinete 1"></div>
-                        <div class="slide"><img src="../imgnuevas/gabinete2.jpg" alt="Gabinete 2"></div>
-                        <div class="slide"><img src="../imgnuevas/gabinete3.jpg" alt="Gabinete 3"></div>
-                        <div class="slide"><img src="../imgnuevas/gabinete6.jpg" alt="Gabinete 4"></div>
-                        <div class="slide"><img src="../imgnuevas/gabinetes5.jpg" alt="Gabinete 5"></div>
-                    </div>
-                    <div class="slider-arrow prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></div>
-                    <div class="slider-arrow next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></div>
-                    <div class="slider-nav">
-                        <div class="slider-dot active" onclick="currentSlide(1)"></div>
-                        <div class="slider-dot" onclick="currentSlide(2)"></div>
-                        <div class="slider-dot" onclick="currentSlide(3)"></div>
-                        <div class="slider-dot" onclick="currentSlide(4)"></div>
-                        <div class="slider-dot" onclick="currentSlide(5)"></div>
+                                    <div class="slider-container">
+                    <div class="perfil-gallery-slider">
+                        <div class="slides">
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete2.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete3.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete4.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinetes5.jpg" alt="Preceptorías"></div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-controls">
+                            <div class="gallery-dots"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
         
         <section class="text-content">
@@ -100,103 +125,88 @@
             </div>
         </section>
     </main>
+       
+    </main>
+<footer class="footer" id="contacto">
+    <!-- Nueva etiqueta img para la imagen de fondo -->
+    <img src="../imgnuevas/escuela3.jpg" alt="Fondo IPET 50" class="footer-background-img">
     
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Inicio</h3>
-                    <ul class="footer-links">
-                        <li><a href="../index.html">Página Principal</a></li>
-                        <li><a href="../index.html#nosotros">Sobre Nosotros</a></li>
-                        <li><a href="../index.html#contacto">Contacto</a></li>
-                    </ul>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-decoration">
+                    <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Formación Técnica</h3>
-                    <ul class="footer-links">
-                        <li><a href="../Especialidades/ELECTRONICA.htm">Electrónica</a></li>
-                        <li><a href="../Especialidades/ELECTRICIDAD.htm">Electricidad</a></li>
-                        <li><a href="../Especialidades/MECANICA.htm">Mecánica</a></li>
-                        <li><a href="../Especialidades/AUTOMOTORES.htm">Automotores</a></li>
-                        <li><a href="../Especialidades/MMO.htm">MMO</a></li>
-                        <li><a href="../Especialidades/IMM.htm">IMM</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Formación Académica</h3>
-                    <ul class="footer-links">
-                        <li><a href="../Formacion academica/SOCIALES.htm">Ciencias Sociales</a></li>
-                        <li><a href="../Formacion academica/ECONOMIA.htm">Economía</a></li>
-                        <li><a href="../Formacion academica/NATURALES.htm">Ciencias Naturales</a></li>
-                        <li><a href="../Formacion academica/ARTES.htm">Artes</a></li>
-                        <li><a href="../Formacion academica/MATEMATICA.htm">Matemáticas</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Dirección: [Dirección de la escuela]</li>
-                        <li><i class="fas fa-phone"></i> Teléfono: [Teléfono]</li>
-                        <li><i class="fas fa-envelope"></i> Email: [Email]</li>
-                    </ul>
+                <div class="footer-brand-info">
+                    <h3 class="footer-title">IPET 50</h3>
+                    <p class="footer-slogan">Formando profesionales desde 1965</p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 IPET 50 - Todos los derechos reservados</p>
+
+            <div class="footer-social">
+                <h4 class="social-title">Síguenos en redes</h4>
+                <div class="social-links">
+                    <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
-    </footer>
-    
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
         
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p class="copyright">&copy; 2023 IPET 50 - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <script src="../scripts/electronica.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.kb-slide');
+        const dotsContainer = document.querySelector('.kb-dots');
+        let currentIndex = 0;
+
+        // Crear indicadores de puntos
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('kb-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.kb-dot');
+
+        // Función para cambiar de slide
+        function goToSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            currentIndex = index;
+
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
         }
-        
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-            let i;
-            const slides = document.getElementsByClassName("slide");
-            const dots = document.getElementsByClassName("slider-dot");
-            
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-        
-        // Auto slide change
-        setInterval(() => {
-            plusSlides(1);
-        }, 5000);
-        
-        // Navigation functions
-        function prevSlide() {
-            plusSlides(-1);
-        }
-        
+
+        // Cambio automático cada 4 segundos
         function nextSlide() {
-            plusSlides(1);
+            const newIndex = (currentIndex + 1) % slides.length;
+            goToSlide(newIndex);
         }
-    </script>
+
+        let slideInterval = setInterval(nextSlide, 4000);
+
+        // Pausar al hacer hover (opcional, aún no implementado)
+    });
+</script>
+
+   
 </body>
 </html>

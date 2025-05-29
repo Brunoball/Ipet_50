@@ -160,10 +160,11 @@ nav, .hero {
   }
   
   .menu-container {
+    margin: 0 auto;
     max-width: 1200px;
     padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   
@@ -436,7 +437,7 @@ nav, .hero {
   }
   
   .perfil-highlights {
-    background-color: var(--gray-light);
+    background-color: var(--white);
     padding: 15px 25px;
     border-radius: 8px;
     min-height: 350px;
@@ -646,7 +647,7 @@ nav, .hero {
   }
   
   .proyectos-card {
-    background: var(--gray-light);
+    background: var(--white);
     border-radius: 12px;
     height: 100%;
     padding: 20px 35px;
@@ -1006,11 +1007,11 @@ nav, .hero {
   }
   
   .slider-prev {
-    left: 0;
+    left: 1rem;
   }
   
   .slider-next {
-    right: 0;
+    right: 1rem;
   }
   
   .slider-dots {
@@ -1313,10 +1314,10 @@ nav, .hero {
     
     .nav-links {
       position: fixed;
-      top: 5.7rem;
+      top: 4.9rem;
       right: -100%;
       width: 100%;
-      background-color: #ffebeb;
+      background-color: var(--white);
       flex-direction: column;
       padding: 2rem 20px 20px;
       z-index: 998;
@@ -1417,7 +1418,7 @@ nav, .hero {
 
     #menu a {
       width: 100%;
-      margin: 0 8px;
+      margin: 5px 4px;
       font-size: 0.9rem;
     }
     

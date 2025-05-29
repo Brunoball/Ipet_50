@@ -17,52 +17,55 @@
 
     
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <img src="img/Escudo.png" alt="Escudo IPET 50">
-                <div class="logo-text">
-                    IPET 50
-                    <span>Educación Técnica Profesional</span>
-                </div>
+<!-- Header --><header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Educación Técnica Profesional</span>
             </div>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="#especialidades" class="nav-link">Formación Técnica</a></li>
-                    <li><a href="#academica" class="nav-link">Formación Académica</a></li>
-                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li class="dropdown-container">
-                        <button class="dropdown-btn" id="moreBtn">
-                            Más <i class="fas fa-chevron-down dropdown-icon"></i>
-                        </button>
-                        <ul class="submenu" id="subMenu">
-                            <li><a href="mas/GABINETES.htm" class="nav-link">Gabinete y Oficinas</a></li>
-                            <li><a href="mas/INTERNADO.htm" class="nav-link">Albergue Para Varones</a></li>
-                            <li><a href="mas/ACUERDOS.htm" class="nav-link">Acuerdo de Convivencia</a></li>
-                            <li><a href="mas/PRECEPTORIA.htm" class="nav-link">Preceptorías</a></li>
-                            <li><a href="mas/CENTRO.htm" class="nav-link">Centro de Estudiantes</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </header>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#especialidades" class="nav-link">Formación Técnica</a></li>
+                <li><a href="#academica" class="nav-link">Formación Académica</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li class="dropdown-container">
+                    <button class="dropdown-btn" id="moreBtn">
+                        Más <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <ul class="submenu" id="subMenu">
+                        <li><a href="mas/GABINETES.htm" class="nav-link">Gabinete y Oficinas</a></li>
+                        <li><a href="mas/INTERNADO.htm" class="nav-link">Albergue Para Varones</a></li>
+                        <li><a href="mas/ACUERDOS.htm" class="nav-link">Acuerdo de Convivencia</a></li>
+                        <li><a href="mas/PRECEPTORIA.htm" class="nav-link">Preceptorías</a></li>
+                        <li><a href="mas/CENTRO.htm" class="nav-link">Centro de Estudiantes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Formación Técnica de Excelencia</h1>
-            <p>Desde 1935 formando profesionales técnicos con valores y competencias para el mundo laboral actual.</p>
-            <a href="#especialidades" class="btn">Conoce nuestras especialidades</a>
-        </div>
-    </section>
+<!-- Hero Section con imagen HTML img tag -->
+<section class="hero" id="hero">
+    <div class="hero-image-container">
+        <img src="../img/img_menu_fondo.png" alt="Fondo IPET 50" class="hero-image">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Formación Técnica de Excelencia</h1>
+        <p>Desde 1935 formando profesionales técnicos con valores y competencias para el mundo laboral actual.</p>
+        <a href="#especialidades" class="btn">Conoce nuestras especialidades</a>
+    </div>
+</section>
 
 
     <section class="stats-section">
@@ -396,5 +399,6 @@
     <script src="scripts/slider.js"></script>
     <script src="scripts/boton_arriba.js"></script>
     <script src="scripts/menu_web.js"></script>
+    <script src="scripts/electronica.js"></script>
 </body>
 </html>
