@@ -1061,6 +1061,7 @@ animation: fadeInUp 1s ease;
         grid-template-columns: 1fr;
         background-color: transparent;
         box-shadow: none;
+        padding: 2rem 0;
     }
     
     /* Slider Ken Burns */
