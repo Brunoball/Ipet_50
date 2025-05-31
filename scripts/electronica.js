@@ -2,16 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar todos los sliders
     initAllSliders();
     
-    // Evita que los enlaces # afecten el historial
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-            history.replaceState(null, null, ' ');
-        });
-    });
 });
 
 function initAllSliders() {
@@ -337,5 +327,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ajustar en redimensionamiento
     window.addEventListener('resize', function() {
         updateSlider();
+    });
+});
+
+
+// Control del botón "Atrás": solo permite volver si estás arriba del todo
+document.addEventListener('DOMContentLoaded', function () {
+    // Insertar un estado falso al historial
+    history.pushState({ stayOnPage: true }, '');
+    history.replaceState(null, null, ' ');
+
+
+    window.addEventListener('popstate', function () {
+        const isAtTop = window.scrollY < 50;
+
+        if (!isAtTop) {
+            // Si no está arriba, hace scroll al inicio y vuelve a insertar el estado
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.pushState({ stayOnPage: true }, '');
+        }
+        // Si está arriba, no se evita el retroceso
     });
 });
