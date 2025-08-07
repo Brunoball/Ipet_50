@@ -6,182 +6,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | Artes Visuales</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/web_styles.css">
     <link rel="stylesheet" href="FA_main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Artes Visuales</span></h1>
-                <p>MÚSICA - ARTES VISUALES - TEATRO</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
             </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Actividades artísticas"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Estudiantes en actividades artísticas"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Presentaciones artísticas"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Obras de arte estudiantiles"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Artes Visuales</span></h1>
+                    <p>
+                        <span>MÚSICA</span> - <span>ARTES VISUALES</span> - <span>TEATRO</span>
+                    </p>
                 </div>
             </div>
-
-            <article class="content-article">
-                <h2 class="article-title">Nuestro Enfoque Educativo</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Este departamento se compone por 3 áreas: Música, Artes Visuales y Teatro. Es un espacio de encuentro, de inspiración, donde el alma se eleva y crea a través de las distintas manifestaciones artísticas.
-                    </p>
+        </section>
+        
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
                     
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos principales:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Desarrollar la creatividad y expresión artística en los estudiantes.</li>
-                            <li><span class="icon">✓</span> Fomentar el aprecio por las distintas manifestaciones artísticas.</li>
-                            <li><span class="icon">✓</span> Brindar herramientas técnicas para la producción artística.</li>
-                            <li><span class="icon">✓</span> Promover el trabajo en equipo a través de proyectos colectivos.</li>
-                            <li><span class="icon">✓</span> Conectar el arte con otras áreas del conocimiento.</li>
-                            <li><span class="icon">✓</span> Preparar a los estudiantes para apreciar y analizar obras artísticas.</li>
-                        </ul>
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Actividades artísticas"></div>
+                                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Estudiantes en actividades artísticas"></div>
+                                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Presentaciones artísticas"></div>
+                                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Obras de arte estudiantiles"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Exploración Artística Integral</h3>
+                                    <p>Nuestro departamento fomenta un enfoque holístico de las artes, donde los estudiantes descubren su potencial creativo a través de tres disciplinas fundamentales: música, artes visuales y teatro. Este espacio único permite a los alumnos desarrollar habilidades técnicas mientras exploran su expresión personal.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Metodología Innovadora</h3>
+                                    <p>Implementamos estrategias pedagógicas basadas en proyectos interdisciplinarios, donde los estudiantes conectan conceptos artísticos con otras áreas del conocimiento. Cada actividad está diseñada para estimular la creatividad, el pensamiento crítico y el trabajo colaborativo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>Planificación Educativa</h3>
+                            <p>Nuestro equipo docente desarrolla planificaciones coordinadas que integran las tres disciplinas artísticas. Realizamos reuniones periódicas para alinear objetivos, metodologías y criterios de evaluación, asegurando una experiencia de aprendizaje coherente y progresiva.</p>
+                        </div>
                         
-                        <p>
-                            <strong><u>Los procesos de planificación y evaluación de la enseñanza</u></strong><br>
-                                          La planificación de los contenidos curriculares se realiza de manera coordinada, tanto vertical como transversalmente, teniendo en cuenta la incorporación de nuevos docentes y la revisión conjunta ante propuestas innovadoras.
-Este proceso se consolida a través de reuniones anuales en las que se unifican criterios, temas, actividades y contenidos. Como materiales de apoyo, se utilizan con frecuencia apuntes específicos y sitios web de consulta.
-                        </p>
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Evaluación Continua</h3>
+                            <p>Implementamos un sistema de evaluación formativa que valora tanto el proceso como los resultados. Los criterios son transparentes desde el inicio y mantenemos comunicación constante con las familias para apoyar el desarrollo integral de cada estudiante.</p>
+                        </div>
                     </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Ver todos los objetivos</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Artes</div>
-                    <h3 class="highlight-title">Espacio Creativo</h3>
-                    <p class="highlight-text">
-                        Los alumnos son protagonistas al descubrir que sus sentidos son atrapados por el sonido, el ritmo, la luz, el color, la acción. 
-                        A través de las distintas disciplinas artísticas, encuentran canales de expresión y desarrollo personal.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Creatividad</span>
-                        <span class="tag">Expresión</span>
-                        <span class="tag">Desarrollo</span>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <div class="highlight-badge">Evaluación</div>
-                    <h3 class="highlight-title">Procesos de aprendizaje</h3>
-                    <p class="highlight-text">
-                        A principio de año se explicita a los estudiantes los criterios de evaluación y aprobación, por escrito y oralmente. 
-                        Se comunica a las familias y alumnos las instancias evaluativas a través de sus respectivos cuadernos de comunicados o carpetas.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Seguimiento</span>
-                        <span class="tag">Retroalimentación</span>
-                        <span class="tag">Proceso</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Microevento del Departamento</h2>
-            
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Microevento 1"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Microevento 2"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Microevento 3"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Microevento 4"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
-                </div>
+                </article>
             </div>
+        </section>
 
-            <article class="content-article">
-                <h3 class="article-title">Experiencia Artística Integral</h3>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        El evento artístico tuvo su comienzo con la participación de dos alumnos que son saxofonistas, quienes deleitaron con piezas musicales.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <p>
-                            A continuación, se desarrolló un circuito artístico para los alumnos de 2do año E y F. Cada estación del mismo contó con actividades de alguna de las 3 áreas que componen nuestro departamento: Música, Teatro y Artes Visuales. Por lo tanto, cada grupo de 5 alumnos participaba de una propuesta para luego de, pasados 10 minutos, rotar y pasar a la siguiente; así hasta recorrer todas las estaciones.
-                        </p>
-                        <p>
-                            ¿Qué actividades se realizaron? Dibujos con fibrones, pintura con lápices de colores, reconocimiento auditivo de canciones, conjunto rítmico con instrumentos de percusión, juegos de pelotas. Además, se presentaron alumnos vestidos de mimos y payasos que estuvieron acompañando durante la jornada.
-                        </p>
-                        <p>
-                            La actividad lúdica favorece en los estudiantes la autoconfianza y la autonomía, convirtiéndose así en una de las actividades recreativas y educativas primordiales. El juego ayuda a desarrollar habilidades y destrezas en el aprendizaje significativo de los estudiantes.
-                        </p>
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Microevento del Departamento</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Microevento 1"></div>
+                                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Microevento 2"></div>
+                                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Microevento 3"></div>
+                                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Microevento 4"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Experiencia Artística Integral</h3>
+                                    <p>Nuestro microevento anual es un espacio donde convergen todas las disciplinas artísticas en una experiencia educativa transformadora. Comenzamos con presentaciones musicales de nuestros estudiantes más avanzados, seguido de un circuito interactivo diseñado especialmente para los alumnos de segundo año.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Objetivos Pedagógicos</h3>
+                                    <p>Este evento busca fomentar la apreciación artística, desarrollar habilidades creativas y promover el trabajo en equipo. Cada actividad está cuidadosamente planificada para alinearse con los objetivos curriculares mientras proporciona una experiencia memorable para los participantes.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-        </div>
-    </section>
+
+                    <div class="event-details">
+                        <div class="detail-header">
+                            <h3>Actividades Realizadas</h3>
+                            <p class="subtitle">Exploración multidisciplinaria en arte y creatividad</p>
+                        </div>
+
+                        <div class="activities-grid three-columns">
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h4>Expresión Visual</h4>
+                                <p>Técnicas mixtas con fibrones y lápices de colores para desarrollar habilidades de composición y teoría del color.</p>
+                            </div>
+
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <h4>Educación Auditiva</h4>
+                                <p>Ejercicios de reconocimiento melódico y rítmico para agudizar la percepción musical.</p>
+                            </div>
+
+                            <div class="activity-card">
+                                <div class="activity-icon">
+                                    <i class="fas fa-theater-masks"></i>
+                                </div>
+                                <h4>Expresión Dramática</h4>
+                                <p>Taller de mímica y clown para desarrollar habilidades de comunicación no verbal y expresión corporal.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>La actividad lúdica en el contexto artístico favorece en los estudiantes la autoconfianza, la autonomía y la capacidad de resolver problemas creativamente. Estas experiencias se convierten en herramientas educativas fundamentales para el desarrollo de habilidades socioemocionales y cognitivas que trascienden el ámbito artístico.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <footer class="page-footer">
         <nav class="footer-nav">
             <ul class="nav-list">
-                <li><a href="../index.htm">INICIO</a></li>
-                <li><a href="../index.html">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../index.html">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../index.html">INSTITUCIONAL</a></li>
-                <li><a href="../index.html">CONTACTO</a></li>
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')">FORMACIÓN TÉCNICA</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')">FORMACIÓN ACADÉMICA</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')">INSTITUCIONAL</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')">CONTACTO</a></li>
             </ul>
         </nav>
-        
+
         <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
+            <p>IPET N° 50 "Ing. Emilio F. Olmos" - Formando profesionales desde 1935</p>
         </div>
     </footer>
 
+    <!-- Botón subir arriba -->
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script src="../scripts/form_ac_slider.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>

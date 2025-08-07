@@ -673,6 +673,11 @@ header {
     color: var(--primary);
 }
 
+
+
+
+
+/* Academic Section */
 /* Academic Section */
 .academic {
     padding: 80px 0;
@@ -681,7 +686,7 @@ header {
 
 .departments-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -692,6 +697,7 @@ header {
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    word-wrap: break-word; /* Asegura que el texto no se desborde */
 }
 
 .department-card:hover {
@@ -704,6 +710,31 @@ header {
     color: var(--primary);
     margin-bottom: 15px;
 }
+
+/* ✅ Media query para celulares */
+@media (max-width: 768px) {
+    .departments-grid {
+        grid-template-columns: 1fr; /* Una sola caja por fila */
+    }
+
+    .department-card {
+        padding: 20px;
+        font-size: 0.95rem; /* Tamaño de fuente adaptado */
+    }
+
+    .department-icon {
+        font-size: 2rem;
+    }
+
+    .department-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .department-card p {
+        font-size: 0.95rem;
+    }
+}
+
 
 
 
@@ -1060,9 +1091,10 @@ header {
 
 .directors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1.3fr 1fr; /* Medio más ancho */
     gap: 20px;
 }
+
 
 .director-card {
     background-color: var(--light-gray);
@@ -1086,6 +1118,11 @@ header {
 }
 
 
+@media (max-width: 768px) {
+  .directors-grid {
+    grid-template-columns: 1fr; /* Una caja por fila */
+  }
+}
 
 
 
@@ -1344,9 +1381,7 @@ footer {
 
 
 
-
-
-/* Stats Section Styles - Versión Minimalista (ORIGINAL) */
+/* Stats Section Styles - Versión Minimalista */
 .stats-section {
     background-color: var(--light-gray);
     padding: 60px 0;
@@ -1371,14 +1406,14 @@ footer {
 }
 
 .stat-icon {
-    width: 50px;
+    width: 40px;
     height: 50px;
     margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #e30613;
-    font-size: 24px;
+    font-size: 25px;
     transition: transform 0.3s ease;
 }
 
@@ -1391,6 +1426,17 @@ footer {
     line-height: 1;
 }
 
+.stat-number.plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.plus-icon {
+    font-size: 1.8rem;
+}
+
 .stat-label {
     font-size: 0.9rem;
     color: #555;
@@ -1400,7 +1446,7 @@ footer {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Efectos hover (ORIGINAL) */
+/* Efectos hover */
 .stat-item:hover .stat-icon {
     transform: scale(1.1);
 }
@@ -1409,7 +1455,7 @@ footer {
     color: #c00511;
 }
 
-/* Ajuste responsivo (SOLO cambia el orden, mantiene ESTILO ORIGINAL) */
+/* Ajuste responsivo */
 @media (max-width: 768px) {
     .stats-container {
         display: grid;
@@ -1421,26 +1467,30 @@ footer {
     .stat-item {
         min-width: auto;
         margin: 0;
-        padding: 20px 15px; /* Mantengo el padding original */
-    }
-
-    .stat-number.plus .plus-icon {
-        display: none;
+        padding: 20px 15px;
     }
     
-    /* ORDEN FIJO (único cambio real) */
-    .stat-item:nth-child(1) { order: 1; } /* Alumnos (arriba izquierda) */
+    /* ELIMINÉ la regla que ocultaba el + en móviles */
+    /* .stat-number.plus .plus-icon { display: none; } */
+    
+    /* ORDEN FIJO */
+    .stat-item:nth-child(1) { order: 1; } /* Estudiantes (arriba izquierda) */
     .stat-item:nth-child(2) { order: 3; } /* Docentes (arriba derecha) */
-    .stat-item:nth-child(3) { order: 2; } /* Egresados (abajo izquierda) */
+    .stat-item:nth-child(3) { order: 2; } /* Internos (abajo izquierda) */
     .stat-item:nth-child(4) { order: 4; } /* Trayectoria (abajo derecha) */
 }
 
 @media (max-width: 480px) {
     .stat-item {
-        padding: 18px 12px; /* Ligero ajuste para móvil muy pequeño */
+        padding: 18px 12px;
     }
     
     .stat-number {
-        font-size: 2.2rem; /* Tamaño original para móvil */
+        font-size: 2.2rem;
+    }
+    
+    /* Ajuste específico para el + en móviles pequeños */
+    .plus-icon {
+        font-size: 1.5rem;
     }
 }
