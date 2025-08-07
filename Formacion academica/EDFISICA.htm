@@ -1,175 +1,210 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Educación Física</title>
-    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="FA_main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
-    <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPET 50 | Educación Física</title>
+  <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/web_styles.css" />
+  <link rel="stylesheet" href="FA_main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Educación Física</span></h1>
-                <p>DEPORTE - SALUD - BIENESTAR</p>
-            </div>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="../img/Escudo.png" alt="Escudo IPET 50" />
+        <div class="logo-text">
+          IPET 50
+          <span>Ing. Emilio F. Olmos</span>
         </div>
-    </header>
-    
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50" />
+        <div class="hero-text">
+          <h1>Departamento de <span>Educación Física</span></h1>
+          <p>
+            <span>DEPORTE</span> - <span>SALUD</span> - <span>BIENESTAR</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
+      <div class="main-content">
+        <article class="content-article-nf">
+          <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+          <div class="content-container">
+            <div class="content-wrapper">
+              <div class="slider-container">
                 <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Actividades deportivas"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Estudiantes en acción"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Instalaciones deportivas"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Torneos internos"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
+                  <div class="slides">
+                    <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Actividades deportivas" /></div>
+                    <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Estudiantes en acción" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Instalaciones deportivas" /></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Torneos internos" /></div>
+                  </div>
+                  <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                  <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                  <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                  </div>
                 </div>
+              </div>
+
+              <div class="text-content">
+                <div class="content-block">
+                  <h3>Desarrollo Integral</h3>
+                  <p>
+                    La Educación Física promueve el desarrollo de habilidades motrices, físicas y sociales, fomentando el trabajo en equipo y la autoestima de los estudiantes.
+                  </p>
+                </div>
+                <div class="content-block">
+                  <h3>Objetivos Educativos</h3>
+                  <p>
+                    Buscamos consolidar hábitos saludables, participación activa y valores deportivos, a través de actividades adaptadas al nivel de cada alumno y con instalaciones de calidad.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <h3>Desempeño Físico</h3>
+              <p>Los estudiantes desarrollan fuerza, resistencia y coordinación mediante juegos, deportes y circuitos físicos.</p>
             </div>
 
-            <article class="content-article">
-                <h2 class="article-title">Nuestro Enfoque Educativo</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        La Educación Física en nuestro instituto promueve el desarrollo integral de los estudiantes a través de actividades deportivas que fomentan la salud, el trabajo en equipo y la superación personal.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos principales:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Fomentar la práctica regular de actividad física como hábito saludable.</li>
-                            <li><span class="icon">✓</span> Desarrollar habilidades motrices y capacidades físicas básicas.</li>
-                            <li><span class="icon">✓</span> Promover valores como el respeto, la solidaridad y el fair play.</li>
-                            <li><span class="icon">✓</span> Estimular la participación en actividades deportivas individuales y colectivas.</li>
-                            <li><span class="icon">✓</span> Contribuir al desarrollo psicosocial y emocional de los estudiantes.</li>
-                            <li><span class="icon">✓</span> Mejorar la autoestima y confianza a través del logro de metas físicas.</li>
-                        </ul>
-                        
-                        <p>
-                            Nuestro departamento cuenta con instalaciones que se han ido perfeccionando a lo largo de los años para ofrecer una experiencia educativa de calidad. Contamos con espacios adecuados para la práctica de diversas disciplinas deportivas y materiales específicos para cada actividad.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Ver todos los objetivos</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Instalaciones</div>
-                    <h3 class="highlight-title">Espacios Deportivos</h3>
-                    <p class="highlight-text">
-                        Contamos con un cajón para salto en largo, colchonetas para salto en alto, correderas para carreras, jabalinas, balas y un nuevo playón de cemento que aumenta la disponibilidad y calidad de nuestras actividades.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Deportes</span>
-                        <span class="tag">Equipamiento</span>
-                        <span class="tag">Infraestructura</span>
-                    </div>
-                </div>
-            </article>
-        </div>
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h3>Salud y Bienestar</h3>
+              <p>La actividad física constante mejora la salud mental, la socialización y la confianza en sí mismos.</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Torneo Interno de Atletismo</h2>
-            
-            <div class="slider-container slider-common">
+      <div class="main-content">
+        <h2 class="section-title">Torneo Interno de Atletismo</h2>
+
+        <article class="content-article">
+          <div class="content-container reverse">
+            <div class="content-wrapper">
+              <div class="slider-container">
                 <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Torneo 1"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Torneo 2"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Torneo 3"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Torneo 4"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Torneo 5"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                        <span class="dot" data-slide="4"></span>
-                    </div>
+                  <div class="slides">
+                    <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Torneo 1" /></div>
+                    <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Torneo 2" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Torneo 3" /></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Torneo 4" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Torneo 5" /></div>
+                  </div>
+                  <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                  <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                  <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                  </div>
                 </div>
+              </div>
+
+              <div class="text-content">
+                <div class="content-block">
+                  <h3>Evento Anual de Participación Masiva</h3>
+                  <p>Participan estudiantes de 1º a 7º año, en pruebas como salto en largo, carreras de velocidad, resistencia, lanzamiento y más.</p>
+                </div>
+                <div class="content-block">
+                  <h3>Valores y Organización</h3>
+                  <p>El torneo se realiza en tres etapas con más de 220 alumnos. Se prioriza la inclusión, el esfuerzo y la mejora personal en un entorno sano y motivador.</p>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <article class="content-article">
-                <h3 class="article-title">Evento Anual Destacado</h3>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Nuestro proyecto estrella es el Torneo Interno de Atletismo, orientado a la participación de estudiantes de 1º a 7º año, con disciplinas que se trabajan previamente en las clases.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <p>
-                            El torneo incluye diversas disciplinas atléticas como carreras de 80 y 100 metros, carreras de resistencia (1200 y 1500 metros), salto en largo, salto en alto, lanzamiento de jabalina y lanzamiento de bala.
-                        </p>
-                        <p>
-                            La actividad se desarrolla en tres etapas: dos jornadas clasificatorias y una jornada final donde participan los ganadores de las etapas anteriores. Este año contamos con la participación de 220 alumnos, demostrando el gran interés y compromiso de nuestros estudiantes.
-                        </p>
-                        <p>
-                            A través de los años, hemos mejorado continuamente nuestras instalaciones para motivar a los jóvenes y ofrecer una mejor experiencia educativa. El reciente playón de cemento ha ampliado significativamente nuestras posibilidades para desarrollar actividades de calidad.
-                        </p>
-                        <p>
-                            Este torneo no solo promueve la competencia sana, sino que también fomenta valores como la perseverancia, el trabajo en equipo y el respeto por las normas, contribuyendo al desarrollo integral de nuestros estudiantes.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Conocer más sobre el torneo</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-        </div>
+          <div class="highlight-box">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>El deporte no solo fortalece el cuerpo, también construye el carácter. Nuestros torneos promueven respeto, disciplina y compañerismo.</p>
+          </div>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <footer class="page-footer">
-        <nav class="footer-nav">
-            <ul class="nav-list">
-                <li><a href="../index.htm">INICIO</a></li>
-                <li><a href="../index.html">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../index.html">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../index.html">INSTITUCIONAL</a></li>
-                <li><a href="../index.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        
-        <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
+  <footer class="footer" id="contacto">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo-decoration">
+            <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo" />
+          </div>
+          <div class="footer-brand-info">
+            <h3 class="footer-title">IPET 50</h3>
+            <p class="footer-slogan">Formando profesionales desde 1935</p>
+          </div>
         </div>
-    </footer>
 
-    <script src="../scripts/form_ac_slider.js"></script>
+        <div class="footer-social">
+          <h4 class="social-title">Síguenos en redes</h4>
+          <div class="social-links">
+            <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../scripts/form_ac_slider.js"></script>
+  <script src="../scripts/menu_web.js"></script>
+  <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>

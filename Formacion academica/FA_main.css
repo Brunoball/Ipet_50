@@ -33,21 +33,92 @@ main {
     padding-top: 0;
 }
 
+
+
+
+
+/* ===== PERSONALIZACIÓN DE MENÚ SOLO PARA ESTA SECCIÓN ===== */
+
+/* Color base mejorado */
+:root {
+  --secondary: #1D428A; /* Azul igual al del botón original */
+  --secondary-dark: #13305e; /* Azul más oscuro para hover */
+}
+/* Hover en escritorio */
+.nav-menu > ul > li > a:hover,
+.nav-menu > ul > li > button:hover {
+  color: var(--secondary);
+  background-color: rgba(52, 152, 219, 0.08); /* Azul claro suave */
+}
+
+/* Submenú */
+.submenu a:hover {
+  color: var(--secondary);
+  background-color: rgba(52, 152, 219, 0.08);
+}
+
+/* Menú en modo mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    background-color: var(--secondary); /* Fondo azul moderno */
+  }
+
+  .nav-menu > ul > li > a,
+  .nav-menu > ul > li > button,
+  .submenu a {
+    color: white;
+  }
+
+  .nav-menu > ul > li > a:hover,
+  .nav-menu > ul > li > button:hover,
+  .submenu a:hover {
+    background-color: var(--secondary-dark); /* Hover azul oscuro */
+    color: white;
+  }
+}
+
+/* ===== Botón del menú (toggle) ===== */
+.nav-toggle {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.nav-toggle:hover {
+  background-color: var(--secondary-dark);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===== HERO SECTION ===== */
 .hero-section {
     position: relative;
-    height: 70vh;
-    min-height: 450px;
+    height: calc(10vh - 10px); /* ✅ Resta altura del header fijo */
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgnuevas/ddsociales.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../imgnuevas/ddsociales.jpg') no-repeat center center/cover;
     background-attachment: fixed;
-    color: var(--white);
+    color: #fff;
     text-align: center;
-    padding: 2rem;
-    margin-top: 0;
+    padding: 0 2rem;
+    margin-top: 4.2rem; 
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -56,7 +127,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 152, 219, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.6));
+    z-index: 1;
 }
 
 .hero-content {
@@ -65,9 +137,14 @@ main {
     width: 90%;
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* ✅ Abarca todo el alto disponible de la sección */
+    animation: fadeInUp 1s ease-out forwards 0.3s;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards 0.3s;
 }
 
 .escudo {
@@ -112,6 +189,7 @@ main {
     opacity: 0;
     color: #fff;
     animation: fadeIn 0.8s ease-out forwards 1.2s;
+    margin-top: 0.5rem;
 }
 
 .hero-text p span {
@@ -120,11 +198,17 @@ main {
     transform: translateY(10px);
 }
 
-.hero-text p span:nth-child(1) { animation: fadeInUpItem 0.6s ease-out forwards 1.4s; }
-.hero-text p span:nth-child(2) { animation: fadeInUpItem 0.6s ease-out forwards 1.6s; }
-.hero-text p span:nth-child(3) { animation: fadeInUpItem 0.6s ease-out forwards 1.8s; }
+.hero-text p span:nth-child(1) {
+    animation: fadeInUpItem 0.6s ease-out forwards 1.4s;
+}
+.hero-text p span:nth-child(2) {
+    animation: fadeInUpItem 0.6s ease-out forwards 1.6s;
+}
+.hero-text p span:nth-child(3) {
+    animation: fadeInUpItem 0.6s ease-out forwards 1.8s;
+}
 
-/* Keyframes para las animaciones */
+/* Keyframes */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -155,6 +239,39 @@ main {
         transform-origin: left;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -205,6 +322,7 @@ main {
     background: #3498db;
     border-radius: 3px;
 }
+
 
 /* ===== CONTENT CONTAINERS ===== */
 .content-container {
@@ -769,55 +887,185 @@ main {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===== FOOTER ===== */
-.page-footer {
-    background: #2c3e50;
-    color: white;
-    padding: 2rem;
-    width: 100%;
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('../imgnuevas/escuela3.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f8f8f8;
+    padding: 4.5rem 0;
+    position: relative;
 }
 
-.footer-nav {
-    margin-bottom: 2rem;
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
 }
 
-.nav-list {
+.footer-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 60px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-slogan {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-weight: 300;
+}
+
+.footer-social {
+    text-align: center;
+}
+
+.social-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+    display: flex;
     justify-content: center;
     gap: 1.5rem;
-    list-style: none;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
+.social-link {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
     transition: all 0.3s ease;
-    padding: 0.5rem;
+    text-decoration: none;
 }
 
-.nav-list a:hover {
-    color: #3498db;
+/* Hover: fondo igual, icono con color real */
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
 }
 
-.footer-info {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+.social-link:hover i.fa-facebook-f {
+    color: #1877f2;
 }
 
-.copyright {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-top: 0.5rem;
+.social-link:hover i.fa-instagram {
+    color: #E1306C;
 }
+
+.social-link:hover i.fa-youtube {
+    color: #FF0000;
+}
+
+/* Responsive ajustes */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        align-items: center; /* ← centrado vertical */
+        justify-content: space-between;
+        text-align: initial;
+    }
+
+    .footer-brand {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .footer-brand-info {
+        text-align: left;
+    }
+
+    .footer-social {
+        text-align: right;
+    }
+
+    .social-links {
+        justify-content: flex-end;
+    }
+
+    .footer-logo {
+        width: 65px;
+    }
+
+    .footer-title {
+        font-size: 2rem;
+    }
+
+    .footer-slogan {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -858,9 +1106,6 @@ main {
   color: #e30613; /* Rojo IPET */
 }
 
-
-
-
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 992px) {
     .flex-container {
@@ -886,47 +1131,56 @@ main {
 }
 
 @media (max-width: 767px) {
+    /* HERO SECTION */
     .hero-section {
-        height: 60vh;
+        height: auto;
         min-height: 400px;
-        padding: 1.5rem 1rem;
+        padding: 3rem 1rem 2rem;
+        text-align: center;
     }
-    
+
     .hero-text h1 {
         font-size: 1.8rem;
     }
-    
+
     .hero-text p {
         font-size: 1rem;
     }
-    
+
+    .escudo {
+        width: 70px;
+    }
+
+    /* TITULOS Y SLIDERS */
     .article-title {
         font-size: 1.6rem;
     }
-    
+
     .slider-common {
         height: 250px;
     }
-    
+
     .section-title {
         font-size: 1.6rem;
     }
-    
+
     .activity-list {
         grid-template-columns: 1fr;
     }
-    
+
+    /* FOOTER */
     .page-footer {
         padding: 1.5rem 1rem;
     }
-    
+
+    /* NAVEGACIÓN (si aplica en tu estructura) */
     .nav-list {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    /* Nuevos estilos para agregar padding horizontal en móvil */
+    /* ESPACIADO EN MOBILE */
     .content-container,
     .activities-section .content-container {
         margin-left: 1rem;
@@ -945,3 +1199,6 @@ main {
         padding-right: 1rem;
     }
 }
+
+
+

@@ -240,6 +240,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
 // Slider de testimonios
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.testimonios-track');

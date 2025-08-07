@@ -4,190 +4,192 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Matemática</title>
+    <title>IPET 50 | Matemáticas</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/web_styles.css">
     <link rel="stylesheet" href="FA_main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Matemáticas</span></h1>
-                <p>ÁLGEBRA - GEOMETRÍA - CÁLCULO</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
             </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="/imgnuevas/mate.jpg" alt="Clase de matemáticas"></div>
-                        <div class="slide"><img src="/imgnuevas/mate2.jpg" alt="Estudiantes resolviendo problemas"></div>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Matemáticas</span></h1>
+                    <p><span>ÁLGEBRA</span> - <span>GEOMETRÍA</span> - <span>CÁLCULO</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="/imgnuevas/mate.jpg" alt="Clase de matemáticas"></div>
+                                        <div class="slide"><img src="/imgnuevas/mate2.jpg" alt="Estudiantes resolviendo problemas"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Matemática como herramienta de pensamiento</h3>
+                                    <p>Hacer matemática es crear, producir, reflexionar. Se promueve el protagonismo del estudiante mediante clases que resignifican los contenidos desde la resolución de problemas.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Objetivos Principales</h3>
+                                    <p>Desarrollar el pensamiento lógico, fomentar la argumentación y vincular los contenidos con la vida real, preparando al estudiante para desafíos académicos y personales.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Aprendizaje Significativo</h3>
+                            <p>El contenido se conecta con los intereses de los estudiantes y sus objetivos personales o profesionales, fortaleciendo el vínculo con la asignatura.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Pensamiento Crítico</h3>
+                            <p>Se potencia el razonamiento lógico y analítico mediante estrategias diversas y resolución de situaciones que requieren reflexión y creatividad.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Día Distinto: Experiencias Matemáticas</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="/imgnuevas/mate6.jpg" alt="Día distinto 1"></div>
+                                        <div class="slide"><img src="/imgnuevas/mate7.jpg" alt="Día distinto 2"></div>
+                                        <div class="slide"><img src="/imgnuevas/mate4.jpg" alt="Día distinto 3"></div>
+                                        <div class="slide"><img src="/imgnuevas/mate5.jpg" alt="Día distinto 4"></div>
+                                        <div class="slide"><img src="/imgnuevas/mate3.jpg" alt="Día distinto 5"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                        <span class="dot" data-slide="4"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Jornadas de aprendizaje lúdico</h3>
+                                    <p>Actividades recreativas que fomentan habilidades cognitivas a través del juego y el trabajo colaborativo. Una forma distinta de acercarse a la matemática.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Olimpíadas Matemáticas</h3>
+                                    <p>Desafíos que estimulan el pensamiento lógico, la resolución de problemas y el uso creativo del conocimiento escolar, promoviendo el aprendizaje activo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>La matemática desarrolla habilidades clave como el razonamiento, la creatividad y la capacidad para resolver problemas del mundo real con eficacia y lógica.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-
-            <article class="content-article">
-                <h2 class="article-title">Nuestro Enfoque Educativo</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Matemática es un espacio de formación que contempla una manera particular de pensar y generar ideas. 
-                        <strong>Hacer matemática es crear, producir, es un trabajo del pensamiento.</strong>
-                    </p>
-                    
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos principales:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Desarrollar el pensamiento lógico-matemático en los estudiantes.</li>
-                            <li><span class="icon">✓</span> Fomentar la resolución de problemas a través de estrategias variadas.</li>
-                            <li><span class="icon">✓</span> Promover la argumentación y justificación de procedimientos matemáticos.</li>
-                            <li><span class="icon">✓</span> Estimular la creatividad en la búsqueda de soluciones.</li>
-                            <li><span class="icon">✓</span> Relacionar los conceptos matemáticos con situaciones de la vida real.</li>
-                            <li><span class="icon">✓</span> Preparar a los estudiantes para desafíos académicos y profesionales.</li>
-                        </ul>
-                        
-                        <p>
-                            La construcción del conocimiento matemático se ve ampliamente favorecida por la resolución de problemas, involucrando un "hacer" y un <strong>"reflexionar sobre el hacer"</strong>, es decir, la justificación y argumentación de los procedimientos que permitieron solucionar una situación, y también la validez de los resultados obtenidos.
-                        </p>
-                        <p>
-                            La clave es dar más protagonismo a los estudiantes a través de la experimentación, consiguiendo de alguna manera que los mismos resignifiquen la Matemática, que logren interpretar y mirar desde otro punto de vista, para lo cual es fundamental dar un nuevo formato a las clases sin olvidar conceptos o contenidos claves.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Ver todos los objetivos</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Método</div>
-                    <h3 class="highlight-title">Aprendizaje Significativo</h3>
-                    <p class="highlight-text">
-                        Trabajar las fortalezas y los intereses de los estudiantes explicando cómo el contenido de la asignatura ayudará a objetivos educacionales, profesionales o personales, permitirá un mejor acercamiento a los docentes y un posterior desempeño positivo por parte de los estudiantes.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Resolución</span>
-                        <span class="tag">Problemas</span>
-                        <span class="tag">Estrategias</span>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <div class="highlight-badge">Enfoque</div>
-                    <h3 class="highlight-title">Pensamiento Crítico</h3>
-                    <p class="highlight-text">
-                        La matemática desarrolla habilidades de razonamiento, análisis y pensamiento crítico que son fundamentales no solo para el ámbito académico sino también para la vida cotidiana y profesional de los estudiantes.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Lógica</span>
-                        <span class="tag">Análisis</span>
-                        <span class="tag">Razonamiento</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Día Distinto: Experiencias Matemáticas</h2>
-            
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="/imgnuevas/mate6.jpg" alt="Día distinto 1"></div>
-                        <div class="slide"><img src="/imgnuevas/mate7.jpg" alt="Día distinto 2"></div>
-                        <div class="slide"><img src="/imgnuevas/mate4.jpg" alt="Día distinto 3"></div>
-                        <div class="slide"><img src="/imgnuevas/mate5.jpg" alt="Día distinto 4"></div>
-                        <div class="slide"><img src="/imgnuevas/mate3.jpg" alt="Día distinto 5"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                        <span class="dot" data-slide="4"></span>
-                    </div>
-                </div>
-            </div>
-
-            <article class="content-article">
-                <h3 class="article-title">Aprendizaje Lúdico de las Matemáticas</h3>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Es indudable que las matemáticas tienen muchos beneficios útiles para nuestra mente. Es muy importante su estudio y su comprensión para conocer mejor el mundo que nos rodea.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <p>
-                            Desde hace varios años el IPET 50 desarrolla jornadas con modalidad diferente a la clase tradicional acercando a los estudiantes al desarrollo de habilidades además de obtener beneficios cognitivos por medio de actividades o juegos.
-                        </p>
-                        <p>
-                            Para que el aprendizaje se torne significativo se requiere que la matemática sea asumida y valorada por todos los actores del sistema educativo y la sociedad en general. El compromiso docente y el trabajo del equipo directivo van a permitir construir con estas actividades concientizar y sensibilizar en el marco de "Un día distinto" la importancia de aprender matemática de distintas maneras.
-                        </p>
-                        <p>
-                            Desde el departamento de Matemática, se han seleccionado diversas actividades, para llevar a la práctica procesos de enseñanza caracterizados por consignas que nos permitan desarrollar habilidades matemáticas de manera progresiva y más divertida.
-                        </p>
-                        
-                        <h3>Olimpíadas matemáticas:</h3>
-                        <p>
-                            La inteligencia lógico matemática, tiene que ver con la habilidad de trabajar y pensar en términos de números y la capacidad de emplear el razonamiento lógico. Las diferentes capacidades en este sentido van a depender de la estimulación recibida. Es importante saber que estas capacidades se pueden y deben entrenar, con una estimulación adecuada se consiguen importantes logros y beneficios.
-                        </p>
-                        <p>
-                            Las Olimpíadas Matemáticas son competencias en las que participan muchos estudiantes donde ante un desafío intelectual tratan de dar solución a un problema matemático presentado, resoluble con sentido común y matemática escolar, elemental. El propósito central es potenciar en todos los estudiantes la capacidad de resolución de problemas, incentivando su razonamiento y la búsqueda de estrategias de solución variadas y novedosas.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <footer class="page-footer">
-        <nav class="footer-nav">
-            <ul class="nav-list">
-                <li><a href="../index.htm">INICIO</a></li>
-                <li><a href="../index.html">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../index.html">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../index.html">INSTITUCIONAL</a></li>
-                <li><a href="../index.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        
-        <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
         </div>
     </footer>
 
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script src="../scripts/form_ac_slider.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>

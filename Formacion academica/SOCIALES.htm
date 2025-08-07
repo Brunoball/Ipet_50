@@ -6,150 +6,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | Ciencias Sociales</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/web_styles.css">
     <link rel="stylesheet" href="FA_main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Ciencias Sociales</span></h1>
-                <p>Formando ciudadanos críticos y comprometidos</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
             </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="/imgnuevas/sociales1.jpg" alt="Actividades del departamento de sociales"></div>
-                        <div class="slide"><img src="/imgnuevas/sociales2.jpg" alt="Estudiantes trabajando en proyectos"></div>
-                        <div class="slide"><img src="/imgnuevas/sociales3.jpg" alt="Presentación de trabajos"></div>
-                        <div class="slide"><img src="/imgnuevas/sociales4.jpg" alt="Actividad grupal"></div>
-                        <div class="slide"><img src="/imgnuevas/sociales5.jpg" alt="Exposición de estudiantes"></div>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Ciencias Sociales</span></h1>
+                    <p><span>Formando ciudadanos críticos</span> - <span>Participación activa</span> - <span>Compromiso social</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="../imgnuevas/sociales1.jpg" alt="Actividades del departamento de sociales"></div>
+                                        <div class="slide"><img src="../imgnuevas/sociales2.jpg" alt="Estudiantes trabajando en proyectos"></div>
+                                        <div class="slide"><img src="../imgnuevas/sociales3.jpg" alt="Presentación de trabajos"></div>
+                                        <div class="slide"><img src="../imgnuevas/sociales4.jpg" alt="Actividad grupal"></div>
+                                        <div class="slide"><img src="../imgnuevas/sociales5.jpg" alt="Exposición de estudiantes"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                        <span class="dot" data-slide="4"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Formación Integral</h3>
+                                    <p>Desde el Departamento de Ciencias Sociales promovemos la formación integral de los estudiantes, fomentando el pensamiento crítico y la comprensión de la realidad social.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Ciudadanía y Participación</h3>
+                                    <p>Nuestro objetivo es desarrollar ciudadanos conscientes, capaces de participar activamente en la transformación de su entorno mediante metodologías innovadoras y trabajo interdisciplinario.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                        <span class="dot" data-slide="4"></span>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Proyectos Interdisciplinarios</h3>
+                            <p>Se trabajan problemáticas sociales contemporáneas con un enfoque integral, integrando herramientas digitales, investigación y propuestas de mejora comunitaria.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h3>Compromiso con el Entorno</h3>
+                            <p>La conexión con la comunidad y la mirada sobre el contexto social permiten una educación transformadora, donde los estudiantes se reconocen como agentes de cambio.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Día Distinto: Experiencias Transformadoras</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="../imgnuevas/ddsociales.jpg" alt="Día distinto 1"></div>
+                                        <div class="slide"><img src="../imgnuevas/ddsociales2.jpg" alt="Día distinto 2"></div>
+                                        <div class="slide"><img src="../imgnuevas/ddsociales3.jpg" alt="Día distinto 3"></div>
+                                        <div class="slide"><img src="../imgnuevas/ddsociales4.jpg" alt="Día distinto 4"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Actividades Significativas</h3>
+                                    <p>En el Día Distinto, los estudiantes participan en proyectos que integran las Ciencias Sociales con otras áreas, promoviendo el trabajo colaborativo y la reflexión crítica.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Experiencias Innovadoras</h3>
+                                    <p>Se abordan temas como el Modelo ONU, la educación vial y la identidad regional a través de actividades dinámicas y debates con impacto real.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-details">
+                        <div class="detail-header">
+                            <h3>Actividades Realizadas</h3>
+                            <p class="subtitle">Proyectos destacados del área</p>
+                        </div>
+
+                        <div class="activities-grid three-columns">
+                            <div class="activity-card">
+                                <div class="activity-icon"><i class="fas fa-landmark"></i></div>
+                                <h4>Modelo ONU</h4>
+                                <p>Simulación diplomática donde los estudiantes representan países y debaten temas globales con argumentos sólidos.</p>
+                            </div>
+
+                            <div class="activity-card">
+                                <div class="activity-icon"><i class="fas fa-map"></i></div>
+                                <h4>Conociendo nuestro país</h4>
+                                <p>Proyecto para profundizar en la diversidad ambiental e histórica de las provincias argentinas.</p>
+                            </div>
+
+                            <div class="activity-card">
+                                <div class="activity-icon"><i class="fas fa-car-side"></i></div>
+                                <h4>Educación Vial</h4>
+                                <p>En articulación con Automotores, los alumnos reflexionan sobre el rol social del conductor y la seguridad vial.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>“La enseñanza de las Ciencias Sociales permite a los estudiantes comprender su realidad, ejercer una ciudadanía activa y proyectar un futuro mejor.”</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-
-            <article class="content-article">
-                <h2 class="article-title">Nuestro Enfoque Educativo</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">Desde el Departamento de Ciencias Sociales promovemos la formación integral de los estudiantes, fomentando el pensamiento crítico y la comprensión de la realidad social. Nuestro objetivo es desarrollar ciudadanos conscientes, capaces de participar activamente en la transformación de su entorno.</p>
-                    
-                    <div class="extra-content">
-                        <p>Nuestro equipo docente utiliza metodologías innovadoras que combinan el análisis teórico con aplicaciones prácticas. A través de proyectos interdisciplinarios, los estudiantes exploran problemáticas sociales contemporáneas desarrollando habilidades de investigación, debate y propuesta de soluciones.</p>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Enfoque basado en competencias</li>
-                            <li><span class="icon">✓</span> Aprendizaje colaborativo</li>
-                            <li><span class="icon">✓</span> Integración de tecnologías educativas</li>
-                            <li><span class="icon">✓</span> Conexión con la comunidad</li>
-                        </ul>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Proyecto Destacado</div>
-                    <h3 class="highlight-title">Preservación del patrimonio natural argentino con IA</h3>
-                    <p class="highlight-text">Los estudiantes de 3° año "D" han explorado las ecorregiones y humedales de Argentina mediante herramientas tecnológicas innovadoras. Utilizando pizarras digitales y la aplicación SUNO, crearon afiches digitales y canciones que promueven la reflexión sobre la conservación ambiental.</p>
-                    <div class="highlight-footer">
-                        <span class="tag">Tecnología</span>
-                        <span class="tag">Ecología</span>
-                        <span class="tag">Innovación</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Día Distinto: Experiencias Transformadoras</h2>
-            
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="/imgnuevas/ddsociales.jpg" alt="Día distinto 1"></div>
-                        <div class="slide"><img src="/imgnuevas/ddsociales2.jpg" alt="Día distinto 2"></div>
-                        <div class="slide"><img src="/imgnuevas/ddsociales3.jpg" alt="Día distinto 3"></div>
-                        <div class="slide"><img src="/imgnuevas/ddsociales4.jpg" alt="Día distinto 4"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="activities-grid">
-                <article class="activity-card">
-                    <h3>Modelo de Naciones Unidas</h3>
-                    <p>Estudiantes de 3° a 6° año simulan ser delegados de países, desarrollando habilidades de investigación, oratoria y debate sobre temas globales actuales.</p>
-                </article>
-                
-                <article class="activity-card">
-                    <h3>Conociendo nuestro país</h3>
-                    <p>Proyecto interdisciplinario que aborda problemas ambientales y cuestiones históricas de cada provincia, fomentando el conocimiento profundo de Argentina.</p>
-                </article>
-                
-                <article class="activity-card">
-                    <h3>Educación Vial Integral</h3>
-                    <p>Iniciativa conjunta con Automotores para formar conductores responsables a través de actividades prácticas y reflexivas sobre seguridad vial.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-
-
-    <footer class="page-footer">
-        <nav class="footer-nav">
-            <ul class="nav-list">
-                <li><a href="../WEB.htm">INICIO</a></li>
-                <li><a href="../WEB.htm#especialidades">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../WEB.htm#academica">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../WEB.htm#nosotros">INSTITUCIONAL</a></li>
-                <li><a href="../WEB.htm#contacto">CONTACTO</a></li>
-            </ul>
-        </nav>
-        
-        <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
         </div>
     </footer>
 
-
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <script src="../scripts/form_ac_slider.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>

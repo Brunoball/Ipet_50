@@ -1,232 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Tecnología y Dibujo Técnico</title>
-    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="FA_main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
-    <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPET 50 | Tecnología y Dibujo Técnico</title>
+  <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/web_styles.css" />
+  <link rel="stylesheet" href="FA_main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Tecnología y Dibujo Técnico</span></h1>
-            </div>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="../img/Escudo.png" alt="Escudo IPET 50" />
+        <div class="logo-text">
+          IPET 50
+          <span>Ing. Emilio F. Olmos</span>
         </div>
-    </header>
-    
-    <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="IPET 50"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Talleres IPET 50"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Instalaciones IPET 50"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Actividades técnicas"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <article class="content-article">
-                <h2 class="article-title">Educación Tecnológica</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                       La Educación Tecnológica en nuestra institución promueve una formación crítica y responsable, orientada a que los estudiantes comprendan e intervengan en los procesos tecnológicos que atraviesan la vida cotidiana, el entorno social y el desarrollo productivo.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos principales:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Construir a partir de la reflexión sobre las prácticas técnicas - criterios éticos que permitan valorar las relaciones entre cambios sociales y ambientales y las innovaciones tecnológicas.</li>
-                            <li><span class="icon">✓</span> Incrementar la curiosidad y el interés por los procesos tecnológicos, los medios técnicos que participan, sus productos resultantes y la disposición final de los residuos.</li>
-                            <li><span class="icon">✓</span> Observar la posición central, creadora, responsable, política, crítica de los sujetos en el mundo artificial construido por el hombre, asumiendo la responsabilidad por sus cambios futuros.</li>
-                            <li><span class="icon">✓</span> Valorar el desarrollo histórico de la tecnología, identificando los cambios producidos, aquellos inventos que impactaron en la sociedad y el rol creativo del hombre en estos procesos.</li>
-                            <li><span class="icon">✓</span> Profundizar y valorar la historia de la tecnología en contextos latinoamericanos, especialmente aquellas raíces técnicas que nos identifican y diferencian.</li>
-                            <li><span class="icon">✓</span> Profundizar y ejercitar las habilidades socializadoras y de construcción colectiva de respuesta a problemas socio técnicos.</li>
-                            <li><span class="icon">✓</span> Identificar fortalezas, debilidades, oportunidades y amenazas de los procesos y productos tecnológicos.</li>
-                        </ul>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Ver todos los objetivos</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Método</div>
-                    <h3 class="highlight-title">Enfoque Práctico</h3>
-                    <p class="highlight-text">
-                        Trabajamos con un enfoque práctico que permite a los estudiantes interactuar directamente con los sistemas tecnológicos, desarrollando habilidades técnicas y de pensamiento crítico que son fundamentales para su formación profesional.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Práctica</span>
-                        <span class="tag">Técnica</span>
-                        <span class="tag">Innovación</span>
-                    </div>
-                </div>
-            </article>
+  <main>
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50" />
+        <div class="hero-text">
+          <h1>Departamento de <span>Tecnología y Dibujo Técnico</span></h1>
+          <p><span>Educación Tecnológica</span> - <span>Dibujo Técnico</span> - <span>Innovación</span></p>
         </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="main-content">
+        <article class="content-article-nf">
+          <h2 class="article-title">Formación Técnica y Tecnológica</h2>
+
+          <div class="content-container">
+            <div class="content-wrapper">
+              <div class="slider-container">
+                <div class="slider">
+                  <div class="slides">
+                    <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="IPET 50" /></div>
+                    <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2.jpg" alt="Talleres IPET 50" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Instalaciones IPET 50" /></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Actividades técnicas" /></div>
+                  </div>
+                  <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                  <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                  <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-content">
+                <div class="content-block">
+                  <h3>Educación Tecnológica</h3>
+                  <p>Formamos estudiantes críticos, responsables y participativos en procesos tecnológicos que impactan en la vida cotidiana y en la sociedad.</p>
+                </div>
+                <div class="content-block">
+                  <h3>Dibujo Técnico</h3>
+                  <p>Desarrollamos habilidades cognitivas, manuales y digitales mediante el trazo técnico como lenguaje universal en entornos productivos y educativos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="card-icon"><i class="fas fa-cogs"></i></div>
+              <h3>Innovación Técnica</h3>
+              <p>Incentivamos el análisis de invenciones y el impacto de la tecnología en el medio, con énfasis en el contexto latinoamericano y ambiental.</p>
+            </div>
+            <div class="info-card">
+              <div class="card-icon"><i class="fas fa-drafting-compass"></i></div>
+              <h3>Destrezas Técnicas</h3>
+              <p>Ejercitamos precisión, pensamiento lógico, uso de instrumentos y tecnologías digitales para la representación gráfica de ideas.</p>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>La tecnología y el dibujo técnico permiten a los estudiantes transformar ideas en soluciones concretas, asumiendo un rol activo y creativo en el mundo actual.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Dibujo Técnico</h2>
-            
-            <div class="slider-container slider-common">
+      <div class="main-content">
+        <h2 class="section-title">Microevento del Departamento</h2>
+
+        <article class="content-article">
+          <div class="content-container reverse">
+            <div class="content-wrapper">
+              <div class="slider-container">
                 <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Dibujo técnico 1"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Dibujo técnico 2"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Dibujo técnico 3"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Dibujo técnico 4"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
+                  <div class="slides">
+                    <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Evento 1" /></div>
+                    <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2.jpg" alt="Evento 2" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 3" /></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Evento 4" /></div>
+                  </div>
+                  <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                  <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                  <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                  </div>
                 </div>
+              </div>
+
+              <div class="text-content">
+                <div class="content-block">
+                  <h3>Olimpiadas de Seguridad</h3>
+                  <p>Alumnos de 3° año participaron en una jornada con charlas sobre extintores y cartelería de seguridad. Se realizaron recorridos por el establecimiento y un concurso de carteles.</p>
+                </div>
+                <div class="content-block">
+                  <p>Se trabajaron contenidos sobre tipos de fuego, agentes extintores y normas de seguridad en ambientes educativos. La actividad promovió la participación activa y conciencia preventiva.</p>
+                </div>
+              </div>
             </div>
-
-            <article class="content-article">
-                <h3 class="article-title">Formación en Dibujo Técnico</h3>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        El Dibujo Técnico es de gran importancia para dotar al estudiante de los instrumentos necesarios para la integración de sus conocimientos en procesos de creación autónoma y/o de experimentación interdisciplinaria.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos en Dibujo Técnico:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Desarrollar el pensamiento lógico (habilidades cognitivas).</li>
-                            <li><span class="icon">✓</span> Desarrollar destrezas manuales (manipulación de instrumentos y materiales).</li>
-                            <li><span class="icon">✓</span> Fortalecer la exactitud y la precisión (aplicación de trazos).</li>
-                            <li><span class="icon">✓</span> Fortalecer los valores y el autoestima (respeto, responsabilidad, aseo, criticidad, creatividad, autonomía).</li>
-                            <li><span class="icon">✓</span> Potenciar las TIC como medio continuo y permanente de aprendizajes.</li>
-                        </ul>
-                        
-                        <p>
-                            Es fundamental la participación directa de la comunidad educativa durante todo el proceso, ya que lo esencial es generar aprendizajes significativos y competencias específicas que le permitan al estudiante interactuar de manera propositiva y eficiente en la práctica social.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-        </div>
+          </div>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <section class="content-section">
-        <div class="main-content">
-            <h2 class="section-title">Microevento del Departamento</h2>
-            
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Evento 1"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Evento 2"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 3"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Evento 4"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 5"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                        <span class="dot" data-slide="4"></span>
-                    </div>
-                </div>
-            </div>
-
-            <article class="content-article">
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Se realizaron Olimpiadas sobre Seguridad con los alumnos de 3° año, incluyendo una charla sobre manejo de extintores de fuego y cartelería de seguridad.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <p>
-                            Con fecha 13 de junio del corriente año, el departamento de Educación Tecnológica y Dibujo Técnico organizó para los alumnos de 3° año una charla sobre manejo de extintores de fuego en principios de incendios y cartelería de seguridad.
-                        </p>
-                        <p>
-                            La actividad estuvo basada, en lo que compete a los extintores, en el reconocimiento de la clase de fuego que se desarrolla, la aplicación de los distintos tipos de agentes extintores posibles y la forma de aplicarlos.
-                        </p>
-                        <p>
-                            Para los carteles de seguridad, se trabajó en la observación de los distintos tipos y formas de carteles normalizados existentes en el mercado.
-                        </p>
-                        <p>
-                            La metodología de desarrollo se basó en la observación y comentarios de diapositivas digitales, con un interesante intercambio de preguntas de los alumnos participantes.
-                        </p>
-                        <p>
-                            A continuación se realizaron distintos recorridos por las instalaciones del instituto para que los alumnos reconozcan los extintores colocados y observen la falta de cartelería. En horario vespertino se llevó a cabo un concurso de carteles que, a criterio de los alumnos, faltaban o habría que colocar en nuestra escuela.
-                        </p>
-                        <p>
-                            Cabe destacar que las actividades fueron recibidas con muy buen agrado por los alumnos.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más sobre el evento</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
+  <footer class="footer" id="contacto">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo-decoration">
+            <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo" />
+          </div>
+          <div class="footer-brand-info">
+            <h3 class="footer-title">IPET 50</h3>
+            <p class="footer-slogan">Formando profesionales desde 1935</p>
+          </div>
         </div>
-    </section>
-
-    <footer class="page-footer">
-        <nav class="footer-nav">
-            <ul class="nav-list">
-                <li><a href="../index.htm">INICIO</a></li>
-                <li><a href="../index.html">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../index.html">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../index.html">INSTITUCIONAL</a></li>
-                <li><a href="../index.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        
-        <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
+        <div class="footer-social">
+          <h4 class="social-title">Síguenos en redes</h4>
+          <div class="social-links">
+            <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 
-    <script src="../scripts/form_ac_slider.js"></script>
+  <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+
+  <script src="../scripts/form_ac_slider.js"></script>
+  <script src="../scripts/menu_web.js"></script>
+  <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>

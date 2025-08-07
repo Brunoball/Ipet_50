@@ -4,173 +4,186 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Naturales</title>
+    <title>IPET 50 | Ciencias Naturales</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/web_styles.css">
     <link rel="stylesheet" href="FA_main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Ciencias Naturales</span></h1>
-                <p>BIOLOGÍA - QUÍMICA - FÍSICA</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
             </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
-    <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="/imgnuevas/naturales1.jpg" alt="Actividades de ciencias naturales"></div>
-                        <div class="slide"><img src="/imgnuevas/naturales2.jpg" alt="Estudiantes en laboratorio"></div>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Ciencias Naturales</span></h1>
+                    <p><span>BIOLOGÍA</span> - <span>QUÍMICA</span> - <span>FÍSICA</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="/imgnuevas/naturales1.jpg" alt="Actividades de ciencias naturales"></div>
+                                        <div class="slide"><img src="/imgnuevas/naturales2.jpg" alt="Estudiantes en laboratorio"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Ciencia en acción</h3>
+                                    <p>Buscamos desarrollar pensamiento crítico y habilidades científicas para interpretar los fenómenos naturales, aplicando conocimiento desde la experiencia.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Objetivos del área</h3>
+                                    <p>Trabajo en laboratorio, construcción de modelos explicativos, uso del lenguaje específico y análisis riguroso de fenómenos físicos, químicos y biológicos.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-vials"></i>
+                            </div>
+                            <h3>Laboratorio de Ciencias Naturales</h3>
+                            <p>Promovemos habilidades como observación, trabajo en equipo y aplicación del método científico mediante prácticas que vinculan teoría con experiencia directa.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3>Cultura digital</h3>
+                            <p>El uso de TIC y simuladores potencia la inclusión, estimula el aprendizaje autónomo y enriquece la enseñanza científica actual.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Día Distinto: Experiencias Transformadoras</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="/imgnuevas/naturales3.jpg" alt="Día distinto 1"></div>
+                                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Día distinto 2"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Aprendizaje lúdico en Ciencias Naturales</h3>
+                                    <p>El juego estimula la autonomía, confianza y entusiasmo por las ciencias, generando experiencias significativas que integran lo teórico con lo vivencial.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Perspectiva práctica y educativa</h3>
+                                    <p>Las actividades ayudan a valorar el rol de las ciencias en la educación, fortaleciendo el vínculo entre el conocimiento y su aplicación en el mundo real.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>El juego favorece el aprendizaje significativo, ayudando a descubrir en las ciencias naturales una experiencia más práctica, divertida y reflexiva.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-
-            <article class="content-article">
-                <h2 class="article-title">Nuestro Enfoque Educativo</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        En el Departamento de Ciencias Naturales nos enfocamos en desarrollar habilidades científicas y pensamiento crítico en nuestros estudiantes, 
-                        preparándolos para comprender y analizar los fenómenos naturales que nos rodean.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos principales:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Reconocer y utilizar adecuadamente el material y los instrumentos de laboratorio aplicando las normas de seguridad e higiene.</li>
-                            <li><span class="icon">✓</span> Valorar los aportes de las Ciencias Naturales a la sociedad a lo largo de la historia.</li>
-                            <li><span class="icon">✓</span> Desarrollar el dominio de los conocimientos de las Ciencias Naturales fomentando la capacidad de análisis y razonamiento.</li>
-                            <li><span class="icon">✓</span> Adquirir autonomía en la construcción de modelos explicativos basados en el reconocimiento de datos.</li>
-                            <li><span class="icon">✓</span> Usar con precisión el lenguaje específico de las ciencias.</li>
-                            <li><span class="icon">✓</span> Interpretar fenómenos biológicos, físicos, químicos y tecnológicos.</li>
-                        </ul>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Ver todos los objetivos</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Laboratorio</div>
-                    <h3 class="highlight-title">Laboratorio de Ciencias Naturales</h3>
-                    <p class="highlight-text">
-                        Las experiencias en el laboratorio permiten desarrollar diversas habilidades en los estudiantes: observación, pensamiento crítico, 
-                        resolución de problemas, trabajo en equipo, manejo de instrumentos y aplicación del método científico. Estas prácticas, articuladas 
-                        con los contenidos teóricos, permiten un aprendizaje más profundo y significativo.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Prácticas</span>
-                        <span class="tag">Investigación</span>
-                        <span class="tag">Método científico</span>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <div class="highlight-badge">Tecnología</div>
-                    <h3 class="highlight-title">Cultura digital</h3>
-                    <p class="highlight-text">
-                        El manejo de sistemas informáticos es cada vez más necesario. El uso de procesadores de texto, planillas de cálculo, presentaciones 
-                        y simuladores complementan los aprendizajes. Facilitar el acceso a herramientas digitales fomenta la inclusión y reduce brechas de 
-                        acceso al conocimiento.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">TIC</span>
-                        <span class="tag">Simuladores</span>
-                        <span class="tag">Inclusión digital</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Día Distinto: Experiencias Transformadoras</h2>
-            
-            <div class="slider-container slider-common">
-                <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="/imgnuevas/naturales3.jpg" alt="Día distinto 1"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Día distinto 2"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                    </div>
-                </div>
-            </div>
-
-            <article class="content-article">
-                <h3 class="article-title">Aprendizaje lúdico en Ciencias Naturales</h3>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Las jornadas de "Un día distinto" son una excelente oportunidad para hacer que el aprendizaje de las ciencias naturales sea 
-                        más accesible y significativo para los estudiantes.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <p>
-                            La actividad lúdica favorece en los estudiantes la autoconfianza y la autonomía, convirtiéndose así en una de las actividades 
-                            recreativas y educativas primordiales. El juego ayuda a desarrollar habilidades y destrezas en el aprendizaje significativo de 
-                            los estudiantes, y a su vez, les permite descubrir en las ciencias naturales una perspectiva más práctica y divertida.
-                        </p>
-                        <p>
-                            Esto impulsa a estudiantes y docentes a reconocer la relevancia de cada materia dentro del contexto educativo y social.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <footer class="page-footer">
-        <nav class="footer-nav">
-            <ul class="nav-list">
-                <li><a href="../index.htm">INICIO</a></li>
-                <li><a href="../index.html">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../index.html">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../index.html">INSTITUCIONAL</a></li>
-                <li><a href="../index.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        
-        <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
         </div>
     </footer>
 
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script src="../scripts/form_ac_slider.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>

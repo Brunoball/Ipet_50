@@ -1,191 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Lengua Extranjera</title>
-    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="FA_main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@400;600&family=Prociono&display=swap" rel="stylesheet">
-    <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPET 50 | Lengua Extranjera</title>
+  <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/web_styles.css" />
+  <link rel="stylesheet" href="FA_main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
-            <div class="hero-text">
-                <h1>Departamento de <span>Lengua Extranjera</span></h1>
-                <p>INGLÉS - COMUNICACIÓN INTERCULTURAL</p>
-            </div>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="../img/Escudo.png" alt="Escudo IPET 50" />
+        <div class="logo-text">
+          IPET 50
+          <span>Ing. Emilio F. Olmos</span>
         </div>
-    </header>
-    
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+          <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50" />
+        <div class="hero-text">
+          <h1>Departamento de <span>Lengua Extranjera</span></h1>
+          <p><span>INGLÉS</span> - <span>COMUNICACIÓN</span> - <span>GLOBALIZACIÓN</span></p>
+        </div>
+      </div>
+    </section>
+
     <section class="content-section">
-        <div class="main-content">
-            <div class="slider-container slider-common">
+      <div class="main-content">
+        <article class="content-article-nf">
+          <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+          <div class="content-container">
+            <div class="content-wrapper">
+              <div class="slider-container">
                 <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="IPET 50"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Clases de idiomas"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Estudiantes"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Aprendizaje de idiomas"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                    </div>
+                  <div class="slides">
+                    <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="IPET 50" /></div>
+                    <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Clases de idiomas" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Estudiantes" /></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Aprendizaje de idiomas" /></div>
+                  </div>
+                  <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                  <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                  <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                  </div>
                 </div>
+              </div>
+
+              <div class="text-content">
+                <div class="content-block">
+                  <h3>Formación Comunicativa</h3>
+                  <p>Buscamos desarrollar en los estudiantes la capacidad de comunicarse eficazmente en inglés, tanto de forma oral como escrita, en contextos reales.</p>
+                </div>
+                <div class="content-block">
+                  <h3>Competencia Global</h3>
+                  <p>El aprendizaje de otras lenguas promueve la flexibilidad cognitiva, la comprensión intercultural y la preparación para los desafíos de un mundo globalizado.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <h3>Enfoque Comunicativo</h3>
+              <p>Priorizamos la interacción en inglés, utilizando contextos significativos que motiven al estudiante a expresarse con naturalidad.</p>
             </div>
 
-            <article class="content-article">
-                <h2 class="article-title">Nuestro Enfoque Educativo</h2>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                      El espacio curricular de Lengua Extranjera – Inglés tiene como objetivo desarrollar en los estudiantes las capacidades necesarias para comunicarse de manera eficaz, tanto de forma oral como escrita, en diversas situaciones concretas.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <h3>Nuestros objetivos principales:</h3>
-                        <ul class="features-list">
-                            <li><span class="icon">✓</span> Optimizar la formación personal a través del aprendizaje de lenguas extranjeras.</li>
-                            <li><span class="icon">✓</span> Abordar otras culturas para ampliar o reconstruir el conocimiento del mundo.</li>
-                            <li><span class="icon">✓</span> Desarrollar flexibilidad cognitiva mediante la adquisición de otros códigos lingüísticos.</li>
-                            <li><span class="icon">✓</span> Preparar a los estudiantes para los requerimientos generados por la globalización de las comunicaciones.</li>
-                            <li><span class="icon">✓</span> Desarrollar habilidades para acceder a información y realizar intercambios a distancia en otras lenguas.</li>
-                            <li><span class="icon">✓</span> Fomentar la comprensión de textos académicos escritos en inglés para estudios superiores y desempeño laboral.</li>
-                        </ul>
-                        
-                        <p>
-                            El aprendizaje de las lenguas optimiza la formación personal. Aprender otras lenguas permite abordar otras culturas con la consecuente posibilidad de ampliar o reconstruir el conocimiento del mundo, lo que supone un desarrollo intelectual más intenso dada la flexibilidad cognitiva que propicia la adquisición de otros códigos lingüísticos.
-                        </p>
-                        <p>
-                            El inglés es el idioma más comúnmente empleado en la publicación de trabajos y en congresos y seminarios internacionales. La comprensión de este tipo de discurso depende no solamente del contenido y de la forma del discurso.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Ver todos los objetivos</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            
-                <div class="highlight-box">
-                    <div class="highlight-badge">Método</div>
-                    <h3 class="highlight-title">Enfoque Comunicativo</h3>
-                    <p class="highlight-text">
-                        Trabajamos con un enfoque comunicativo que permite a los estudiantes desarrollar habilidades prácticas para situaciones reales, enfatizando la interacción oral y escrita en contextos significativos.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Comunicación</span>
-                        <span class="tag">Interacción</span>
-                        <span class="tag">Contextos reales</span>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <div class="highlight-badge">Importancia</div>
-                    <h3 class="highlight-title">Acceso a la Información</h3>
-                    <p class="highlight-text">
-                        La materia tiene importancia dentro de la currícula porque permite al estudiante acceder a fuentes de información de su interés, conociendo y evaluando bibliografía publicada en lengua inglesa.
-                    </p>
-                    <div class="highlight-footer">
-                        <span class="tag">Investigación</span>
-                        <span class="tag">Recursos</span>
-                        <span class="tag">Globalización</span>
-                    </div>
-                </div>
-            </article>
-        </div>
+            <div class="info-card">
+              <div class="card-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3>Acceso a Recursos</h3>
+              <p>El inglés abre las puertas a bibliografía técnica, textos académicos y oportunidades laborales y formativas internacionales.</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="activities-section">
-        <div class="main-content">
-            <h2 class="section-title">Microevento del Departamento</h2>
-            
-            <div class="slider-container slider-common">
+      <div class="main-content">
+        <h2 class="section-title">Microevento del Departamento</h2>
+
+        <article class="content-article">
+          <div class="content-container reverse">
+            <div class="content-wrapper">
+              <div class="slider-container">
                 <div class="slider">
-                    <div class="slides">
-                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Evento 1"></div>
-                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Evento 2"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 3"></div>
-                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Evento 4"></div>
-                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 5"></div>
-                    </div>
-                    <button class="slider-nav prev" aria-label="Imagen anterior">&#10094;</button>
-                    <button class="slider-nav next" aria-label="Imagen siguiente">&#10095;</button>
-                    <div class="slider-dots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                        <span class="dot" data-slide="4"></span>
-                    </div>
+                  <div class="slides">
+                    <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Evento 1" /></div>
+                    <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Evento 2" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 3" /></div>
+                    <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Evento 4" /></div>
+                    <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Evento 5" /></div>
+                  </div>
+                  <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                  <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                  <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                  </div>
                 </div>
+              </div>
+
+              <div class="text-content">
+                <div class="content-block">
+                  <h3>Taller de Traducción</h3>
+                  <p>Los estudiantes de 4º y 6º año participaron en una jornada donde compararon traducciones hechas con diccionario versus traducciones automáticas, reflexionando sobre precisión y coherencia.</p>
+                </div>
+                <div class="content-block">
+                  <h3>Resultados del Análisis</h3>
+                  <p>Se concluyó que los traductores automáticos no son suficientes, y se destacó la importancia del criterio humano en la interpretación de textos académicos y técnicos.</p>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <article class="content-article">
-                <h3 class="article-title">Taller de Traducción</h3>
-                <div class="content-toggle">
-                    <p class="article-intro">
-                        Desde el área de lengua extranjera, en el ciclo orientado, se trabaja sobre la interpretación y traducción de textos.
-                    </p>
-                    
-                    <div class="extra-content">
-                        <p>
-                            Existe un mito entre los alumnos, que el traductor de Google es una herramienta infalible a la hora de realizar dicha tarea; por lo tanto, no es necesario adquirir habilidades para la traducción.
-                        </p>
-                        <p>
-                            Durante la jornada se trabajaron los mismos textos con los alumnos de 4to año (que recién se inician en la traducción) y los de 6to (que ya vienen trabajando en el tema).
-                        </p>
-                        <p>
-                            El grupo de 4to realizó la traducción de los textos usando solo el traductor de Google y los alumnos de 6to usaron sólo diccionarios. Al final de la jornada se realizó una comparación entre ambas traducciones y se arribó a la conclusión de que el traductor online presentaba falencias en aspectos como coherencia, cohesión y vocabulario técnico.
-                        </p>
-                        <p>
-                            Posteriormente se socializó lo realizado con el resto de los alumnos de cuarto año para interiorizarlos sobre lo trabajado. Los mismos participaron con entusiasmo tanto en el momento de la implementación como durante su posterior socialización.
-                        </p>
-                    </div>
-            
-                    <button class="read-more-btn">
-                        <span class="btn-text">Leer más sobre el evento</span>
-                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-        </div>
+          <div class="highlight-box">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>El aprendizaje de una lengua extranjera permite acceder a nuevas formas de pensar, comunicarse y participar activamente en un mundo cada vez más interconectado.</p>
+          </div>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <footer class="page-footer">
-        <nav class="footer-nav">
-            <ul class="nav-list">
-                <li><a href="../index.htm">INICIO</a></li>
-                <li><a href="../index.html">FORMACIÓN TÉCNICA</a></li>
-                <li><a href="../index.html">FORMACIÓN ACADÉMICA</a></li>
-                <li><a href="../index.html">INSTITUCIONAL</a></li>
-                <li><a href="../index.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-        
-        <div class="footer-info">
-            <p>IPET 50 "Emilio F. Olmos" - Formando profesionales desde 1950</p>
-            <p class="copyright">© 2023 Todos los derechos reservados</p>
+  <footer class="footer" id="contacto">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo-decoration">
+            <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo" />
+          </div>
+          <div class="footer-brand-info">
+            <h3 class="footer-title">IPET 50</h3>
+            <p class="footer-slogan">Formando profesionales desde 1935</p>
+          </div>
         </div>
-    </footer>
 
-    <script src="../scripts/form_ac_slider.js"></script>
+        <div class="footer-social">
+          <h4 class="social-title">Síguenos en redes</h4>
+          <div class="social-links">
+            <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="../scripts/form_ac_slider.js"></script>
+  <script src="../scripts/menu_web.js"></script>
+  <script src="../scripts/boton_arriba.js"></script>
 </body>
 </html>
