@@ -847,7 +847,6 @@ header {
 
 
 
-
 /* Gallery Slider - Versión Mejorada con Responsive Avanzado */
 .gallery-slider {
     position: relative;
@@ -864,8 +863,8 @@ header {
     display: flex;
     transition: transform 0.5s ease-in-out;
     height: 70vh; /* Altura relativa al viewport */
-    max-height: 500px; /* Límite máximo */
-    min-height: 250px; /* Límite mínimo */
+    max-height: 500px;
+    min-height: 250px;
 }
 
 /* Slide individual */
@@ -874,14 +873,18 @@ header {
     height: 100%;
     flex-shrink: 0;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.gallery-slides img {
+/* Imagen del slide */
+.gallery-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen llenando el contenedor sin deformarse */
+    object-fit: cover;
+    display: block;
 }
-
 
 /* Controles de navegación */
 .slider-nav {
@@ -952,7 +955,7 @@ header {
     .gallery-slider {
         border-radius: 10px;
     }
-    
+
     .gallery-slides {
         height: 45vh;
     }
@@ -963,38 +966,41 @@ header {
         height: 40vh;
         min-height: 200px;
     }
-    
+
+    .gallery-slide {
+        height: 100%;
+    }
+
+    .gallery-slide img {
+        height: 100% !important;
+        object-fit: cover;
+    }
+
     .slider-btn {
         width: 40px;
         height: 40px;
         font-size: 1rem;
         background-color: rgba(255, 255, 255, 0.6);
-        color: #fff; /* Mantenemos rojo */
-        transition: none; /* Quitamos transición para que no haya agrandamiento */
+        color: #fff;
+        transition: none;
     }
-    
+
     .slider-btn:hover {
-        background-color: rgba(255, 255, 255, 0.6); /* Sin cambio de fondo */
-        transform: none; /* No agrandar */
-        box-shadow: none; /* Sin sombra extra */
-        color: var(--primary); /* Mantenemos rojo */
+        background-color: rgba(255, 255, 255, 0.6);
+        transform: none;
+        box-shadow: none;
+        color: var(--primary);
     }
-    
+
     .slider-dots {
         bottom: 20px;
     }
-    
-    .dot {
-        width: 14px;
-        height: 14px;
-    }
-    
+
+    .dot,
     .dot.active {
         width: 14px;
         height: 14px;
     }
-
-
 }
 
 @media (max-width: 480px) {
@@ -1002,48 +1008,51 @@ header {
         margin: 1rem auto;
         border-radius: 8px;
     }
-    
+
     .gallery-slides {
         height: 35vh;
         min-height: 180px;
     }
-    
+
+    .gallery-slide {
+        height: 100%;
+    }
+
+    .gallery-slide img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
     .slider-nav {
         padding: 0 0.5rem;
     }
-    
+
     .slider-btn {
         width: 36px;
         height: 36px;
         background-color: rgba(255, 255, 255, 0.5);
-        color: var(--primary); /* Mantenemos rojo */
-        transition: none; /* Sin animación de escala */
+        color: var(--primary);
+        transition: none;
     }
-    
+
     .slider-btn:hover {
         background-color: rgba(255, 255, 255, 0.5);
         transform: none;
         box-shadow: none;
         color: var(--primary);
     }
-    
+
     .slider-dots {
         bottom: 15px;
         gap: 8px;
     }
-    
-    .dot {
-        width: 12px;
-        height: 12px;
-    }
-    
+
+    .dot,
     .dot.active {
         width: 12px;
         height: 12px;
     }
 }
-
-
 
 
 
@@ -1559,16 +1568,6 @@ footer {
   display: inline-block;
 }
 
-.testimonials-section .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #e30613;
-}
 
 .testimonials-section .testimonials-subtitle {
   font-size: 1.2rem;
