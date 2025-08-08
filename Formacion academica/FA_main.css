@@ -39,16 +39,16 @@ main {
 
 /* ===== PERSONALIZACIÓN DE MENÚ SOLO PARA ESTA SECCIÓN ===== */
 
-/* Color base mejorado */
 :root {
-  --secondary: #1D428A; /* Azul igual al del botón original */
-  --secondary-dark: #13305e; /* Azul más oscuro para hover */
+  --secondary: #1D428A; /* Azul IPET */
+  --secondary-dark: #13305e;
 }
+
 /* Hover en escritorio */
 .nav-menu > ul > li > a:hover,
 .nav-menu > ul > li > button:hover {
   color: var(--secondary);
-  background-color: rgba(52, 152, 219, 0.08); /* Azul claro suave */
+  background-color: rgba(52, 152, 219, 0.08);
 }
 
 /* Submenú */
@@ -57,10 +57,10 @@ main {
   background-color: rgba(52, 152, 219, 0.08);
 }
 
-/* Menú en modo mobile */
-@media (max-width: 768px) {
+/* Menú en móvil */
+@media (max-width: 931px) {
   .nav-menu {
-    background-color: var(--secondary); /* Fondo azul moderno */
+    background-color: var(--secondary) !important;
   }
 
   .nav-menu > ul > li > a,
@@ -72,12 +72,12 @@ main {
   .nav-menu > ul > li > a:hover,
   .nav-menu > ul > li > button:hover,
   .submenu a:hover {
-    background-color: var(--secondary-dark); /* Hover azul oscuro */
+    background-color: var(--secondary-dark);
     color: white;
   }
 }
 
-/* ===== Botón del menú (toggle) ===== */
+/* Botón del menú (hamburguesa) */
 .nav-toggle {
   background-color: var(--secondary);
   color: white;
@@ -86,7 +86,6 @@ main {
 .nav-toggle:hover {
   background-color: var(--secondary-dark);
 }
-
 
 
 
@@ -906,7 +905,7 @@ main {
 /* ===== FOOTER ===== */
 .footer {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-                url('../imgnuevas/escuela3.jpg');
+                url('../imgnuevas/escuela/escuela3.jpg');
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;
@@ -1095,14 +1094,14 @@ main {
 }
 
 .back-to-top:hover {
-  background-color: white;
-  color: #e30613; /* fallback por si el ícono hereda */
+  background-color: #13305e; /* Azul más oscuro */
   transform: translateY(-3px);
 }
 
 .back-to-top:hover i {
-  color: #e30613; /* Rojo IPET */
+  color: white; /* Mantiene el ícono blanco */
 }
+
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 992px) {
