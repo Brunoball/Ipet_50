@@ -15,21 +15,28 @@
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
-<header><!-- Imagen de fondo que reemplazará el background de CSS -->
-    
+<header>
     <div class="header-background">
-        <img src="../img/imm.jpeg" alt="Fondo tecnológico" class="header-bg-image">
+        <img src="../img/imm.jpeg" alt="Trabajos en madera y muebles" class="header-bg-image">
         <div class="header-overlay"></div>
     </div>
     
-    <nav id="menu">
+    <nav id="menu"  class="menu-container-header">
         <div class="menu-container">
-            <div class="logo-container">
-                <a href="../index.html" class="logo"><i class="fa-solid fa-hammer icon-box"></i>IMM</a>
+        <div class="logo">
+            <img src="../img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Ing. Emilio F. Olmos</span>
             </div>
+        </div>
             
             <button class="hamburger" id="navToggle" aria-label="Menu">
                 <span></span>
@@ -37,20 +44,41 @@
                 <span></span>
             </button>
             
-            <div class="nav-links" id="navMenu">
-                <a href="#perfil-egresado" class="nav-link">PERFIL DEL EGRESADO</a>
-                <a href="#nuestro-trabajo" class="nav-link">NUESTRO TRABAJO</a>
-                <a href="#microevento" class="nav-link">EVENTOS</a>
-                <a href="#footer" class="contact-btn">CONTACTO</a>
-            </div>
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="../index.html" class="nav-link">inicio</a></li>
+                <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
+                <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
+                <li><a href="#microevento" class="nav-link">Eventos</a></li>
+                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <li><a href="#footer" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
         </div>
     </nav>
     
     <section class="hero">
         <div class="hero-content">
-            <h1>Especialidad Industrialización de la madera y el mueble</h1>
-            <p class="hero-subtitle">Formando profesionales para el futuro de la industria maderera</p>
-            <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+            <h1>INDUSTRIALIZACIÓN DE LA MADERA Y EL MUEBLE</h1>
+            <p class="hero-subtitle">Transformando la madera en obras de arte funcionales</p>
+            <div class="hero-buttons">
+                <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+            </div>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">+20</span>
+                <span class="stat-label">Años de experiencia</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Prácticas profesionales</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+500</span>
+                <span class="stat-label">Egresados</span>
+            </div>
         </div>
     </section>
     
@@ -76,13 +104,13 @@
                     <div class="perfil-gallery-container">
                         <div class="perfil-gallery-slider">
                             <div class="gallery-slide active">
-                                <img src="../imgnuevas/imm1.jpg" alt="Estudiantes de IMM trabajando">
+                                <img src="../imgnuevas/imm/imm1.jpg" alt="Estudiantes de IMM trabajando">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/imm2.jpg" alt="Taller de IMM">
+                                <img src="../imgnuevas/imm/imm2.jpg" alt="Taller de IMM">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/imm3.jpg" alt="Proyectos de IMM">
+                                <img src="../imgnuevas/imm/imm3.jpg" alt="Proyectos de IMM">
                             </div>
                         </div>
                         <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
@@ -269,7 +297,6 @@
                 <div class="evento-description">
                     <p>Se realizó una exposición de ejercicios que se realizan en el CB y en el CO y de algunos trabajos realizados como aberturas, muebles, silla postural (proyecto). Además se les proyectó un powerpoint explicativo de la especialidad, a todos los cursos de 2 año y a otros cursos de años superiores que quisieron participar de la muestra.</p>
                     
-                    <a href="galeria.html" class="evento-link">Ver galería completa <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -395,9 +422,6 @@
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <p>&copy; 2025 IPET 50 - Todos los derechos reservados</p>
-        </div>
     </footer>
 
     <!-- Back to top button -->
@@ -408,5 +432,6 @@
     <script src="../scripts/menu_electronica.js"></script>
     <script src="../scripts/boton_arriba.js"></script>
     <script src="../scripts/electronica.js"></script>
+            <script src="../scripts/menu_web.js"></script>
 </body>
 </html>

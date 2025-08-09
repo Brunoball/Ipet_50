@@ -11,53 +11,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="../img/Escudo.png" alt="Escudo IPET 50">
-                <div class="logo-text">
-                    IPET 50
-                    <span>Ing. Emilio F. Olmos</span>
-                </div>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="../img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Ing. Emilio F. Olmos</span>
             </div>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="../index.html#especialidades" class="nav-link">Formación Tecnica</a></li>
-                    <li><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li class="dropdown-container">
-
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </header>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="../index.html" class="nav-link">inicio</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main class="main-content">
 <section class="hero-section">
     <div class="kenburns-slider">
         <div class="kb-slides">
             <div class="kb-slide active">
-                <img class="hero-image" src="../imgnuevas/centro.jpg" alt="Gabinetes y Oficinas IPET 50">
+                <img class="hero-image" src="../imgnuevas/centro/centro.jpg" alt="Gabinetes y Oficinas IPET 50">
             </div>
             <div class="kb-slide">
-                <img class="hero-image" src="../imgnuevas/centro4.jpg" alt="Gabinetes y Oficinas IPET 50">
+                <img class="hero-image" src="../imgnuevas/centro/centro4.jpg" alt="Gabinetes y Oficinas IPET 50">
             </div>
             <div class="kb-slide">
-                <img class="hero-image" src="../imgnuevas/centro5.jpg" alt="Gabinetes y Oficinas IPET 50">
+                <img class="hero-image" src="../imgnuevas/centro/centro5.jpg" alt="Gabinetes y Oficinas IPET 50">
             </div>
         </div>
         <div class="hero-overlay">
             <h2 class="hero-title">Ceentro de Estudiantes</h2>
+            <p class="hero-subtitle">Espacio de participación, representación y propuestas estudiantiles</p>
         </div>
         <div class="kb-dots"></div>
     </div>
@@ -81,12 +83,12 @@
                 <div class="slider-container">
                     <div class="perfil-gallery-slider">
                         <div class="slides">
-                            <div class="gallery-slide"><img src="../imgnuevas/centro.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/centro2.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/centro3.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/centro4.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/centro5.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/centro6.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro/centro.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro/centro2.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro/centro3.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro/centro4.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro/centro5.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/centro/centro6.jpg" alt="Preceptorías"></div>
                         </div>
                         <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
                         <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
@@ -131,9 +133,6 @@
         </main>
     </main>
 <footer class="footer" id="contacto">
-    <!-- Nueva etiqueta img para la imagen de fondo -->
-    <img src="../imgnuevas/escuela3.jpg" alt="Fondo IPET 50" class="footer-background-img">
-    
     <div class="footer-container">
         <div class="footer-content">
             <div class="footer-brand">
@@ -155,12 +154,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-legal">
-                <p class="copyright">&copy; 2023 IPET 50 - Todos los derechos reservados</p>
-            </div>
-        </div>
     </div>
 </footer>
     <div class="back-to-top" id="backToTop">
@@ -169,45 +162,6 @@
     <script src="../scripts/electronica.js"></script>
     <script src="../scripts/menu_web.js"></script>
     <script src="../scripts/boton_arriba.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const slides = document.querySelectorAll('.kb-slide');
-        const dotsContainer = document.querySelector('.kb-dots');
-        let currentIndex = 0;
-
-        // Crear indicadores de puntos
-        slides.forEach((slide, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('kb-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.kb-dot');
-
-        // Función para cambiar de slide
-        function goToSlide(index) {
-            slides[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
-
-            currentIndex = index;
-
-            slides[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-        }
-
-        // Cambio automático cada 4 segundos
-        function nextSlide() {
-            const newIndex = (currentIndex + 1) % slides.length;
-            goToSlide(newIndex);
-        }
-
-        let slideInterval = setInterval(nextSlide, 4000);
-
-        // Pausar al hacer hover (opcional, aún no implementado)
-    });
-</script>
+    <script src="../scripts/Efectoventana.js"></script>
 </body>
 </html>

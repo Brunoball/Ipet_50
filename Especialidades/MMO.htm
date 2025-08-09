@@ -14,34 +14,46 @@
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
-<header><!-- Imagen de fondo que reemplazará el background de CSS -->
+   <header><!-- Imagen de fondo que reemplazará el background de CSS -->
     
     <div class="header-background">
         <img src="../img/mmo.jpg" alt="Fondo de construcción" class="header-bg-image">
         <div class="header-overlay"></div>
     </div>
     
-    <nav id="menu">
+    <nav id="menu" class="menu-container-header">
         <div class="menu-container">
-            <div class="logo-container">
-                <a href="../index.html" class="logo"><img src="../imgnuevas/logo_mmo3.png" alt="Fondo de construcción" class="header-bg-image"></i>MMO</a>
+        <div class="logo">
+            <img src="../img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Ing. Emilio F. Olmos</span>
             </div>
+        </div>
             
             <button class="hamburger" id="navToggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            
-            <div class="nav-links" id="navMenu">
-                <a href="#perfil-egresado" class="nav-link">PERFIL DEL EGRESADO</a>
-                <a href="#nuestro-trabajo" class="nav-link">NUESTRO TRABAJO</a>
-                <a href="#microevento" class="nav-link">EVENTOS</a>
-                <a href="#footer" class="contact-btn">CONTACTO</a>
-            </div>
+
+            <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="../index.html" class="nav-link">inicio</a></li>
+                <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
+                <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
+                <li><a href="#microevento" class="nav-link">Eventos</a></li>
+                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <li><a href="#footer" class="nav-link">Contacto</a></li>
+            </ul>
+            </nav>   
         </div>
     </nav>
     
@@ -49,7 +61,9 @@
         <div class="hero-content">
             <h1>Especialidad Maestro Mayor de Obras</h1>
             <p class="hero-subtitle">Formando profesionales para el futuro de la construcción</p>
-            <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+            <div class="hero-buttons">
+                <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+            </div>
         </div>
     </section>
     
@@ -73,16 +87,16 @@
                     <div class="perfil-gallery-container">
                         <div class="perfil-gallery-slider">
                             <div class="gallery-slide active">
-                                <img src="../imgnuevas/mmo.jpg" alt="Estudiantes de MMO trabajando">
+                                <img src="../imgnuevas/mmo/mmo.jpg" alt="Estudiantes de MMO trabajando">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mmo2.jpg" alt="Taller de MMO">
+                                <img src="../imgnuevas/mmo/mmo2.jpg" alt="Taller de MMO">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mmo3.jpg" alt="Proyectos de construcción">
+                                <img src="../imgnuevas/mmo/mmo3.jpg" alt="Proyectos de construcción">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mmo5.jpg" alt="Obras realizadas">
+                                <img src="../imgnuevas/mmo/mmo5.jpg" alt="Obras realizadas">
                             </div>
                         </div>
                         <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
@@ -263,7 +277,6 @@
                 <div class="evento-description">
                     <p>Se realizaron exposiciones de los trabajos prácticos que realizan los estudiantes en los diferentes niveles, incluyendo maquetas de viviendas, planos arquitectónicos y demostraciones de técnicas constructivas. Los alumnos de cursos superiores compartieron sus experiencias con los más nuevos.</p>
                     
-                    <a href="galeria.html" class="evento-link">Ver galería completa <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -389,9 +402,6 @@
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <p>&copy; 2025 IPET 50 - Todos los derechos reservados</p>
-        </div>
     </footer>
 
     <!-- Back to top button -->
@@ -402,5 +412,6 @@
     <script src="../scripts/menu_electronica.js"></script>
     <script src="../scripts/boton_arriba.js"></script>
     <script src="../scripts/electronica.js"></script>
+            <script src="../scripts/menu_web.js"></script>
 </body>
 </html>

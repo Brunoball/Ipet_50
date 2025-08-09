@@ -6,84 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | GABINETES Y OFICINAS</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="gabinetes.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gabinetes.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
 </head>
 
 <body>
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <img src="../img/Escudo.png" alt="Escudo IPET 50">
-                <div class="logo-text">
-                    IPET 50
-                    <span>Educación Técnica Profesional</span>
-                </div>
-            </div>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="../index.html#especialidades" class="nav-link">Formación Tecnica</a></li>
-                    <li><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li class="dropdown-container">
-
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <main class="main-content">
-<section class="hero-section">
-    <div class="kenburns-slider">
-        <div class="kb-slides">
-            <div class="kb-slide active">
-                <img class="hero-image" src="../imgnuevas/gabinete2.jpg" alt="Gabinetes y Oficinas IPET 50">
-            </div>
-            <div class="kb-slide">
-                <img class="hero-image" src="../imgnuevas/gabinete3.jpg" alt="Gabinetes y Oficinas IPET 50">
-            </div>
-            <div class="kb-slide">
-                <img class="hero-image" src="../imgnuevas/gabinetes5.jpg" alt="Gabinetes y Oficinas IPET 50">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="../img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Ing. Emilio F. Olmos</span>
             </div>
         </div>
-        <div class="hero-overlay">
-            <h2 class="hero-title">Gabinetes y Oficinas</h2>
-            <p class="hero-subtitle">Espacios dedicados al apoyo educativo y administrativo</p>
-        </div>
-        <div class="kb-dots"></div>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="../index.html" class="nav-link">inicio</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
     </div>
-</section>
+</header>
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="kenburns-slider">
+                <div class="kb-slides">
+                    <div class="kb-slide active">
+                        <img class="hero-image" src="../imgnuevas/gabinete/gabinete2.jpg" alt="Gabinetes y Oficinas IPET 50">
+                    </div>
+                    <div class="kb-slide">
+                        <img class="hero-image" src="../imgnuevas/gabinete/gabinete3.jpg" alt="Gabinetes y Oficinas IPET 50">
+                    </div>
+                    <div class="kb-slide">
+                        <img class="hero-image" src="../imgnuevas/gabinete/gabinetes5.jpg" alt="Gabinetes y Oficinas IPET 50">
+                    </div>
+                </div>
+                <div class="hero-overlay">
+                    <h2 class="hero-title">Gabinetes y Oficinas</h2>
+                    <p class="hero-subtitle">Espacios dedicados al apoyo educativo y administrativo</p>
+                </div>
+                <div class="kb-dots"></div>
+            </div>
+        </section>
+
         <main class="main-text"> 
             <section class="content-section">
-
-            
-            <div class="text-content">
-                <h2>Nuestros Espacios</h2>
-                <p>El IPET 50 cuenta con Gabinete Psicopedagógico y Coordinación de Cursos, abocados al desempeño de los alumnos, a los casos particulares de mismos, así como también a las interrelaciones en los ámbitos de aprendizaje y con las familias.</p>
-                <p>También se dispone de un Laboratorio de Informática, equipado con 14 máquinas que es utilizado por numerosos docentes y un Laboratorio de Físico-Química, preparado para realizar diversos experimentos.</p>
-                <p>Desde las oficinas, se realiza la administración general de la institución, que cuenta con 829 alumnos y 220 docentes y no docentes.</p>
-            </div>
-                                    <div class="slider-container">
+                <div class="text-content">
+                    <h2>Nuestros Espacios</h2>
+                    <p>El IPET 50 cuenta con Gabinete Psicopedagógico y Coordinación de Cursos, abocados al desempeño de los alumnos, a los casos particulares de mismos, así como también a las interrelaciones en los ámbitos de aprendizaje y con las familias.</p>
+                    <p>También se dispone de un Laboratorio de Informática, equipado con 14 máquinas que es utilizado por numerosos docentes y un Laboratorio de Físico-Química, preparado para realizar diversos experimentos.</p>
+                    <p>Desde las oficinas, se realiza la administración general de la institución, que cuenta con 829 alumnos y 220 docentes y no docentes.</p>
+                </div>
+                <div class="slider-container">
                     <div class="perfil-gallery-slider">
                         <div class="slides">
-                            <div class="gallery-slide"><img src="../imgnuevas/gabinete.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/gabinete2.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/gabinete3.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/gabinete4.jpg" alt="Preceptorías"></div>
-                            <div class="gallery-slide"><img src="../imgnuevas/gabinetes5.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete/gabinete.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete/gabinete2.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete/gabinete3.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete/gabinete4.jpg" alt="Preceptorías"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/gabinete/gabinetes5.jpg" alt="Preceptorías"></div>
                         </div>
                         <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
                         <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
@@ -92,45 +86,42 @@
                         </div>
                     </div>
                 </div>
-        </section>
-        
-        <section class="text-content">
-            <h2>Biblioteca "Bernardino Rivadavia"</h2>
-            <p>La institución cuenta con la Biblioteca "Bernardino Rivadavia", equipada con más de 12000 ejemplares para la Formación Básica y la Formación Orientada de las seis especialidades.</p>
+            </section>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-book-open"></i></div>
-                    <h3 class="feature-title">Amplio Catálogo</h3>
-                    <p class="feature-text">Más de 12,000 ejemplares disponibles para consulta y préstamo.</p>
-                </div>
+            <section class="text-content">
+                <h2>Biblioteca "Bernardino Rivadavia"</h2>
+                <p>La institución cuenta con la Biblioteca "Bernardino Rivadavia", equipada con más de 12000 ejemplares para la Formación Básica y la Formación Orientada de las seis especialidades.</p>
                 
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-laptop"></i></div>
-                    <h3 class="feature-title">Laboratorio de Informática</h3>
-                    <p class="feature-text">14 equipos disponibles para uso educativo y de investigación.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                        <h3 class="feature-title">Amplio Catálogo</h3>
+                        <p class="feature-text">Más de 12,000 ejemplares disponibles para consulta y préstamo.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                        <h3 class="feature-title">Laboratorio de Informática</h3>
+                        <p class="feature-text">14 equipos disponibles para uso educativo y de investigación.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                        <h3 class="feature-title">Laboratorio Científico</h3>
+                        <p class="feature-text">Equipado para experimentos de Física y Química.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="feature-title">Apoyo Psicopedagógico</h3>
+                        <p class="feature-text">Atención personalizada para estudiantes y familias.</p>
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-flask"></i></div>
-                    <h3 class="feature-title">Laboratorio Científico</h3>
-                    <p class="feature-text">Equipado para experimentos de Física y Química.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="feature-title">Apoyo Psicopedagógico</h3>
-                    <p class="feature-text">Atención personalizada para estudiantes y familias.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
     </main>
-       
-    </main>
+
 <footer class="footer" id="contacto">
-    <!-- Nueva etiqueta img para la imagen de fondo -->
-    <img src="../imgnuevas/escuela3.jpg" alt="Fondo IPET 50" class="footer-background-img">
-    
     <div class="footer-container">
         <div class="footer-content">
             <div class="footer-brand">
@@ -152,61 +143,15 @@
                 </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-legal">
-                <p class="copyright">&copy; 2023 IPET 50 - Todos los derechos reservados</p>
-            </div>
-        </div>
     </div>
 </footer>
+
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
     <script src="../scripts/electronica.js"></script>
     <script src="../scripts/menu_web.js"></script>
     <script src="../scripts/boton_arriba.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const slides = document.querySelectorAll('.kb-slide');
-        const dotsContainer = document.querySelector('.kb-dots');
-        let currentIndex = 0;
-
-        // Crear indicadores de puntos
-        slides.forEach((slide, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('kb-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.kb-dot');
-
-        // Función para cambiar de slide
-        function goToSlide(index) {
-            slides[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
-
-            currentIndex = index;
-
-            slides[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-        }
-
-        // Cambio automático cada 4 segundos
-        function nextSlide() {
-            const newIndex = (currentIndex + 1) % slides.length;
-            goToSlide(newIndex);
-        }
-
-        let slideInterval = setInterval(nextSlide, 4000);
-
-        // Pausar al hacer hover (opcional, aún no implementado)
-    });
-</script>
-
-   
+    <script src="../scripts/Efectoventana.js"></script>
 </body>
 </html>

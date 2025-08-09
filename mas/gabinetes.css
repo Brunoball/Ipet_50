@@ -1,7 +1,6 @@
 /* ============================================= */
 /* VARIABLES GLOBALES */
 /* ============================================= */
-/* ============================================= */
 :root {
     /* Colores principales */
     --primary: #e30613; /* Azul oscuro principal */
@@ -12,10 +11,8 @@
     --gray: #6B7280; /* Texto gris */
     --white: #FFFFFF; /* Blanco puro */
     --gris: #2D2926;
-        --transition: all 0.3s ease;
+    --transition: all 0.3s ease;
 }
-
-
 
 /* ============================================= */
 /* RESET Y ESTILOS BASE */
@@ -27,29 +24,29 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: var(--dark);
     line-height: 1.6;
     background-color: #f5f5f5;
 }
+
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 /* ============================================= */
 /* ESTRUCTURA PRINCIPAL */
 /* ============================================= */
-
 .main-text {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* ============================================= */
-/* HEADER - BARRA DE NAVEGACIÓN */
-/* ============================================= */
+/* ===== HEADER - BARRA DE NAVEGACIÓN ===== */
+/* ===== HEADER - BARRA DE NAVEGACIÓN ===== */
 header {
-    background-color: var(--light);
+    background-color: white;
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -99,7 +96,7 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* Navegación principal - Desktop */
+/* Navigation - Estilo Desktop */
 .nav-menu > ul {
     display: flex;
     gap: 5px;
@@ -112,73 +109,135 @@ header {
     position: relative;
 }
 
-
-.nav-link {
-    font-family:   'Poppins', sans-serif;
+.nav-menu > ul > li > a {
     padding: 12px 18px;
-    font-weight: 400;
-    color: #2d2926;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 5px;
     text-decoration: none;
-    position: relative; /* Necesario para el pseudo-elemento */
 }
 
-/* Efecto hover con borde inferior */
-.nav-link::after {
+.nav-menu > ul > li > a:hover {
+    color: var(--primary);
+    background-color: rgba(200, 16, 46, 0.05);
+}
+
+/* Botón de hamburguesa para móvil */
+.nav-toggle {
+    display: none;
+    background: var(--primary);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 1100;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
     content: '';
     position: absolute;
-    bottom: 8px; /* Ajusta según tu preferencia */
-    left: 18px;
-    right: 18px;
+    width: 24px;
     height: 2px;
-    background-color: var(--secondary);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease;
+    background: white;
+    left: 0;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover::after {
-    transform: scaleX(1); /* Hace visible el borde */
+.hamburger::before {
+    top: -8px;
 }
 
-/* Efecto cuando está activo (opcional) */
-.nav-link.active::after {
-    transform: scaleX(1);
+.hamburger::after {
+    bottom: -8px;
 }
 
-/* Modo sticky - ajustes para el hover */
-.header.scrolled .nav-link {
-    color: var(--dark);
+.nav-toggle.open .hamburger {
+    background: transparent;
 }
 
-.header.scrolled .nav-link:hover {
-    color: var(--primary);
+.nav-toggle.open .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
 }
 
-.header.scrolled .nav-link::after {
-    background-color: var(--primary); /* Cambia el color en modo sticky si lo prefieres */
+.nav-toggle.open .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
 }
 
-/* Versión móvil */
+/* Estilos para móvil */
 @media (max-width: 768px) {
-    .nav-link::after {
-        bottom: 0;
-        left: 20px;
-        right: auto;
-        width: 0;
-        height: 3px;
-        transition: width 0.3s ease;
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
-    .nav-link:hover::after,
-    .nav-link.active::after {
-        width: calc(100% - 40px); /* Ancho completo menos el padding */
-        transform: scaleX(1);
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #dbdbdb;
+        padding: 10px 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        clip-path: circle(0px at 90% -10%);
+        -webkit-clip-path: circle(0px at 90% -10%);
+        transition: clip-path 0.5s ease;
+        pointer-events: none;
+    }
+    
+    .nav-menu.open {
+        clip-path: circle(1500px at 90% -10%);
+        -webkit-clip-path: circle(1500px at 90% -10%);
+        pointer-events: all;
+    }
+    
+    .nav-menu > ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav-menu > ul > li {
+        width: 100%;
+    }
+    
+    .nav-menu > ul > li > a {
+        padding: 15px 20px;
+        color: #2d2926;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+    
+    .nav-menu > ul > li > a:hover {
+        color: #fff;
+        background-color: #920000;
     }
 }
+
 /* Efecto sticky al hacer scroll */
 .header.scrolled {
     padding: 0.3rem 0;
@@ -186,11 +245,115 @@ header {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
 }
 
-.header.scrolled .logo-container {
-    transform: scale(0.95);
+/* NAVEGACIÓN MÓVIL */
+/* Boton Hamburguer */
+.nav-toggle {
+    display: none;
+    background: #1D428A;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 1100;
 }
 
-/* Estilos para móvil */
+.hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+.nav-toggle.open .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.open .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle.open .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #dbdbdb;
+        margin: 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        clip-path: circle(0px at 90% -10%);
+        -webkit-clip-path: circle(0px at 90% -10%);
+        transition: clip-path 0.5s ease;
+        pointer-events: none;
+    }
+    
+    .nav-menu.open {
+        clip-path: circle(1500px at 90% -10%);
+        -webkit-clip-path: circle(1500px at 90% -10%);
+        pointer-events: all;
+    }
+    
+    .nav-menu > ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav-menu > ul > li {
+        width: 100%;
+    }
+    
+    .nav-menu > ul > li > a {
+        padding: 15px 20px;
+        color: #2d2926;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+}
 
 /* ============================================= */
 /* SLIDER KEN BURNS (HERO SECTION) */
@@ -199,7 +362,6 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -295,10 +457,10 @@ header {
 }
 
 .hero-title {
-font-size: 2.7rem;
-margin-bottom: 0;
-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-animation: fadeInUp 1s ease;
+    font-size: 2.7rem;
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
 }
 
 .hero-subtitle {
@@ -319,7 +481,8 @@ animation: fadeInUp 1s ease;
     }
 }
 
-/* Indicadores de slides .kb-dots {
+/* Indicadores de slides */
+.kb-dots {
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -328,8 +491,7 @@ animation: fadeInUp 1s ease;
     justify-content: center;
     gap: 10px;
     z-index: 3;
-}*/
-
+}
 
 .kb-dot {
     width: 12px;
@@ -379,138 +541,6 @@ animation: fadeInUp 1s ease;
 }
 
 /* ============================================= */
-/* NAVEGACIÓN MÓVIL */
-/* ============================================= */
-/* Boton Hamburguer */
-.nav-toggle {
-    display: none;
-    background: var(--secondary);
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-    z-index: 1100;
-}
-
-.hamburger {
-    display: block;
-    position: relative;
-    width: 24px;
-    height: 2px;
-    background: white;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: white;
-    left: 0;
-    transition: all 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    bottom: -8px;
-}
-
-.nav-toggle.open .hamburger {
-    background: transparent;
-}
-
-.nav-toggle.open .hamburger::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-.nav-toggle.open .hamburger::after {
-    bottom: 0;
-    transform: rotate(-45deg);
-}
-
-
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: #dbdbdb;
-        margin: 0;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        clip-path: circle(0px at 90% -10%);
-        -webkit-clip-path: circle(0px at 90% -10%);
-        transition: clip-path 0.5s ease;
-        pointer-events: none;
-    }
-    
-    .nav-menu.open {
-        clip-path: circle(1500px at 90% -10%);
-        -webkit-clip-path: circle(1500px at 90% -10%);
-        pointer-events: all;
-    }
-    
-    .nav-menu > ul {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .nav-menu > ul > li {
-        width: 100%;
-    }
-    .nav-menu > ul > li > a:hover, .nav-menu > ul > li > button:hover{
-        color: #fff;
-        background-color: var(--gray);
-    }
-    .nav-link::after {
-    background-color: transparent;
-}
-    
-    .nav-menu > ul > li > a,
-    .nav-menu > ul > li > button {
-        padding: 15px 20px;
-        color: #2d2926;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        text-align: left;
-        box-sizing: border-box;
-    }
-    
-    
-    .nav-list {
-        flex-direction: column;
-        gap: 1.8rem;
-        width: 100%;
-    }
-    
-    .nav-link {
-        padding: 0.5rem 1rem;
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
-    }
-}
-
-/* ============================================= */
 /* SECCIÓN DE CONTENIDO PRINCIPAL */
 /* ============================================= */
 .content-section {
@@ -522,9 +552,11 @@ animation: fadeInUp 1s ease;
     grid-template-columns: 1fr 1fr;
     border-radius: 8px;
 }
+
 .slider-container {
     margin: auto 0;
 }
+
 .perfil-gallery-container {
     flex: 0 0 40%;
     min-width: 45%;
@@ -533,6 +565,7 @@ animation: fadeInUp 1s ease;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
+
 .perfil-gallery-slider {
     width: 100%;
     height: 350px;
@@ -540,6 +573,7 @@ animation: fadeInUp 1s ease;
     overflow: hidden;
     border-radius: 8px;
 }
+
 .gallery-slide {
     position: absolute;
     top: 0;
@@ -559,6 +593,7 @@ animation: fadeInUp 1s ease;
     height: 100%;
     object-fit: cover;
 }
+
 .gallery-nav {
     position: absolute;
     top: 50%;
@@ -590,6 +625,7 @@ animation: fadeInUp 1s ease;
 .gallery-next {
     right: 15px;
 }
+
 .gallery-controls {
     position: absolute;
     bottom: 1rem;
@@ -622,6 +658,7 @@ animation: fadeInUp 1s ease;
     background-color: var(--white);
     transform: scale(1.1);
 }
+
 @media (max-width: 992px) {
     .perfil-gallery-slider {
         height: 250px;
@@ -638,9 +675,10 @@ animation: fadeInUp 1s ease;
         color: var(--primary-color);
     }
 }
+
 /* Contenido de texto */
 .text-content {
-    padding: 1rem 0;
+    padding: 1rem;
     border-radius: 8px;
 }
 
@@ -696,7 +734,6 @@ animation: fadeInUp 1s ease;
 }
 
 .feature-title {
-    
     text-align: center;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -713,114 +750,53 @@ animation: fadeInUp 1s ease;
 /* ============================================= */
 /* FOOTER */
 /* ============================================= */
-/* ESTILOS ACTUALIZADOS PARA EL FOOTER *//* ESTILOS MINIMALISTAS PARA EL FOOTER */
+/* ===== FOOTER ===== */
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('../imgnuevas/escuela/escuela3.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #f8f8f8;
+    padding: 4.5rem 0;
     position: relative;
-    overflow: hidden;
-    min-height: 300px;
-    padding: 3rem 0;
 }
 
-.footer-background-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.7);
-}
-
-/* El resto del CSS permanece igual */
 .footer-container {
-    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 1.5rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
-/* ... (todo el resto del CSS permanece igual) ... */
 .footer-content {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    text-align: center;
 }
 
 .footer-brand {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-}
-
-.logo-decoration {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.circle-lines {
-    position: relative;
-    width: 120px;
-    height: 60px;
-    margin-bottom: -20px;
-}
-
-.half-circle {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 40px 40px 0 0;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.line {
-    position: absolute;
-    top: 40px;
-    height: 1px;
-    width: 60px;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.left-line {
-    left: -60px;
-}
-
-.right-line {
-    right: -60px;
+    gap: 1rem;
+    text-align: center;
 }
 
 .footer-logo {
-    width: 70px;
-    height: auto;
-    position: relative;
-    z-index: 2;
-    filter:drop-shadow(2px 4px 6px black);
-}
-
-.footer-brand-info {
-    text-align: center;
+    width: 60px;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 .footer-title {
     font-size: 1.8rem;
     font-weight: 600;
-    margin: 0 0 0.5rem;
-    color: #ffffff;
-    letter-spacing: 0.5px;
+    color: #fff;
+    margin: 0;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -836,7 +812,6 @@ animation: fadeInUp 1s ease;
 }
 
 .social-title {
-    text-align: center;
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -844,150 +819,85 @@ animation: fadeInUp 1s ease;
 }
 
 .social-links {
-    
     display: flex;
     justify-content: center;
     gap: 1.5rem;
 }
 
 .social-link {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
     width: 42px;
     height: 42px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
+/* Hover: fondo igual, icono con color real */
 .social-link:hover {
-    color: #fff;
-    background-color: var(--secondary);
+    background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-3px);
 }
 
-.footer-bottom {
-    margin-top: auto;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+.social-link:hover i.fa-facebook-f {
+    color: #1877f2;
 }
 
-.footer-legal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
+.social-link:hover i.fa-instagram {
+    color: #E1306C;
 }
 
-.copyright {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
-    order: 2;
+.social-link:hover i.fa-youtube {
+    color: #FF0000;
 }
 
-.footer-legal-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    order: 1;
-}
-
-.legal-link {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s ease;
-}
-
-.legal-link:hover {
-    color: var(--secondary);
-    text-decoration: underline;
-}
-
-.legal-separator {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 0.8rem;
-}
-
-/* Media Queries */
+/* Responsive ajustes */
 @media (min-width: 768px) {
     .footer-content {
         flex-direction: row;
+        align-items: center; /* ← centrado vertical */
         justify-content: space-between;
-        align-items: center;
+        text-align: initial;
     }
-    
+
     .footer-brand {
         flex-direction: row;
+        align-items: center;
         text-align: left;
-        gap: 2rem;
+        gap: 1rem;
     }
-    
+
     .footer-brand-info {
         text-align: left;
     }
-    
+
     .footer-social {
         text-align: right;
     }
-    
+
     .social-links {
         justify-content: flex-end;
     }
-    
-    .footer-legal {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .copyright {
-        order: 1;
-    }
-    
-    .footer-legal-links {
-        order: 2;
-    }
-    
-    .half-circle {
-        width: 100px;
-        height: 50px;
-        border-radius: 50px 50px 0 0;
-    }
-    
-    .line {
-        top: 50px;
-        width: 80px;
-    }
-    
-    .left-line {
-        left: -80px;
-    }
-    
-    .right-line {
-        right: -80px;
-    }
-}
 
-@media (min-width: 992px) {
+    .footer-logo {
+        width: 65px;
+    }
+
     .footer-title {
         font-size: 2rem;
     }
-    
+
     .footer-slogan {
         font-size: 1.1rem;
     }
-    
-    .footer-logo {
-        width: 80px;
-    }
 }
+
 /* ============================================= */
 /* MEDIA QUERIES - RESPONSIVE DESIGN */
 /* ============================================= */
@@ -1013,7 +923,6 @@ animation: fadeInUp 1s ease;
         padding: 0;
     }
 
-    
     .nav-list {
         flex-direction: column;
         gap: 1.8rem;
@@ -1029,7 +938,6 @@ animation: fadeInUp 1s ease;
     }
 
     /* Footer */
-    
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -1045,7 +953,6 @@ animation: fadeInUp 1s ease;
     .logo-text{
         text-align: justify; 
         padding: 0 3px;
-
     }
     .logo-text span{
         letter-spacing: 1px;
@@ -1103,7 +1010,6 @@ animation: fadeInUp 1s ease;
     }
     
     /* Slider Ken Burns */
-    
     .hero-overlay {
         padding: 1.5rem;
     }
@@ -1123,10 +1029,8 @@ animation: fadeInUp 1s ease;
     }
 }
 
-
-  
-  /* ===== BOTÓN IR ARRIBA ===== */
-  .back-to-top {
+/* ===== BOTÓN IR ARRIBA ===== */
+.back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -1144,15 +1048,15 @@ animation: fadeInUp 1s ease;
     visibility: hidden;
     transition: var(--transition);
     z-index: 999;
-  }
-  
-  .back-to-top.active {
+}
+
+.back-to-top.active {
     opacity: 1;
     visibility: visible;
-  }
-  
-  .back-to-top:hover {
+}
+
+.back-to-top:hover {
     background-color: var(--white);
     color: var(--primary);
     transform: translateY(-3px);
-  }
+}

@@ -14,21 +14,29 @@
     <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
-<header><!-- Imagen de fondo que reemplazará el background de CSS -->
-    
+<header>
+    <!-- Imagen de fondo para Mecánica -->
     <div class="header-background">
-        <img src="../img/mecanica.jpg" alt="Fondo de taller mecánico" class="header-bg-image">
+        <img src="../img/mecanica.jpg" alt="Taller de mecánica industrial" class="header-bg-image">
         <div class="header-overlay"></div>
     </div>
     
-    <nav id="menu">
+    <nav id="menu" class="menu-container-header">
         <div class="menu-container">
-            <div class="logo-container">
-                <a href="../index.html" class="logo"><i class="fas fa-cogs"></i>MECÁNICA</a>
+        <div class="logo">
+            <img src="../img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Ing. Emilio F. Olmos</span>
             </div>
+        </div>
             
             <button class="hamburger" id="navToggle" aria-label="Menu">
                 <span></span>
@@ -36,21 +44,29 @@
                 <span></span>
             </button>
             
-            <div class="nav-links" id="navMenu">
-                <a href="#perfil-egresado" class="nav-link">PERFIL DEL EGRESADO</a>
-                <a href="#nuestro-trabajo" class="nav-link">NUESTRO TRABAJO</a>
-                <a href="#microevento" class="nav-link">EVENTOS</a>
-                <a href="#footer" class="contact-btn">CONTACTO</a>
-            </div>
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="../index.html" class="nav-link">inicio</a></li>
+                <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
+                <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
+                <li><a href="#perfil-egresado" class="nav-link">Eventos</a></li>
+                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <li><a href="#footer" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
         </div>
     </nav>
     
     <section class="hero">
         <div class="hero-content">
-            <h1>Especialidad Mecánica</h1>
-            <p class="hero-subtitle">Formando profesionales para el futuro industrial</p>
-            <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+            <h1>Especialidad Mecánica Industrial</h1>
+            <p class="hero-subtitle">Formando técnicos expertos en sistemas mecánicos industriales</p>
+            <div class="hero-buttons">
+                <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+            </div>
         </div>
+        
+
     </section>
     
     <div class="wave-divider">
@@ -73,19 +89,19 @@
                     <div class="perfil-gallery-container">
                         <div class="perfil-gallery-slider">
                             <div class="gallery-slide active">
-                                <img src="../imgnuevas/mecanica5.jpg" alt="Estudiantes de mecánica trabajando">
+                                <img src="../imgnuevas/mecanica/mecanica5.jpg" alt="Estudiantes de mecánica trabajando">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mecanica2.jpg" alt="Taller de mecánica">
+                                <img src="../imgnuevas/mecanica/mecanica2.jpg" alt="Taller de mecánica">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mecanica3.jpg" alt="Proyectos mecánicos">
+                                <img src="../imgnuevas/mecanica/mecanica3.jpg" alt="Proyectos mecánicos">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mecanica4.jpg" alt="Equipamiento mecánico">
+                                <img src="../imgnuevas/mecanica/mecanica4.jpg" alt="Equipamiento mecánico">
                             </div>
                             <div class="gallery-slide">
-                                <img src="../imgnuevas/mecanica.jpg" alt="Prácticas de mecánica">
+                                <img src="../imgnuevas/mecanica/mecanica.jpg" alt="Prácticas de mecánica">
                             </div>
                         </div>
                         <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
@@ -273,14 +289,12 @@
                 
                 <div class="evento-description">
                     <p>El Departamento de Mecánica realizó durante la semana de demostración:</p>
-                    <ul>
-                        <li>Charlas sobre normas de Higiene y Seguridad para alumnos de primer año</li>
-                        <li>Participación activa mediante roto films y consultas sobre seguridad en talleres</li>
-                        <li>Evaluación del conocimiento sobre elementos de protección personal</li>
-                    </ul>
-                    <p>Como resultado se observó que los alumnos conocen las normas pero necesitan reforzar su aplicación práctica, quedando como objetivo mejorar los controles en el uso de equipos de protección.</p>
                     
-                    <a href="galeria.html" class="evento-link">Ver galería completa <i class="fas fa-arrow-right"></i></a>
+                     <p>   Charlas sobre normas de Higiene y Seguridad para alumnos de primer año
+                        Participación activa mediante roto films y consultas sobre seguridad en talleres
+                        Evaluación del conocimiento sobre elementos de protección personal
+                    
+                    Como resultado se observó que los alumnos conocen las normas pero necesitan reforzar su aplicación práctica, quedando como objetivo mejorar los controles en el uso de equipos de protección.</p>
                 </div>
             </div>
         </section>
@@ -406,9 +420,7 @@
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <p>&copy; 2025 IPET 50 - Todos los derechos reservados</p>
-        </div>
+
     </footer>
 
     <!-- Back to top button -->
@@ -419,5 +431,6 @@
     <script src="../scripts/menu_electronica.js"></script>
     <script src="../scripts/boton_arriba.js"></script>
     <script src="../scripts/electronica.js"></script>
+            <script src="../scripts/menu_web.js"></script>
 </body>
 </html>
