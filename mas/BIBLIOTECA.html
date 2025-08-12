@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | Biblioteca "Bernardino Rivadavia"</title>
+    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="gabinetes.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="../img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">inicio</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="kenburns-slider">
+                <div class="kb-slides">
+                    <div class="kb-slide active">
+                        <img class="hero-image" src="../imgnuevas/biblioteca/biblioteca1.jpg" alt="Biblioteca IPET 50">
+                    </div>
+                    <div class="kb-slide">
+                        <img class="hero-image" src="../imgnuevas/biblioteca/biblioteca2.jpg" alt="Biblioteca IPET 50">
+                    </div>
+                    <div class="kb-slide">
+                        <img class="hero-image" src="../imgnuevas/biblioteca/biblioteca3.jpg" alt="Biblioteca IPET 50">
+                    </div>
+                </div>
+                <div class="hero-overlay">
+                    <h2 class="hero-title">Biblioteca "Bernardino Rivadavia"</h2>
+                    <p class="hero-subtitle">Más de 12,000 ejemplares para el aprendizaje y la investigación</p>
+                </div>
+                <div class="kb-dots"></div>
+            </div>
+        </section>
+
+        <div class="main-text"> 
+            <section class="content-section">
+                <div class="text-content">
+                    <h2>Nuestra Biblioteca</h2>
+                    <p>La Biblioteca "Bernardino Rivadavia" del IPET 50 es un espacio fundamental para el desarrollo académico de nuestros estudiantes. Con más de 12,000 ejemplares cuidadosamente seleccionados, apoyamos tanto la Formación Básica como la Formación Orientada de nuestras seis especialidades técnicas.</p>
+                    <p>Nuestro acervo bibliográfico incluye materiales actualizados en diversas áreas del conocimiento, con especial énfasis en literatura técnica y científica. La biblioteca cuenta con áreas de lectura individual y grupal, así como espacios para investigación y estudio.</p>
+                    <p>Además de los servicios de préstamo interno y externo, ofrecemos acceso a recursos digitales y asesoramiento especializado para trabajos de investigación. La biblioteca está abierta durante todo el horario escolar y cuenta con personal capacitado para asistir a nuestros usuarios.</p>
+                </div>
+                <div class="slider-container">
+                    <div class="perfil-gallery-slider">
+                        <div class="slides">
+                            <div class="gallery-slide"><img src="../imgnuevas/biblioteca/biblioteca1.jpg" alt="Biblioteca IPET 50"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/biblioteca/biblioteca2.jpg" alt="Biblioteca IPET 50"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/biblioteca/biblioteca3.jpg" alt="Biblioteca IPET 50"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/biblioteca/biblioteca4.jpg" alt="Biblioteca IPET 50"></div>
+                            <div class="gallery-slide"><img src="../imgnuevas/biblioteca/biblioteca5.jpg" alt="Biblioteca IPET 50"></div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-controls">
+                            <div class="gallery-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="text-content">
+                <h2>Servicios y Recursos</h2>
+                <p>La biblioteca ofrece una variedad de servicios diseñados para apoyar el proceso educativo y fomentar el hábito de la lectura entre nuestros estudiantes y docentes.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                        <h3 class="feature-title">Amplio Catálogo</h3>
+                        <p class="feature-text">Más de 12,000 ejemplares disponibles para consulta y préstamo, organizados por áreas temáticas.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-search"></i></div>
+                        <h3 class="feature-title">Sistema de Búsqueda</h3>
+                        <p class="feature-text">Catálogo digitalizado para localizar materiales de manera rápida y eficiente.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                        <h3 class="feature-title">Recursos Digitales</h3>
+                        <p class="feature-text">Acceso a bases de datos, libros electrónicos y recursos educativos digitales.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3 class="feature-title">Asesoramiento</h3>
+                        <p class="feature-text">Orientación especializada para trabajos de investigación y proyectos escolares.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="text-content">
+                <h2>Horarios y Normativas</h2>
+                <div class="horario-section">
+                    <div class="horario-card">
+                        <h3><i class="far fa-clock"></i> Horario de Atención</h3>
+                        <ul>
+                            <li><strong>Lunes a Viernes:</strong> 8:00 a 18:00 hs</li>
+                            <li><strong>Sábados:</strong> Cerrado</li>
+                            <li><strong>Receso escolar:</strong> Consultar horarios especiales</li>
+                        </ul>
+                    </div>
+                    <div class="normativas-card">
+                        <h3><i class="fas fa-clipboard-list"></i> Normativas</h3>
+                        <ul>
+                            <li>Préstamo de 3 libros por 7 días renovables</li>
+                            <li>Material de referencia solo para consulta en sala</li>
+                            <li>Silencio y respeto por el espacio de estudio</li>
+                            <li>Prohibido comer o beber en las áreas de lectura</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script src="../scripts/biblioteca.js"></script>
+    <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/boton_arriba.js"></script>
+    <script src="../scripts/Efectoventana.js"></script>
+</body>
+</html>

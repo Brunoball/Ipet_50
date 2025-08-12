@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | GABINETE PSICOPEDAGÓGICO</title>
+    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <!-- Podés reutilizar gabinetes.css o duplicarlo como gabinete-psico.css si querés estilos propios -->
+    <link rel="stylesheet" href="gabinetes.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<header>
+  <div class="container header-container">
+      <div class="logo">
+          <img src="../img/Escudo.png" alt="Escudo IPET 50">
+          <div class="logo-text">
+              IPET 50
+              <span>Ing. Emilio F. Olmos</span>
+          </div>
+      </div>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
+          <ul>
+              <li><a href="../index.html" class="nav-link">Inicio</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <!-- HERO con Kenburns: reemplazá las imágenes por las del Gabinete Psicopedagógico -->
+  <section class="hero-section">
+    <div class="kenburns-slider">
+      <div class="kb-slides">
+        <div class="kb-slide active">
+          <img class="hero-image" src="../imgnuevas/psico/psico1.jpg" alt="Gabinete Psicopedagógico IPET 50">
+        </div>
+        <div class="kb-slide">
+          <img class="hero-image" src="../imgnuevas/psico/psico2.jpg" alt="Acompañamiento psicopedagógico IPET 50">
+        </div>
+        <div class="kb-slide">
+          <img class="hero-image" src="../imgnuevas/psico/psico3.jpg" alt="Orientación y bienestar estudiantil">
+        </div>
+      </div>
+      <div class="hero-overlay">
+        <h2 class="hero-title">Gabinete Psicopedagógico</h2>
+        <p class="hero-subtitle">Acompañamiento, orientación y bienestar estudiantil</p>
+      </div>
+      <div class="kb-dots"></div>
+    </div>
+  </section>
+
+  <main class="main-text"> 
+    <!-- Presentación / Rol -->
+    <section class="content-section">
+      <div class="text-content">
+        <h2>Nuestro Rol</h2>
+        <p>El Gabinete Psicopedagógico del IPET 50 acompaña las trayectorias escolares de los estudiantes, promoviendo el aprendizaje, la inclusión y la convivencia. Trabajamos articuladamente con equipos directivos, docentes y familias para atender situaciones individuales y grupales.</p>
+        <p>Desarrollamos estrategias de orientación, derivación y seguimiento; generamos espacios de escucha y contención; y colaboramos en la construcción de acuerdos institucionales que favorezcan el clima escolar.</p>
+        <p>También impulsamos acciones preventivas y proyectos transversales sobre hábitos de estudio, organización del tiempo, habilidades socioemocionales y ciudadanía digital.</p>
+      </div>
+
+      <!-- Galería lateral -->
+      <div class="slider-container">
+        <div class="perfil-gallery-slider">
+          <div class="slides">
+            <div class="gallery-slide"><img src="../imgnuevas/psico/psico4.jpg" alt="Espacio de escucha"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/psico/psico5.jpg" alt="Trabajo con familias y docentes"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/psico/psico6.jpg" alt="Actividades de orientación"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/psico/psico7.jpg" alt="Inclusión y convivencia"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/psico/psico8.jpg" alt="Bienestar estudiantil"></div>
+          </div>
+          <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+          <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+          <div class="gallery-controls">
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios / ejes de trabajo -->
+    <section class="text-content">
+      <h2>¿Qué hacemos?</h2>
+      <p>Principales líneas de acción del Gabinete Psicopedagógico:</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-people-arrows"></i></div>
+          <h3 class="feature-title">Orientación y Escucha</h3>
+          <p class="feature-text">Entrevistas, acompañamiento individual y grupal, y articulación con equipos externos cuando corresponde.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h3 class="feature-title">Estrategias de Aprendizaje</h3>
+          <p class="feature-text">Hábitos de estudio, organización, técnicas de preparación y apoyo a trayectorias específicas.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3 class="feature-title">Convivencia y Bienestar</h3>
+          <p class="feature-text">Promoción de habilidades socioemocionales y acciones preventivas para un clima escolar saludable.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-file-shield"></i></div>
+          <h3 class="feature-title">Protocolos y Derivaciones</h3>
+          <p class="feature-text">Intervenciones con criterio institucional y coordinación con redes socio-sanitarias cuando es necesario.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</main>
+
+<footer class="footer" id="contacto">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo-decoration">
+          <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+        </div>
+        <div class="footer-brand-info">
+          <h3 class="footer-title">IPET 50</h3>
+          <p class="footer-slogan">Formando profesionales desde 1935</p>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="social-title">Síguenos en redes</h4>
+        <div class="social-links">
+          <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Reutilizá tus scripts existentes para slider, menú y botón subir -->
+<script src="../scripts/electronica.js"></script>
+<script src="../scripts/menu_web.js"></script>
+<script src="../scripts/boton_arriba.js"></script>
+<script src="../scripts/Efectoventana.js"></script>
+</body>
+</html>

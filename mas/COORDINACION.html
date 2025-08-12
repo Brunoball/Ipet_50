@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | COORDINACIÓN DE CURSOS</title>
+    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="gabinetes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<header>
+  <div class="container header-container">
+      <div class="logo">
+          <img src="../img/Escudo.png" alt="Escudo IPET 50">
+          <div class="logo-text">
+              IPET 50
+              <span>Ing. Emilio F. Olmos</span>
+          </div>
+      </div>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
+          <ul>
+              <li><a href="../index.html" class="nav-link">Inicio</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <!-- HERO: Reemplazá las imágenes por las de Coordinación de Cursos -->
+  <section class="hero-section">
+    <div class="kenburns-slider">
+      <div class="kb-slides">
+        <div class="kb-slide active">
+          <img class="hero-image" src="../imgnuevas/coordinacion/coordinacion1.jpg" alt="Coordinación de Cursos IPET 50">
+        </div>
+        <div class="kb-slide">
+          <img class="hero-image" src="../imgnuevas/coordinacion/coordinacion2.jpg" alt="Coordinación de Cursos IPET 50">
+        </div>
+        <div class="kb-slide">
+          <img class="hero-image" src="../imgnuevas/coordinacion/coordinacion3.jpg" alt="Coordinación de Cursos IPET 50">
+        </div>
+      </div>
+      <div class="hero-overlay">
+        <h2 class="hero-title">Coordinación de Cursos</h2>
+        <p class="hero-subtitle">Gestión académica, acompañamiento y comunicación institucional</p>
+      </div>
+      <div class="kb-dots"></div>
+    </div>
+  </section>
+
+  <div class="main-text">
+    <!-- Sección principal de contenido -->
+    <section class="content-section">
+      <div class="text-content">
+        <h2>Nuestro Rol</h2>
+        <p>La Coordinación de Cursos del IPET 50 articula el funcionamiento académico entre directivos, preceptorías, equipos docentes y familias. Acompañamos la trayectoria de los estudiantes, organizamos horarios, mesas de exámenes y reuniones, y velamos por el cumplimiento de los acuerdos institucionales.</p>
+        <p>Trabajamos con un enfoque integral para atender situaciones pedagógicas y de convivencia, promover estrategias de apoyo y seguimiento, y fortalecer los vínculos entre escuela y comunidad.</p>
+        <p>Desde este espacio también gestionamos comunicaciones oficiales, trámites académicos (equivalencias, informes, certificados) y el uso de recursos institucionales para mejorar la experiencia educativa.</p>
+      </div>
+      
+      <!-- Galería lateral -->
+      <div class="slider-container">
+        <div class="perfil-gallery-slider">
+          <div class="slides">
+            <div class="gallery-slide"><img src="../imgnuevas/coordinacion/coordinacion4.jpg" alt="Reuniones de coordinación"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/coordinacion/coordinacion5.jpg" alt="Planificación de horarios"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/coordinacion/coordinacion6.jpg" alt="Trabajo con docentes"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/coordinacion/coordinacion7.jpg" alt="Comunicación con familias"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/coordinacion/coordinacion8.jpg" alt="Seguimiento de trayectorias"></div>
+          </div>
+          <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+          <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+          <div class="gallery-controls">
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de features / servicios -->
+    <section class="text-content">
+      <h2>¿Qué hacemos?</h2>
+      <p>Estas son algunas de las líneas de trabajo de la Coordinación de Cursos:</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3 class="feature-title">Gestión de Horarios</h3>
+          <p class="feature-text">Organización de cronogramas, mesas de exámenes y actos escolares.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+          <h3 class="feature-title">Acompañamiento Estudiantil</h3>
+          <p class="feature-text">Seguimiento de trayectorias y acciones de apoyo pedagógico.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-comments"></i></div>
+          <h3 class="feature-title">Comunicación</h3>
+          <p class="feature-text">Vínculo permanente entre familias, docentes y directivos.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+          <h3 class="feature-title">Trámites Académicos</h3>
+          <p class="feature-text">Equivalencias, certificados, informes y documentación oficial.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer" id="contacto">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo-decoration">
+          <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+        </div>
+        <div class="footer-brand-info">
+          <h3 class="footer-title">IPET 50</h3>
+          <p class="footer-slogan">Formando profesionales desde 1935</p>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="social-title">Síguenos en redes</h4>
+        <div class="social-links">
+          <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Si tus sliders/menú/botón subir ya existen, podés reutilizar los mismos scripts.  -->
+<script src="../scripts/electronica.js"></script>
+<script src="../scripts/menu_web.js"></script>
+<script src="../scripts/boton_arriba.js"></script>
+<script src="../scripts/Efectoventana.js"></script>
+</body>
+</html>
+

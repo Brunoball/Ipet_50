@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | LABORATORIO DE NATURALES</title>
+    <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+    <!-- Podés reutilizar gabinetes.css o duplicarlo como laboratorio-naturales.css para personalizar colores/acentos -->
+    <link rel="stylesheet" href="gabinetes.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<header>
+  <div class="container header-container">
+      <div class="logo">
+          <img src="../img/Escudo.png" alt="Escudo IPET 50">
+          <div class="logo-text">
+              IPET 50
+              <span>Ing. Emilio F. Olmos</span>
+          </div>
+      </div>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir/cerrar navegación">
+          <span class="hamburger"></span>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
+          <ul>
+              <li><a href="../index.html" class="nav-link">Inicio</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+              <li><a href="../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+<main class="main-content">
+  <!-- HERO con efecto Kenburns: reemplazá las imágenes por las del Laboratorio de Naturales -->
+  <section class="hero-section">
+    <div class="kenburns-slider">
+      <div class="kb-slides">
+        <div class="kb-slide active">
+          <img class="hero-image" src="../imgnuevas/labnat/nat1.jpg" alt="Laboratorio de Naturales IPET 50">
+        </div>
+        <div class="kb-slide">
+          <img class="hero-image" src="../imgnuevas/labnat/nat2.jpg" alt="Prácticas de Ciencias Naturales">
+        </div>
+        <div class="kb-slide">
+          <img class="hero-image" src="../imgnuevas/labnat/nat3.jpg" alt="Biología, Química y Física básica">
+        </div>
+      </div>
+      <div class="hero-overlay">
+        <h2 class="hero-title">Laboratorio de Naturales</h2>
+        <p class="hero-subtitle">Prácticas de Biología, Química y cuidado del ambiente</p>
+      </div>
+      <div class="kb-dots"></div>
+    </div>
+  </section>
+
+  <main class="main-text"> 
+    <!-- Introducción / Descripción -->
+    <section class="content-section">
+      <div class="text-content">
+        <h2>Nuestro Espacio</h2>
+        <p>El Laboratorio de Naturales del IPET 50 está preparado para realizar <strong>experiencias de Biología y Química básica</strong>, observaciones con microscopio y prácticas seguras guiadas por docentes. Favorece el aprendizaje experimental y el desarrollo del pensamiento científico.</p>
+        <p>Contamos con material de laboratorio, reactivos para actividades demostrativas, equipos de microscopía y recursos didácticos para el trabajo individual y grupal.</p>
+        <p>Promovemos el cuidado del ambiente y el uso responsable de los recursos, respetando protocolos de seguridad e higiene establecidos por la institución.</p>
+      </div>
+
+      <!-- Galería lateral -->
+      <div class="slider-container">
+        <div class="perfil-gallery-slider">
+          <div class="slides">
+            <div class="gallery-slide"><img src="../imgnuevas/labnat/nat4.jpg" alt="Materiales de laboratorio"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/labnat/nat5.jpg" alt="Microscopios y observación"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/labnat/nat6.jpg" alt="Prácticas guiadas"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/labnat/nat7.jpg" alt="Seguridad y orden"></div>
+            <div class="gallery-slide"><img src="../imgnuevas/labnat/nat8.jpg" alt="Conciencia ambiental"></div>
+          </div>
+          <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+          <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+          <div class="gallery-controls">
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios / Features -->
+    <section class="text-content">
+      <h2>¿Qué ofrecemos?</h2>
+      <p>Recursos y ejes de trabajo en el Laboratorio de Naturales:</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-flask"></i></div>
+          <h3 class="feature-title">Prácticas Experimentales</h3>
+          <p class="feature-text">Actividades demostrativas y de laboratorio para reforzar contenidos de Química y Biología.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+          <h3 class="feature-title">Microscopía</h3>
+          <p class="feature-text">Observación de muestras y ejercicios de registro científico.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+          <h3 class="feature-title">Educación Ambiental</h3>
+          <p class="feature-text">Proyectos sobre conservación, reciclaje y prácticas sustentables.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="feature-title">Seguridad e Higiene</h3>
+          <p class="feature-text">Protocolos de uso, elementos de protección y mantenimiento del espacio.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</main>
+
+<footer class="footer" id="contacto">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo-decoration">
+          <img src="../img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+        </div>
+        <div class="footer-brand-info">
+          <h3 class="footer-title">IPET 50</h3>
+          <p class="footer-slogan">Formando profesionales desde 1935</p>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="social-title">Síguenos en redes</h4>
+        <div class="social-links">
+          <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Reutilizá los mismos scripts para slider, menú y botón arriba -->
+<script src="../scripts/electronica.js"></script>
+<script src="../scripts/menu_web.js"></script>
+<script src="../scripts/boton_arriba.js"></script>
+<script src="../scripts/Efectoventana.js"></script>
+</body>
+</html>
