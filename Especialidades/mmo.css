@@ -226,7 +226,7 @@ header {
 
 
 /* Estilos para móvil */
-@media (max-width: 768px) {
+@media (max-width: 996px) {
     .nav-toggle {
         display: flex;
         align-items: center;
@@ -1250,7 +1250,7 @@ header {
   /* ===== ICONO SWIPE HORIZONTAL PARA MÓVIL ===== */
 
   
-  @media (max-width: 768px) {
+  @media (max-width: 996px) {
     .card-content{
       height: auto;
       padding-bottom: 25px;
@@ -1344,7 +1344,7 @@ header {
       width: 25px;
       height: 3px;
       
-      background: var(--accent-color);
+      background: white;
       margin: 5px auto;
       transition: var(--dark-color);
     }

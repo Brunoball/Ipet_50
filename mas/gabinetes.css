@@ -185,7 +185,7 @@ header {
 }
 
 /* Estilos para móvil */
-@media (max-width: 768px) {
+@media (max-width: 996px) {
     .nav-toggle {
         display: flex;
         align-items: center;
@@ -303,7 +303,7 @@ header {
     transform: rotate(-45deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 996px) {
     .nav-toggle {
         display: flex;
         align-items: center;
