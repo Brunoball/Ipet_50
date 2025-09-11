@@ -1,32 +1,59 @@
-// Mostrar/Ocultar botón al hacer scroll
-window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('backToTop');
-    if (window.scrollY > 100) { // Aparece después de 150px (en lugar de 300px)
-        backToTop.classList.add('active');
-    } else {
-        backToTop.classList.remove('active');
-    }
-});
+// boton_arriba.js
+'use strict';
 
-// Hacer scroll suave al hacer clic
-document.getElementById('backToTop').addEventListener('click', function(e) {
+document.addEventListener('DOMContentLoaded', () => {
+  // Botón actual (según tu HTML)
+  const backToTop = document.getElementById('backToTop');
+  // Soporte opcional para un id legado ("top") si existiera en otras páginas
+  const legacyTop = document.getElementById('top');
+
+  // Si no existe ninguno, no hacemos nada en esta página
+  if (!backToTop && !legacyTop) {
+    console.warn('[BackToTop] No se encontró #backToTop ni #top en esta página.');
+    return;
+  }
+
+  // Umbral de aparición (tu código usaba 100px; mantenemos ese valor)
+  const THRESHOLD = 100;
+
+  // Mostrar/ocultar con una sola función
+  const toggleVisibility = () => {
+    const show = window.scrollY > THRESHOLD;
+
+    // Botón nuevo con clase .active (controlás visibilidad desde CSS)
+    if (backToTop) {
+      backToTop.classList.toggle('active', show);
+      // Si además querés forzar interacción/visibilidad sin depender solo de CSS:
+      backToTop.style.pointerEvents = show ? 'auto' : 'none';
+      backToTop.style.opacity = backToTop.classList.contains('active') ? backToTop.style.opacity : backToTop.style.opacity;
+      // (Las dos líneas de arriba son opcionales; dejalas si tu CSS no maneja pointer-events)
+    }
+
+    // Botón legado que usa display block/none
+    if (legacyTop) {
+      legacyTop.style.display = show ? 'block' : 'none';
+    }
+  };
+
+  // Estado inicial
+  toggleVisibility();
+
+  // Scroll (una sola escucha, passive para mejor rendimiento)
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+  // Click (scroll suave hacia arriba)
+  const onClickScrollTop = (e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll suave
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (backToTop) {
+    backToTop.addEventListener('click', onClickScrollTop);
+  }
+  if (legacyTop) {
+    legacyTop.addEventListener('click', onClickScrollTop);
+  }
 });
-
-
-window.addEventListener('scroll', function() {
-    console.log("Scrolling...");
-    var botonIrArriba = document.getElementById('top');
-    var umbral = window.innerHeight / 10; // Umbral de desplazamiento para mostrar el botón
-
-    if (window.scrollY > umbral) {
-        botonIrArriba.style.display = 'block';
-    } else {
-        botonIrArriba.style.display = 'none';
-    }
-});
-
 
 
 

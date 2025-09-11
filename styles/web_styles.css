@@ -138,13 +138,6 @@ img {
 
 
 
-
-
-
-
-
-
-
 /* Header - Versión Mejorada */
 header {
   background-color: white;
@@ -383,6 +376,16 @@ header {
     transition: clip-path 0.5s ease;
     pointer-events: none;
     z-index: 1000;
+
+    /* ⬇️ scroll de toda la bandeja para ver TODO */
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+  }
+
+  @supports not (height: 100dvh) {
+    .nav-menu { max-height: calc(100vh - 80px); }
   }
 
   .nav-menu.open {
@@ -419,22 +422,30 @@ header {
     background-color: #7a0000;
   }
 
+  /* Submenú en móvil: cerrado por defecto; se abre con .open */
   .submenu {
     position: static;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: none;
     display: block;
+
+    /* cerrado por defecto */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    visibility: visible;
+    visibility: hidden;
+
     transition: max-height 0.3s ease, opacity 0.2s ease;
+    padding-bottom: 0;
   }
 
   .submenu.open {
+    /* abierto solo cuando se presiona "Más" */
+    max-height: none;                /* sin límite (el scroll lo hace .nav-menu) */
+    overflow: visible;
     opacity: 1;
-    max-height: 500px;
+    visibility: visible;
   }
 
   .submenu a {
@@ -1776,4 +1787,302 @@ footer {
     margin-right: 0;
     margin-bottom: 15px;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================
+   POP-UP TESTIMONIOS (clean, centrado en desktop)
+   ============================ */
+.ipet-popup {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  width: 340px;                     /* un poco más ancho */
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);  /* sombra más sutil */
+  border-radius: 12px;
+  padding: 14px 16px;
+  z-index: 1200;
+  transform: translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .22s ease, opacity .22s ease, box-shadow .22s ease;
+  font-size: 14px;
+}
+
+/* Aparición/ocultación */
+.ipet-popup.ipet-popup--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.ipet-popup.ipet-popup--hide {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+/* Botón cerrar */
+.ipet-popup__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: background .15s ease, transform .1s ease;
+}
+.ipet-popup__close:hover { background: rgba(0,0,0,.06); }
+.ipet-popup__close:active { transform: scale(.96); }
+
+/* Texto */
+.ipet-popup__title {
+  margin: 4px 0 6px;
+  font-size: 15.5px;
+  line-height: 1.3;
+  color: var(--dark);
+  font-family: 'Montserrat', sans-serif;
+}
+.ipet-popup__text {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  color: #444;
+}
+
+/* CTA: más discreta pero clara */
+.ipet-popup__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8.5px 13px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .18s ease, background .18s ease;
+  box-shadow: 0 6px 14px rgba(227,6,19,.15);
+  font-size: 13.5px;
+}
+.ipet-popup__cta:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(227,6,19,.2);
+}
+.ipet-popup__cta i { font-size: 14px; }
+
+/* —— Mejora “elegante” en desktop: centrar contenido y suavizar impacto —— */
+@media (min-width: 992px) {
+  .ipet-popup {
+    text-align: center;             /* centra título, texto y botón */
+    box-shadow: 0 4px 14px rgba(0,0,0,.07);
+  }
+  .ipet-popup__cta {
+    width: 100%;                    /* botón ancho: limpio y ordenado */
+  }
+}
+
+/* Mobile: que no invada y mantenga lectura cómoda */
+@media (max-width: 768px) {
+  .ipet-popup {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    text-align: left;               /* en móvil, alineación natural */
+  }
+}
+@media (max-width: 420px) {
+  .ipet-popup { padding: 12px; border-radius: 10px; }
+  .ipet-popup__title { font-size: 14.5px; }
+  .ipet-popup__text { font-size: 13px; }
+  .ipet-popup__cta { padding: 8px 12px; font-size: 13px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Popup Invitación (centrado con backdrop) ===== */
+.invite-popup[hidden] { display: none !important; }
+
+.invite-popup {
+  position: fixed; inset: 0; z-index: 9999;
+  display: grid; place-items: center;
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Backdrop oscuro con leve blur */
+.invite-popup__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(2px);
+}
+
+/* Tarjeta */
+.invite-popup__card {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+  max-height: 86vh;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.12);
+  transform: scale(.96);
+  opacity: 0;
+  transition: transform .30s ease, opacity .30s ease, box-shadow .30s ease;
+}
+
+.invite-popup--visible .invite-popup__card { transform: scale(1); opacity: 1; }
+.invite-popup--hide .invite-popup__card   { transform: scale(.92); opacity: 0; }
+
+/* Imagen */
+.invite-popup__img {
+  display: block;
+  width: auto;
+  max-width: min(92vw, 720px);
+  height: auto;
+  max-height: calc(86vh - 84px);
+  object-fit: contain;
+  background: #fff;
+}
+
+/* ===== Botón de cierre ===== */
+.invite-popup__close {
+  position: absolute; top: 14px; right: 14px;
+  width: 38px; height: 38px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,0.95);
+  color: #1f2937;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  transition: background .18s ease, transform .14s ease, box-shadow .18s ease;
+  backdrop-filter: saturate(120%) blur(2px);
+}
+.invite-popup__close:hover {
+  background: rgba(0,0,0,0.08); /* gris suave, no blanco */
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+.invite-popup__close:active {
+  transform: scale(.96);
+  box-shadow: 0 4px 12px rgba(0,0,0,.18);
+}
+
+/* ===== Footer ===== */
+.invite-popup__footer {
+  background: #ffffff;
+  padding: 14px 16px;
+  display: grid;
+  gap: 10px;
+  justify-items: center; /* centra el botón */
+}
+
+/* CTA WhatsApp */
+.invite-popup__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  justify-content: center;
+  padding: 12px 24px;
+  background: #25D366;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(37,211,102,.35);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.invite-popup__cta:hover   { transform: translateY(-1px); box-shadow: 0 12px 26px rgba(37,211,102,.38); filter: brightness(1.02); }
+.invite-popup__cta:active  { transform: scale(.98); box-shadow: 0 6px 14px rgba(37,211,102,.32); }
+.invite-popup__cta i { font-size: 18px; }
+
+/* Línea secundaria: SOLO mobile */
+.invite-popup__alt {
+  display: none;
+  font-size: 13.5px;
+  color: #64748b;
+}
+.invite-popup__tel {
+  color: #334155;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+.invite-popup__tel:hover { text-decoration: underline; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 480px) {
+  .invite-popup__card { border-radius: 16px; }
+  .invite-popup__close { top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 10px; }
+  .invite-popup__img { max-height: calc(86vh - 92px); }
+  .invite-popup__footer { padding: 12px; }
+  .invite-popup__cta { font-size: 15.5px; }
+  .invite-popup__alt { display: block; }
+}
+
+/* ===== Modo oscuro ===== */
+@media (prefers-color-scheme: dark) {
+  .invite-popup__card { background: #0b1220; box-shadow: 0 20px 50px rgba(0,0,0,.6); }
+  .invite-popup__img  { background: #0b1220; }
+  .invite-popup__close {
+    background: rgba(255,255,255,0.06);
+    color: #e5e7eb;
+    border-color: rgba(255,255,255,.08);
+  }
+  .invite-popup__close:hover { background: rgba(255,255,255,0.12); } /* hover gris oscuro */
+  .invite-popup__footer { background: #0b1220; }
+  .invite-popup__alt { color: #94a3b8; }
+  .invite-popup__tel { color: #e2e8f0; }
 }
