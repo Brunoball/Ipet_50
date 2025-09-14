@@ -7,7 +7,7 @@
     <title>IPET 50 | IMM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="imm.css">
+    <link rel="stylesheet" href="imm.css?v=<?= filemtime(__DIR__ . '/imm.css') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
                 <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
                 <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
                 <li><a href="#microevento" class="nav-link">Eventos</a></li>
-                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <!--<li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>-->
                 <li><a href="#footer" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
@@ -161,94 +161,94 @@
             </div>
         </section>
 
-<!-- Sección Nuestro Trabajo con hover effects -->
-<section id="nuestro-trabajo" class="trabajo-section">
-    <div class="contenedor">
-        <h2 class="section-title">NUESTRO TRABAJO<span class="title-icon"><i class="fas fa-hammer"></i></span></h2>
-        
-        <div class="trabajo-grid">
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-drafting-compass"></i>
+    <!-- Sección Nuestro Trabajo con hover effects -->
+    <section id="nuestro-trabajo" class="trabajo-section">
+        <div class="contenedor">
+            <h2 class="section-title">NUESTRO TRABAJO<span class="title-icon"><i class="fas fa-hammer"></i></span></h2>
+            
+            <div class="trabajo-grid">
+                <div class="trabajo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="card-image">
+                        <img src="../img/nt_imm.png" alt="Elaboración de planos" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>ELABORACIÓN DE PLANOS</h3>
+                        <p>La elaboración de planos en carpintería es esencial para crear muebles o estructuras de madera. Estos planos detallan dimensiones, materiales y pasos de ensamblaje, proporcionando vistas claras y precisas que facilitan la comprensión del diseño y optimizan el trabajo.</p>
+                    </div>
                 </div>
-                <div class="card-image">
-                    <img src="../img/nt_imm.png" alt="Elaboración de planos" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>ELABORACIÓN DE PLANOS</h3>
-                    <p>La elaboración de planos en carpintería es esencial para crear muebles o estructuras de madera. Estos planos detallan dimensiones, materiales y pasos de ensamblaje, proporcionando vistas claras y precisas que facilitan la comprensión del diseño y optimizan el trabajo.</p>
-                </div>
-            </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-pencil-ruler"></i>
+                <div class="trabajo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="card-image">
+                        <img src="../img/nt_imm.jpg" alt="Diseño de productos" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>DISEÑO DE PRODUCTOS</h3>
+                        <p>El diseño de productos en carpintería implica la creación de piezas funcionales y estéticamente agradables, utilizando madera como material principal. Este proceso requiere una profunda comprensión de las propiedades de la madera, las técnicas de ensamblaje y la selección adecuada de acabados.</p>
+                    </div>
                 </div>
-                <div class="card-image">
-                    <img src="../img/nt_imm.jpg" alt="Diseño de productos" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>DISEÑO DE PRODUCTOS</h3>
-                    <p>El diseño de productos en carpintería implica la creación de piezas funcionales y estéticamente agradables, utilizando madera como material principal. Este proceso requiere una profunda comprensión de las propiedades de la madera, las técnicas de ensamblaje y la selección adecuada de acabados.</p>
-                </div>
-            </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-tree"></i>
+                <div class="trabajo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="card-image">
+                        <img src="../img/nt_imm3.webp" alt="Selección de materiales" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>SELECCIÓN DE MATERIALES</h3>
+                        <p>La selección de materiales en carpintería es clave para garantizar la calidad y durabilidad de los productos. Implica elegir el tipo de madera adecuado según las necesidades del proyecto, considerando factores como resistencia, estética, facilidad de trabajo y disponibilidad.</p>
+                    </div>
                 </div>
-                <div class="card-image">
-                    <img src="../img/nt_imm3.webp" alt="Selección de materiales" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>SELECCIÓN DE MATERIALES</h3>
-                    <p>La selección de materiales en carpintería es clave para garantizar la calidad y durabilidad de los productos. Implica elegir el tipo de madera adecuado según las necesidades del proyecto, considerando factores como resistencia, estética, facilidad de trabajo y disponibilidad.</p>
-                </div>
-            </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-cogs"></i>
+                <div class="trabajo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="card-image">
+                        <img src="../img/nt_imm4.png" alt="Operación de maquinaria" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>OPERACIÓN DE MAQUINARIA</h3>
+                        <p>La operación de maquinaria en carpintería es fundamental para trabajar la madera con precisión y eficiencia. Implica manejar equipos como sierras, cepilladoras y fresadoras, siguiendo instrucciones técnicas y normas de seguridad.</p>
+                    </div>
                 </div>
-                <div class="card-image">
-                    <img src="../img/nt_imm4.png" alt="Operación de maquinaria" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>OPERACIÓN DE MAQUINARIA</h3>
-                    <p>La operación de maquinaria en carpintería es fundamental para trabajar la madera con precisión y eficiencia. Implica manejar equipos como sierras, cepilladoras y fresadoras, siguiendo instrucciones técnicas y normas de seguridad.</p>
-                </div>
-            </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-puzzle-piece"></i>
+                <div class="trabajo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="card-image">
+                        <img src="../img/nt_imm6.jpg" alt="Ensamblaje" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>ENSAMBLAJE</h3>
+                        <p>El ensamblaje en carpintería es el proceso de unir piezas de madera para formar un producto final. Requiere precisión y el uso de técnicas como encajes, adhesivos y fijaciones mecánicas, asegurando estabilidad y funcionalidad.</p>
+                    </div>
                 </div>
-                <div class="card-image">
-                    <img src="../img/nt_imm6.jpg" alt="Ensamblaje" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>ENSAMBLAJE</h3>
-                    <p>El ensamblaje en carpintería es el proceso de unir piezas de madera para formar un producto final. Requiere precisión y el uso de técnicas como encajes, adhesivos y fijaciones mecánicas, asegurando estabilidad y funcionalidad.</p>
-                </div>
-            </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_imm8.jpg" alt="Ajustes y reparaciones" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>AJUSTES Y REPARACIONES</h3>
-                    <p>Los ajustes y reparaciones en carpintería consisten en corregir imperfecciones o daños en productos de madera. Esto puede incluir afinar piezas, reforzar uniones o restaurar acabados, garantizando la funcionalidad y estética del producto final.</p>
+                <div class="trabajo-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="card-image">
+                        <img src="../img/nt_imm8.jpg" alt="Ajustes y reparaciones" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>AJUSTES Y REPARACIONES</h3>
+                        <p>Los ajustes y reparaciones en carpintería consisten en corregir imperfecciones o daños en productos de madera. Esto puede incluir afinar piezas, reforzar uniones o restaurar acabados, garantizando la funcionalidad y estética del producto final.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-                <!-- Sección Eventos con timeline -->
+        <!-- Sección Eventos con timeline -->
         <section id="microevento" class="evento-section">
             <div class="contenedor">
                 <div class="section-header">
@@ -301,7 +301,10 @@
             </div>
         </section>
     </main>
-<section id="Testimonios" class="testimonios-section">
+
+
+    <!--
+    <section id="Testimonios" class="testimonios-section">
         <div class="section-header section-header-testimonios">
             <h2 class="section-title-testimonios">Testimonios Estudiantiles</h2>
         </div>
@@ -369,8 +372,6 @@
                 </div>
             </div>
 
-            <!-- Icono de swipe para móviles - AÑADIDO AQUÍ -->
-
 
             <button class="slider-nav slider-prev"><i class="fas fa-chevron-left"></i></button>
             <button class="slider-nav slider-next"><i class="fas fa-chevron-right"></i></button>
@@ -382,6 +383,8 @@
             <div class="dot" data-index="2"></div>
         </div>
     </section>
+    -->
+
     <footer id="footer" class="footer-section">
         <div class="footer-container">
             <div class="footer-column">
@@ -428,9 +431,10 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="../scripts/menu_electronica.js"></script>
-    <script src="../scripts/boton_arriba.js"></script>
-    <script src="../scripts/electronica.js"></script>
-            <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/menu_electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_electronica.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/electronica.js') ?>"></script>
+
 </body>
 </html>

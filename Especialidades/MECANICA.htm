@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | MECÁNICA</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="mecanica.css">
+    <link rel="stylesheet" href="mecanica.css?v=<?= filemtime(__DIR__ . '/mecanica.css') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
                 <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
                 <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
                 <li><a href="#perfil-egresado" class="nav-link">Eventos</a></li>
-                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <!--<li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>-->
                 <li><a href="#footer" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
@@ -299,7 +299,9 @@
             </div>
         </section>
     </main>
- <section id="Testimonios" class="testimonios-section">
+
+    <!--
+    <section id="Testimonios" class="testimonios-section">
         <div class="section-header section-header-testimonios">
             <h2 class="section-title-testimonios">Testimonios Estudiantiles</h2>
         </div>
@@ -367,8 +369,6 @@
                 </div>
             </div>
 
-            <!-- Icono de swipe para móviles - AÑADIDO AQUÍ -->
-
 
             <button class="slider-nav slider-prev"><i class="fas fa-chevron-left"></i></button>
             <button class="slider-nav slider-next"><i class="fas fa-chevron-right"></i></button>
@@ -380,6 +380,9 @@
             <div class="dot" data-index="2"></div>
         </div>
     </section>
+    -->
+
+
     <footer id="footer" class="footer-section">
         <div class="footer-container">
             <div class="footer-column">
@@ -427,9 +430,10 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="../scripts/menu_electronica.js"></script>
-    <script src="../scripts/boton_arriba.js"></script>
-    <script src="../scripts/electronica.js"></script>
-            <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/menu_electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_electronica.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/electronica.js') ?>"></script>
+
 </body>
 </html>

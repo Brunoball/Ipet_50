@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | ELECTRICIDAD</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="electricidad.css">
+    <link rel="stylesheet" href="electricidad.css?v=<?= filemtime(__DIR__ . '/electricidad.css') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
                 <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
                 <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
                 <li><a href="#microevento" class="nav-link">Eventos</a></li>
-                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <!--<li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>-->
                 <li><a href="#footer" class="nav-link">Contacto</a></li>
             </ul>
             </nav>
@@ -136,92 +136,92 @@
             </div>
         </section>
 
-<!-- Sección Nuestro Trabajo con hover effects -->
-<section id="nuestro-trabajo" class="trabajo-section">
-    <div class="contenedor">
-        <h2 class="section-title">NUESTRO TRABAJO<span class="title-icon"><i class="fas fa-laptop-code"></i></span></h2>
-        
-        <div class="trabajo-grid">
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-plug"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_electricidad.jpg" alt="Instalación eléctrica" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>INSTALACIÓN ELÉCTRICA</h3>
-                    <p>La instalación eléctrica es la red de cables, dispositivos y equipos que permiten la distribución y el uso de la energía eléctrica en un espacio determinado. Es esencial para el funcionamiento de luces, enchufes, electrodomésticos y sistemas electrónicos.</p>
-                </div>
-            </div>
+        <!-- Sección Nuestro Trabajo con hover effects -->
+        <section id="nuestro-trabajo" class="trabajo-section">
+            <div class="contenedor">
+                <h2 class="section-title">NUESTRO TRABAJO<span class="title-icon"><i class="fas fa-laptop-code"></i></span></h2>
+                
+                <div class="trabajo-grid">
+                    <div class="trabajo-card">
+                        <div class="card-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="card-image">
+                            <img src="../img/nt_electricidad.jpg" alt="Instalación eléctrica" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>INSTALACIÓN ELÉCTRICA</h3>
+                            <p>La instalación eléctrica es la red de cables, dispositivos y equipos que permiten la distribución y el uso de la energía eléctrica en un espacio determinado. Es esencial para el funcionamiento de luces, enchufes, electrodomésticos y sistemas electrónicos.</p>
+                        </div>
+                    </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_electricidad2.jpg" alt="Cableado" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>CABLEADO</h3>
-                    <p>El cableado es el conjunto de cables, conectores y canalizaciones que transportan la corriente eléctrica desde su fuente hasta los dispositivos que la utilizan. Es como el sistema circulatorio de una instalación eléctrica, llevando la energía a cada rincón.</p>
-                </div>
-            </div>
+                    <div class="trabajo-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="card-image">
+                            <img src="../img/nt_electricidad2.jpg" alt="Cableado" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>CABLEADO</h3>
+                            <p>El cableado es el conjunto de cables, conectores y canalizaciones que transportan la corriente eléctrica desde su fuente hasta los dispositivos que la utilizan. Es como el sistema circulatorio de una instalación eléctrica, llevando la energía a cada rincón.</p>
+                        </div>
+                    </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_electricidad3.png" alt="Mantenimiento eléctrico" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>MANTENIMIENTO ELÉCTRICO</h3>
-                    <p>El mantenimiento eléctrico es un conjunto de tareas y acciones preventivas y correctivas que se realizan en instalaciones eléctricas con el objetivo de garantizar su correcto funcionamiento, seguridad y eficiencia a lo largo del tiempo.</p>
-                </div>
-            </div>
+                    <div class="trabajo-card">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="card-image">
+                            <img src="../img/nt_electricidad3.png" alt="Mantenimiento eléctrico" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>MANTENIMIENTO ELÉCTRICO</h3>
+                            <p>El mantenimiento eléctrico es un conjunto de tareas y acciones preventivas y correctivas que se realizan en instalaciones eléctricas con el objetivo de garantizar su correcto funcionamiento, seguridad y eficiencia a lo largo del tiempo.</p>
+                        </div>
+                    </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-drafting-compass"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_electricidad4.jpg" alt="Diseño de planos eléctricos" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>DISEÑO DE PLANOS ELÉCTRICOS</h3>
-                    <p>El diseño de planos eléctricos es un proceso fundamental en cualquier proyecto de construcción o reforma. Un plano eléctrico bien elaborado es una representación gráfica detallada de la distribución de los elementos eléctricos de una instalación.</p>
-                </div>
-            </div>
+                    <div class="trabajo-card">
+                        <div class="card-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div class="card-image">
+                            <img src="../img/nt_electricidad4.jpg" alt="Diseño de planos eléctricos" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>DISEÑO DE PLANOS ELÉCTRICOS</h3>
+                            <p>El diseño de planos eléctricos es un proceso fundamental en cualquier proyecto de construcción o reforma. Un plano eléctrico bien elaborado es una representación gráfica detallada de la distribución de los elementos eléctricos de una instalación.</p>
+                        </div>
+                    </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-industry"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_electricidad5.jpg" alt="Programación de PLC" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>PROGRAMACIÓN DE PLC</h3>
-                    <p>La programación de PLC es el proceso mediante el cual se diseñan y desarrollan secuencias de control automatizadas para sistemas industriales. Se configuran los PLCs para gestionar y controlar procesos como la maquinaria o sistemas de producción.</p>
-                </div>
-            </div>
+                    <div class="trabajo-card">
+                        <div class="card-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="card-image">
+                            <img src="../img/nt_electricidad5.jpg" alt="Programación de PLC" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>PROGRAMACIÓN DE PLC</h3>
+                            <p>La programación de PLC es el proceso mediante el cual se diseñan y desarrollan secuencias de control automatizadas para sistemas industriales. Se configuran los PLCs para gestionar y controlar procesos como la maquinaria o sistemas de producción.</p>
+                        </div>
+                    </div>
 
-            <div class="trabajo-card">
-                <div class="card-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="card-image">
-                    <img src="../img/nt_electricidad8.webp" alt="Automatización industrial" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>AUTOMATIZACIÓN INDUSTRIAL</h3>
-                    <p>La automatización industrial en electricidad consiste en implementar sistemas y equipos eléctricos que controlen y optimicen procesos productivos de manera automática. Incluye el uso de dispositivos como PLCs, sensores y actuadores.</p>
+                    <div class="trabajo-card">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="card-image">
+                            <img src="../img/nt_electricidad8.webp" alt="Automatización industrial" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>AUTOMATIZACIÓN INDUSTRIAL</h3>
+                            <p>La automatización industrial en electricidad consiste en implementar sistemas y equipos eléctricos que controlen y optimicen procesos productivos de manera automática. Incluye el uso de dispositivos como PLCs, sensores y actuadores.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
                 <!-- Sección Eventos con timeline -->
         <section id="microevento" class="evento-section">
@@ -278,7 +278,9 @@
             </div>
         </section>
     </main>
-<section id="Testimonios" class="testimonios-section">
+
+    <!--
+    <section id="Testimonios" class="testimonios-section">
         <div class="section-header section-header-testimonios">
             <h2 class="section-title-testimonios">Testimonios Estudiantiles</h2>
         </div>
@@ -346,8 +348,6 @@
                 </div>
             </div>
 
-            <!-- Icono de swipe para móviles - AÑADIDO AQUÍ -->
-
 
             <button class="slider-nav slider-prev"><i class="fas fa-chevron-left"></i></button>
             <button class="slider-nav slider-next"><i class="fas fa-chevron-right"></i></button>
@@ -359,6 +359,8 @@
             <div class="dot" data-index="2"></div>
         </div>
     </section>
+    -->
+
     <footer id="footer" class="footer-section">
         <div class="footer-container">
             <div class="footer-column">
@@ -406,9 +408,9 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="../scripts/menu_electronica.js"></script>
-    <script src="../scripts/boton_arriba.js"></script>
-    <script src="../scripts/electronica.js"></script>
-            <script src="../scripts/menu_web.js"></script>
+    <script src="../scripts/menu_electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_electronica.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/electronica.js') ?>"></script>
 </body>
 </html>

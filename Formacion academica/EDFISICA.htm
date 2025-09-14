@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IPET 50 | Educación Física</title>
   <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="../styles/web_styles.css" />
-  <link rel="stylesheet" href="FA_main.css" />
+  <link rel="stylesheet" href="../styles/web_styles.css?v=<?= filemtime(__DIR__ . '/../styles/web_styles.css') ?>">
+  <link rel="stylesheet" href="FA_main.css?v=<?= filemtime(__DIR__ . '/FA_main.css') ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -204,8 +204,8 @@
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <script src="../scripts/form_ac_slider.js"></script>
-  <script src="../scripts/menu_web.js"></script>
-  <script src="../scripts/boton_arriba.js"></script>
+  <script src="../scripts/form_ac_slider.js?v=<?= filemtime(__DIR__ . '/../scripts/form_ac_slider.js') ?>"></script>
+  <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+  <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
 </body>
 </html>

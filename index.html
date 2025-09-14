@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/web_styles.css">
+    <link rel="stylesheet" href="styles/web_styles.css?v=<?= filemtime(__DIR__ . '/styles/web_styles.css') ?>">
     <link rel="shortcut icon" href="img/efologo.png" type="image/x-icon">
 </head>
 <body>
@@ -320,86 +320,93 @@
         </div>
     </section>
     
+
     <!-- About Section -->
     <section class="about" id="nosotros">
         <div class="container">
             <h2 class="section-title">Sobre Nosotros</h2>
-            
+
             <!-- Gallery Slider -->
             <div class="gallery-slider">
-                <div class="gallery-slides" id="gallerySlides">
-                    <div class="gallery-slide">
-                        <img src="imgnuevas/escuela/escuela2.jpg" alt="IPET 50" loading="lazy">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="imgnuevas/escuela/escuela7.jpg" alt="IPET 50" loading="lazy">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="imgnuevas/escuela/escueladentro4.jpg" alt="IPET 50" loading="lazy">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="imgnuevas/escuela/escueladentro2.jpg" alt="IPET 50" loading="lazy">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="imgnuevas/escuela/escueladentro3.jpg" alt="IPET 50" loading="lazy">
-                    </div>
+            <div class="gallery-slides" id="gallerySlides">
+                <div class="gallery-slide">
+                <img src="imgnuevas/escuela/escuela2.jpg" alt="IPET 50" loading="lazy">
                 </div>
-                
-                <div class="slider-nav">
-                    <button class="slider-btn" id="prevBtn" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-                    <button class="slider-btn" id="nextBtn" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+                <div class="gallery-slide">
+                <img src="imgnuevas/escuela/escuela7.jpg" alt="IPET 50" loading="lazy">
                 </div>
-                
-                <div class="slider-dots" id="sliderDots">
-                    <span class="dot active" aria-hidden="true"></span>
-                    <span class="dot" aria-hidden="true"></span>
-                    <span class="dot" aria-hidden="true"></span>
-                    <span class="dot" aria-hidden="true"></span>
-                    <span class="dot" aria-hidden="true"></span>
+                <div class="gallery-slide">
+                <img src="imgnuevas/escuela/escueladentro4.jpg" alt="IPET 50" loading="lazy">
+                </div>
+                <div class="gallery-slide">
+                <img src="imgnuevas/escuela/escueladentro2.jpg" alt="IPET 50" loading="lazy">
+                </div>
+                <div class="gallery-slide">
+                <img src="imgnuevas/escuela/escueladentro3.jpg" alt="IPET 50" loading="lazy">
                 </div>
             </div>
-                        
-            <!-- Tarjetas de texto del código 1 -->
+
+            <div class="slider-nav">
+                <button class="slider-btn" id="prevBtn" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn" id="nextBtn" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="slider-dots" id="sliderDots">
+                <span class="dot active" aria-hidden="true"></span>
+                <span class="dot" aria-hidden="true"></span>
+                <span class="dot" aria-hidden="true"></span>
+                <span class="dot" aria-hidden="true"></span>
+                <span class="dot" aria-hidden="true"></span>
+            </div>
+            </div>
+
+            <!-- Tarjetas de texto -->
             <div class="text-cards">
-                <div class="text-card">
-                    <p>Fundado en 1935 como la "Escuela de Artes y Oficios", nuestro instituto ha sido pionero en la formación técnica profesional en la región. Desde nuestros inicios, hemos acompañado el desarrollo industrial de San Francisco formando profesionales técnicos altamente capacitados.</p>
-                </div>
-                
-                <div class="text-card">
-                    <p>Hoy, con <span class="anios-trayectoria"></span> años de trayectoria, continuamos innovando en educación técnica con seis especialidades orientadas a la producción industrial, manteniendo nuestro compromiso con la excelencia educativa y la formación integral de nuestros estudiantes.</p>
-                </div>
+            <div class="text-card">
+                <p>Fundado en 1935 como la "Escuela de Artes y Oficios", nuestro instituto ha sido pionero en la formación técnica profesional en la región. Desde nuestros inicios, hemos acompañado el desarrollo industrial de San Francisco formando profesionales técnicos altamente capacitados.</p>
             </div>
-            
+
+            <div class="text-card">
+                <p>Hoy, con <span class="anios-trayectoria"></span> años de trayectoria, continuamos innovando en educación técnica con seis especialidades orientadas a la producción industrial, manteniendo nuestro compromiso con la excelencia educativa y la formación integral de nuestros estudiantes.</p>
+            </div>
+            </div>
+
+            <!-- Equipo Directivo -->
             <!-- Equipo Directivo -->
             <div class="directors">
                 <h3>Equipo Directivo</h3>
-                
+
                 <div class="directors-grid">
                     <div class="director-card">
-                        <h4>Equipo Directivo</h4>
-                        <p><strong>Director:</strong> Lic. Jorge Tomé Seif</p>
-                        <p><strong>Vicedirector:</strong> Ing. Rodolfo Podadera</p>
+                    <h4>Equipo Directivo</h4>
+                    <p><strong>Director:</strong> Lic. Jorge Tomé Seif</p>
+                    <p><strong>Vicedirector:</strong> Ing. Rodolfo Podadera</p>
                     </div>
-                    
-                    <div class="director-card">
-                        <h4>Equipo de Gestión</h4>
+
+                    <div class="director-card span-2">
+                    <h4>Equipo de Gestión</h4>
+
+                    <!-- ⬇️ Distribución en 2 columnas -->
+                    <div class="gestion-grid">
+                        <div class="gestion-col">
                         <p><strong>Jefe de Taller:</strong> Prof. Eduardo Mancinelli</p>
                         <p><strong>Jefe de Sección:</strong> Prof. Rubén Murisengo</p>
                         <p><strong>Jefe de Albergue:</strong> Prof. Darío Bonino</p>
-                        <p><strong>Coordinación de Curso:</strong> Prof. Lic. Ivana Aguirre</p>
-                        <p><strong>Gabinete Psicopedagógico:</strong> Prof. Lic. Soledad Garello</p>
-                        <p><strong>Jefa de Biblioteca:</strong> Bib. Daniela Laulhé</p>
-                    </div>
+                        </div>
 
-                    <div class="director-card">
-                        <h4>Administración</h4>
+                        <div class="gestion-col">
                         <p><strong>Secretaria:</strong> Prof. Lic. Yanina Ardiles</p>
                         <p><strong>Prosecretaria:</strong> Prof. Yanina Reinero</p>
+                        <p><strong>Coordinación de Curso:</strong> Prof. Lic. Ivana Aguirre</p>
+                        <p><strong>Gabinete Psicopedagógico:</strong> Prof. Lic. Soledad Garello</p>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- 
         ============================
@@ -558,11 +565,11 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="scripts/slider.js"></script>
-    <script src="scripts/boton_arriba.js"></script>
-    <script src="scripts/menu_web.js"></script>
-    <script src="scripts/electronica.js"></script>
-    <script src="scripts/anios_esc.js"></script>
-    <script src="scripts/popup_invitacion.js"></script>
+    <script src="scripts/slider.js?v=<?= filemtime(__DIR__.'/scripts/slider.js') ?>"></script>
+    <script src="scripts/boton_arriba.js?v=<?= filemtime(__DIR__.'/scripts/boton_arriba.js') ?>"></script>
+    <script src="scripts/menu_web.js?v=<?= filemtime(__DIR__.'/scripts/menu_web.js') ?>"></script>
+    <script src="scripts/electronica.js?v=<?= filemtime(__DIR__.'/scripts/electronica.js') ?>"></script>
+    <script src="scripts/anios_esc.js?v=<?= filemtime(__DIR__.'/scripts/anios_esc.js') ?>"></script>
+    <script src="scripts/popup_invitacion.js?v=<?= filemtime(__DIR__.'/scripts/popup_invitacion.js') ?>"></script>
 </body>
 </html>

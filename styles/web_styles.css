@@ -751,79 +751,143 @@ header {
 
 
 
-
-
-
 /* About Section */
 .about {
-    padding: 80px 0;
-    background-color: white;
+  padding: 80px 0;
+  background-color: white;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 2.3rem;
-    color: var(--primary);
-    margin-bottom: 40px;
-    position: relative;
+  text-align: center;
+  font-size: 2.3rem;
+  color: var(--primary);
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    margin: 15px auto 0;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  margin: 15px auto 0;
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.about-text {
-    margin-bottom: 20px;
-}
+.about-text { margin-bottom: 20px; }
 
-/* Tarjetas de texto del código 1 */
+/* Tarjetas de texto */
 .text-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 50px 0;
 }
 
 .text-card {
-    background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid var(--primary);
-    transition: transform 0.3s ease;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.3s ease;
 }
 
-.text-card:hover {
-    transform: translateY(-5px);
+.text-card:hover { transform: translateY(-5px); }
+.text-card p { line-height: 1.6; font-size: 1.1rem; }
+
+/* Directivos */
+.directors h3 {
+  margin-bottom: 20px;
+  color: var(--primary);
 }
 
-.text-card p {
-    line-height: 1.6;
-    font-size: 1.1rem;
+.directors-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;     /* móvil */
+  align-items: stretch;            /* iguala alturas dentro de la fila */
 }
 
+/* Tarjetas: mismas alturas y contenido ordenado */
+.director-card {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  display: flex;                   /* para acomodar contenido */
+  flex-direction: column;
+  height: 100%;                    /* llena la celda del grid */
+}
 
+.director-card h4 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  color: var(--primary);
+}
 
+/* ----- Grid interno para "Equipo de Gestión" en 2 columnas ----- */
+.gestion-grid{
+  display:grid;
+  grid-template-columns: 1fr;      /* mobile: una columna */
+  gap: 8px 28px;                   /* un poco menos de gap horizontal */
+}
+.gestion-col { min-width: 0; }     /* permite que el grid reparta mejor el espacio */
+.gestion-col p{ margin: 6px 0; }
 
+/* Desktop: 3 columnas, la del medio ocupa 2 */
+@media (min-width: 992px) {
+  .directors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;          /* mantiene igualación en desktop */
+  }
+  .director-card.span-2 {
+    grid-column: span 2;
+  }
 
+  /* ✅ Ajuste solicitado:
+     - Aumentamos el ancho de la columna derecha
+     - Reducimos el gap entre columnas
+     - “Corremos” levemente a la izquierda el contenido derecho */
+  .gestion-grid{
+    grid-template-columns: 0.9fr 1.1fr;  /* más espacio a la columna derecha */
+    gap: 8px 18px;                        /* menos separación horizontal */
+    align-items: start;
+  }
+  .gestion-col:last-child{
+    margin-left: -8px;     /* lo acercamos un poco a la izquierda */
+    padding-right: 6px;    /* prevenimos cualquier recorte por el borde derecho */
+  }
+}
 
+/* Tablet: 2 columnas; la del medio ocupa toda la fila */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .directors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+  }
+  .director-card.span-2 {
+    grid-column: 1 / -1;           /* ocupa ambas */
+  }
 
-
-
-
-
+  /* También damos un pelín más de ancho a la derecha en tablet */
+  .gestion-grid{
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 8px 20px;
+  }
+  .gestion-col:last-child{
+    margin-left: -6px;
+    padding-right: 6px;
+  }
+}
 
 
 

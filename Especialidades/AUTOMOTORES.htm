@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPET 50 | AUTOMOTORES</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
-    <link rel="stylesheet" href="automotores.css">
+    <link rel="stylesheet" href="automotores.css?v=<?= filemtime(__DIR__ . '/automotores.css') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
                 <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
                 <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
                 <li><a href="#microevento" class="nav-link">Eventos</a></li>
-                <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li>
+                <!-- <li><a href="#Testimonios"  class="nav-link">Testimonios</a></li> -->
                 <li><a href="#footer" class="nav-link">Contacto</a></li>
             </ul>
             </nav>
@@ -283,92 +283,98 @@
                    
                 </div>
             </div>
-        </section>
-
-       
-           
+        </section> 
     </main>
- <section id="Testimonios" class="testimonios-section">
-        <div class="section-header section-header-testimonios">
-            <h2 class="section-title-testimonios">Testimonios Estudiantiles</h2>
-        </div>
 
-        <div class="testimonios-slider">
-            <div class="testimonios-track">
-                <div class="testimonio-card" data-index="0">
-                    <div class="testimonio-content">
-                        <span class="testimonio-year">2020</span>
-                        <p class="testimonio-text">
-                            "Durante el año 2020 enfrentamos una serie de cambios en los procesos de enseñanza-aprendizaje.
-                            El contacto entre compañeros y profesores nos permitió valorar todo lo hermoso de estudiar
-                            y el compromiso de los profesores para que pudiéramos continuar aprendiendo juntos."
-                        </p>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Estudiante">
-                            </div>
-                            <div class="author-info">
-                                <h4>Grupo de Estudiantes</h4>
-                                <p>Varias carreras - Promoción 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="testimonio-card" data-index="1">
-                    <div class="testimonio-content">
-                        <span class="testimonio-year">2023</span>
-                        <p class="testimonio-text">
-                            "Cuando comencé a buscar instituciones donde se dicte la carrera no tuve dudas en elegir esta.
-                            Es un establecimiento reconocido por su trayectoria y formación académica, pero también
-                            por los valores personales que fortalecen nuestra profesión."
-                        </p>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Julieta Fortaleño">
-                            </div>
-                            <div class="author-info">
-                                <h4>Julieta Fortaleño</h4>
-                                <p>Tecnicatura Superior en Enfermería - 3° año</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!--
+        === INICIO: Sección Testimonios (comentada para desactivar) ===
 
-                <div class="testimonio-card" data-index="2">
-                    <div class="testimonio-content">
-                        <span class="testimonio-year">2023</span>
-                        <p class="testimonio-text">
-                            "Si bien me costó adaptarme al principio, la experiencia de estudiar aquí ha sido enriquecedora.
-                            Los profesores siempre están dispuestos a ayudar y el ambiente entre compañeros es muy acogedor,
-                            lo que hace que aprender sea una experiencia realmente valiosa."
-                        </p>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Agustín Pesaresi">
-                            </div>
-                            <div class="author-info">
-                                <h4>Agustín Pesaresi</h4>
-                                <p>Profesorado de inglés - 3° año</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="Testimonios" class="testimonios-section">
+            <div class="section-header section-header-testimonios">
+                <h2 class="section-title-testimonios">Testimonios Estudiantiles</h2>
             </div>
 
-            <!-- Icono de swipe para móviles - AÑADIDO AQUÍ -->
+            <div class="testimonios-slider">
+                <div class="testimonios-track">
+                    <div class="testimonio-card" data-index="0">
+                        <div class="testimonio-content">
+                            <span class="testimonio-year">2020</span>
+                            <p class="testimonio-text">
+                                "Durante el año 2020 enfrentamos una serie de cambios en los procesos de enseñanza-aprendizaje.
+                                El contacto entre compañeros y profesores nos permitió valorar todo lo hermoso de estudiar
+                                y el compromiso de los profesores para que pudiéramos continuar aprendiendo juntos."
+                            </p>
+                            <div class="testimonio-author">
+                                <div class="author-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Estudiante">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Grupo de Estudiantes</h4>
+                                    <p>Varias carreras - Promoción 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card" data-index="1">
+                        <div class="testimonio-content">
+                            <span class="testimonio-year">2023</span>
+                            <p class="testimonio-text">
+                                "Cuando comencé a buscar instituciones donde se dicte la carrera no tuve dudas en elegir esta.
+                                Es un establecimiento reconocido por su trayectoria y formación académica, pero también
+                                por los valores personales que fortalecen nuestra profesión."
+                            </p>
+                            <div class="testimonio-author">
+                                <div class="author-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Julieta Fortaleño">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Julieta Fortaleño</h4>
+                                    <p>Tecnicatura Superior en Enfermería - 3° año</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card" data-index="2">
+                        <div class="testimonio-content">
+                            <span class="testimonio-year">2023</span>
+                            <p class="testimonio-text">
+                                "Si bien me costó adaptarme al principio, la experiencia de estudiar aquí ha sido enriquecedora.
+                                Los profesores siempre están dispuestos a ayudar y el ambiente entre compañeros es muy acogedor,
+                                lo que hace que aprender sea una experiencia realmente valiosa."
+                            </p>
+                            <div class="testimonio-author">
+                                <div class="author-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Agustín Pesaresi">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Agustín Pesaresi</h4>
+                                    <p>Profesorado de inglés - 3° año</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-            <button class="slider-nav slider-prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-nav slider-next"><i class="fas fa-chevron-right"></i></button>
-        </div>
 
-        <div class="slider-dots">
-            <div class="dot active" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-        </div>
-    </section>
+                <button class="slider-nav slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-nav slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="slider-dots">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+            </div>
+        </section>
+
+        === FIN: Sección Testimonios (comentada para desactivar) ===
+    -->
+
+
     <footer id="footer" class="footer-section">
         <div class="footer-container">
             <div class="footer-column">
@@ -417,9 +423,9 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="../scripts/menu_electronica.js"></script>
-    <script src="../scripts/boton_arriba.js"></script>
-        <script src="../scripts/menu_web.js"></script>
-    <script src="../scripts/electronica.js"></script>
+    <script src="../scripts/menu_electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_electronica.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/electronica.js') ?>"></script>
 </body>
 </html>
