@@ -263,7 +263,7 @@ header {
     
     .nav-menu > ul > li > a {
         padding: 15px 20px;
-        color: #2d2926;
+        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
