@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Ciencias Sociales</title>
+    <title>IPET 50 | Lengua y Literatura</title>
     <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/web_styles.css">
     <link rel="stylesheet" href="FA_main.css?v=<?= filemtime(__DIR__ . '/FA_main.css') ?>">
@@ -42,18 +42,18 @@
     </header>
 
     <main>
-        <section class="hero-section" style="background-image: url('../imgnuevas/cienciassociales.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <!-- Hero -->
+        <section class="hero-section" style="background-image: url('../imgnuevas/lenguayliteratura.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <img class="escudo" src="../img/Escudo.png" alt="Escudo IPET 50">
                 <div class="hero-text">
-                    <h1>Departamento de <span>Ciencias Sociales</span></h1>
-                    <p><span>Formando ciudadanos críticos</span> - <span>Participación activa</span> - <span>Compromiso social</span></p>
+                    <h1>Departamento de <span>Lengua y Literatura</span></h1>
                 </div>
             </div>
         </section>
 
-
+        <!-- Enfoque Educativo -->
         <section class="content-section">
             <div class="main-content">
                 <article class="content-article-nf">
@@ -61,14 +61,78 @@
 
                     <div class="content-container">
                         <div class="content-wrapper">
+                            <!-- Slider -->
                             <div class="slider-container">
                                 <div class="slider">
                                     <div class="slides">
-                                        <div class="slide active"><img src="../imgnuevas/sociales/sociales1.jpg" alt="Actividades del departamento de sociales"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/sociales2.jpg" alt="Estudiantes trabajando en proyectos"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/sociales3.jpg" alt="Presentación de trabajos"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/sociales4.jpg" alt="Actividad grupal"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/sociales5.jpg" alt="Exposición de estudiantes"></div>
+                                        <div class="slide active"><img src="/imgnuevas/lengua/lengua.jpg" alt="Clase de lengua"></div>
+                                        <div class="slide"><img src="/imgnuevas/lengua/lengua2.jpg" alt="Estudiantes leyendo"></div>
+                                        <div class="slide"><img src="/imgnuevas/lengua/lengua3.jpg" alt="Taller de escritura"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Texto -->
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Formación integral en lenguaje</h3>
+                                    <p>Buscamos estudiantes reflexivos, interpretativos y cooperativos. Enseñamos prácticas discursivas contemporáneas y promovemos una alfabetización académica que fortalezca la lectura comprensiva y la escritura con herramientas tecnológicas, en diálogo con perspectivas multiculturales.</p>
+                                </div>
+
+                                <div class="content-block">
+                                    <h3>Ejes principales del área</h3>
+                                    <p>Trabajamos cuatro ejes articulados: comprensión y producción oral; lectura y producción escrita; literatura como experiencia estética y crítica; y reflexión sobre la lengua (sistema, norma y uso) aplicada a textos y contextos reales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjetas -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                            </div>
+                            <h3>Alfabetización Académica</h3>
+                            <p>Construimos pautas de trabajo claras para leer, escribir y argumentar con rigor, conectando teoría y práctica en situaciones reales de comunicación.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                            </div>
+                            <h3>Tecnología y Comunicación</h3>
+                            <p>Integramos soportes digitales para acceder a múltiples voces y géneros, potenciando la producción de textos y presentaciones con criterios actuales.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Actividades -->
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Día Distinto: Experiencias Literarias</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <!-- Slider -->
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="/imgnuevas/lengua/lengua4.jpg" alt="Evento literario 1"></div>
+                                        <div class="slide"><img src="/imgnuevas/lengua/lengua6.jpg" alt="Evento literario 2"></div>
+                                        <div class="slide"><img src="/imgnuevas/lengua/lengua5.jpg" alt="Evento literario 3"></div>
+                                        <div class="slide"><img src="/imgnuevas/lengua/lengua7.jpg" alt="Evento literario 4"></div>
+                                        <div class="slide"><img src="/imgnuevas/lengua/lengua8.jpg" alt="Evento literario 5"></div>
                                     </div>
                                     <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
                                     <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
@@ -82,14 +146,47 @@
                                 </div>
                             </div>
 
+                            <!-- Texto -->
                             <div class="text-content">
                                 <div class="content-block">
-                                    <h3>Formación Integral</h3>
-                                    <p>Desde el Departamento de Ciencias Sociales promovemos la formación integral de los estudiantes, fomentando el pensamiento crítico y la comprensión de la realidad social.</p>
+                                    <h3>Acciones integradoras</h3>
+                                    <p>La biblioteca institucional es un eje transversal y espacio de encuentro. Organizamos talleres, conversatorios, foros y ferias del libro que proyectan la lectura como disfrute personal y construcción colectiva.</p>
+                                </div>
+
+                                <div class="content-block">
+                                    <h3>Reflexión y práctica</h3>
+                                    <p>Articulamos reflexión metalingüística con la pragmática del uso: tipologías textuales, oralidad, reescritura y producción de informes, narrativas y exposiciones vinculadas al mundo técnico de la escuela.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cita -->
+                    <div class="highlight-box">
+                        <div class="quote-icon" aria-hidden="true">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>El saber hacer integrado a lectura, escritura y teoría literaria fortalece aprendizajes socioemocionales y el trabajo cooperativo en el aula.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ortografía aplicada -->
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Ortografía aplicada (RAE)</h2>
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Norma al servicio del sentido</h3>
+                                    <p>Abordamos la ortografía como parte de la gramática que ayuda a escribir con corrección y claridad. Actualizamos criterios según la RAE y promovemos enunciados coherentes en situaciones reales de comunicación.</p>
                                 </div>
                                 <div class="content-block">
-                                    <h3>Ciudadanía y Participación</h3>
-                                    <p>Nuestro objetivo es desarrollar ciudadanos conscientes, capaces de participar activamente en la transformación de su entorno mediante metodologías innovadoras y trabajo interdisciplinario.</p>
+                                    <h3>Talleres de escritura</h3>
+                                    <p>Practicamos planificación, textualización y revisión (cuadros, redes, imágenes, borradores). La reescritura sostiene mejoras en vocabulario, cohesión y adecuación al propósito comunicativo.</p>
                                 </div>
                             </div>
                         </div>
@@ -98,92 +195,17 @@
                     <div class="info-cards">
                         <div class="info-card">
                             <div class="card-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-book" aria-hidden="true"></i>
                             </div>
-                            <h3>Proyectos Interdisciplinarios</h3>
-                            <p>Se trabajan problemáticas sociales contemporáneas con un enfoque integral, integrando herramientas digitales, investigación y propuestas de mejora comunitaria.</p>
+                            <h3>Lectura y Literatura</h3>
+                            <p>Construimos una “biografía lectora” que vincula experiencia estética con pensamiento crítico y sensibilidad por la diversidad cultural.</p>
                         </div>
-
                         <div class="info-card">
                             <div class="card-icon">
-                                <i class="fas fa-globe-americas"></i>
+                                <i class="fas fa-people-arrows" aria-hidden="true"></i>
                             </div>
-                            <h3>Compromiso con el Entorno</h3>
-                            <p>La conexión con la comunidad y la mirada sobre el contexto social permiten una educación transformadora, donde los estudiantes se reconocen como agentes de cambio.</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="activities-section">
-            <div class="main-content">
-                <h2 class="section-title">Día Distinto: Experiencias Transformadoras</h2>
-
-                <article class="content-article">
-                    <div class="content-container reverse">
-                        <div class="content-wrapper">
-                            <div class="slider-container">
-                                <div class="slider">
-                                    <div class="slides">
-                                        <div class="slide active"><img src="../imgnuevas/sociales/ddsociales.jpg" alt="Día distinto 1"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/ddsociales2.jpg" alt="Día distinto 2"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/ddsociales3.jpg" alt="Día distinto 3"></div>
-                                        <div class="slide"><img src="../imgnuevas/sociales/ddsociales4.jpg" alt="Día distinto 4"></div>
-                                    </div>
-                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
-                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
-                                    <div class="slider-dots">
-                                        <span class="dot active" data-slide="0"></span>
-                                        <span class="dot" data-slide="1"></span>
-                                        <span class="dot" data-slide="2"></span>
-                                        <span class="dot" data-slide="3"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="text-content">
-                                <div class="content-block">
-                                    <h3>Actividades Significativas</h3>
-                                    <p>En el Día Distinto, los estudiantes participan en proyectos que integran las Ciencias Sociales con otras áreas, promoviendo el trabajo colaborativo y la reflexión crítica.</p>
-                                </div>
-                                <div class="content-block">
-                                    <h3>Experiencias Innovadoras</h3>
-                                    <p>Se abordan temas como el Modelo ONU, la educación vial y la identidad regional a través de actividades dinámicas y debates con impacto real.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="event-details">
-                        <div class="detail-header">
-                            <h3>Actividades Realizadas</h3>
-                            <p class="subtitle">Proyectos destacados del área</p>
-                        </div>
-
-                        <div class="activities-grid three-columns">
-                            <div class="activity-card">
-                                <div class="activity-icon"><i class="fas fa-landmark"></i></div>
-                                <h4>Modelo ONU</h4>
-                                <p>Simulación diplomática donde los estudiantes representan países y debaten temas globales con argumentos sólidos.</p>
-                            </div>
-
-                            <div class="activity-card">
-                                <div class="activity-icon"><i class="fas fa-map"></i></div>
-                                <h4>Conociendo nuestro país</h4>
-                                <p>Proyecto para profundizar en la diversidad ambiental e histórica de las provincias argentinas.</p>
-                            </div>
-
-                            <div class="activity-card">
-                                <div class="activity-icon"><i class="fas fa-car-side"></i></div>
-                                <h4>Educación Vial</h4>
-                                <p>En articulación con Automotores, los alumnos reflexionan sobre el rol social del conductor y la seguridad vial.</p>
-                            </div>
-                        </div>
-
-                        <div class="highlight-box">
-                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                            <p>“La enseñanza de las Ciencias Sociales permite a los estudiantes comprender su realidad, ejercer una ciudadanía activa y proyectar un futuro mejor.”</p>
+                            <h3>Comunicación Oral</h3>
+                            <p>Trabajamos exposiciones, debates y presentaciones con criterios de coherencia, cohesión y respeto por distintas voces.</p>
                         </div>
                     </div>
                 </article>
@@ -191,6 +213,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer" id="contacto">
         <div class="footer-container">
             <div class="footer-content">
@@ -207,19 +230,21 @@
                 <div class="footer-social">
                     <h4 class="social-title">Síguenos en redes</h4>
                     <div class="social-links">
-                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Botón volver arriba -->
+    <div class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </div>
 
+    <!-- Scripts -->
     <script src="../scripts/form_ac_slider.js?v=<?= filemtime(__DIR__ . '/../scripts/form_ac_slider.js') ?>"></script>
     <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
     <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>

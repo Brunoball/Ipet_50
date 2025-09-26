@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPET 50 | ELECTRÓNICA</title>
+  <link rel="shortcut icon" href="../img/efologo.png" type="image/x-icon">
+  <link rel="stylesheet"href="electronica.css?v=<?= filemtime(__DIR__ . '/electronica.css') ?>">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link href="../fontawesome-free-6.5.1-web/css/all.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<header>
+  <!-- Imagen de fondo que reemplazará el background de CSS -->
+  <div class="header-background">
+    <img src="../img/portada6.jpg" alt="Fondo tecnológico" class="header-bg-image" loading="lazy">
+    <div class="header-overlay"></div>
+  </div>
+
+  <nav id="menu" class="menu-container-header">
+    <div class="menu-container">
+      <div class="logo">
+        <img src="../img/Escudo.png" alt="Escudo IPET 50" loading="lazy">
+        <div class="logo-text">
+          IPET 50
+          <span>Ing. Emilio F. Olmos</span>
+        </div>
+      </div>
+
+      <button class="hamburger" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="#perfil-egresado" class="nav-link">Perfil del Egresado</a></li>
+          <li><a href="#nuestro-trabajo" class="nav-link">Nuestro Trabajo</a></li>
+          <li><a href="#microevento" class="nav-link">Eventos</a></li>
+          <!--<li><a href="#Testimonios" class="nav-link">Testimonios</a></li>-->
+          <li><a href="#footer" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Especialidad Electrónica</h1>
+      <p class="hero-subtitle">Formando profesionales para el futuro tecnológico</p>
+      <a href="#nuestro-trabajo" class="cta-button">Conoce nuestro trabajo</a>
+    </div>
+  </section>
+
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            fill="rgba(173, 216, 230, 0.3)"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            fill="rgba(173, 216, 230, 0.2)"></path>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section id="perfil-egresado" class="perfil-section">
+    <div class="contenedor">
+      <h2 class="section-title">PERFIL DEL EGRESADO
+        <span class="title-icon"><i class="fas fa-user-graduate" aria-hidden="true"></i></span>
+      </h2>
+
+      <div id="PDE" class="perfil-content">
+        <div class="perfil-gallery-container">
+          <div class="perfil-gallery-slider">
+            <div class="gallery-slide active">
+              <img src="../imgnuevas/electronica/electronica.jpg" alt="Estudiantes de electrónica trabajando" loading="lazy">
+            </div>
+            <div class="gallery-slide">
+              <img src="../imgnuevas/electronica/electronica2.jpg" alt="Laboratorio de electrónica" loading="lazy">
+            </div>
+            <div class="gallery-slide">
+              <img src="../imgnuevas/electronica/electronica3.jpg" alt="Proyectos electrónicos" loading="lazy">
+            </div>
+            <div class="gallery-slide">
+              <!-- RUTA CORREGIDA: antes ../imgnuevaselectronica/electronica4.jpg -->
+              <img src="../imgnuevas/electronica/electronica4.jpg" alt="Equipamiento electrónico" loading="lazy">
+            </div>
+            <div class="gallery-slide">
+              <img src="../imgnuevas/electronica/electronica5.jpeg" alt="Prácticas de electrónica" loading="lazy">
+            </div>
+            <div class="gallery-slide">
+              <img src="../imgnuevas/electronica/electronica6.jpeg" alt="Taller de electrónica" loading="lazy">
+            </div>
+          </div>
+
+          <button class="gallery-nav gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+          <button class="gallery-nav gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+
+          <div class="gallery-controls">
+            <div class="gallery-dots"></div>
+          </div>
+        </div>
+
+        <div class="perfil-text-container">
+          <div class="perfil-highlights">
+            <h3>Competencias profesionales</h3>
+            <ul class="competencies-list">
+              <li><i class="fas fa-microchip" aria-hidden="true"></i> Proyectar componentes y equipos de electrónica analógica/digital de mediana complejidad</li>
+              <li><i class="fas fa-flask" aria-hidden="true"></i> Realizar ensayos y mediciones eléctricas/electrónicas en dispositivos y equipos</li>
+              <li><i class="fas fa-cogs" aria-hidden="true"></i> Operar componentes, productos y equipos con electrónica analógica/digital</li>
+              <li><i class="fas fa-tools" aria-hidden="true"></i> Realizar mantenimientos predictivos, preventivos y correctivos</li>
+              <li><i class="fas fa-project-diagram" aria-hidden="true"></i> Montar dispositivos y componentes electrónicos</li>
+              <li><i class="fas fa-wrench" aria-hidden="true"></i> Instalar productos y equipos electrónicos</li>
+              <li><i class="fas fa-store" aria-hidden="true"></i> Asesorar y comercializar dispositivos electrónicos</li>
+              <li><i class="fas fa-lightbulb" aria-hidden="true"></i> Generar emprendimientos con electrónica de mediana complejidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="perfil-description-full">
+        <p>Esta especialidad prepara alumnos para desempeñarse como futuros técnicos en electrónica, capaces de aportar eficazmente a las operaciones y mantenimiento de sistemas con equipamiento electrónico (preferentemente industrial). En la carrera de Técnico en Electrónica, en sus primeros dos años de cursado, se realiza un recorrido por todas las especialidades del colegio. Luego a partir del tercer año de cursado hasta el séptimo los alumnos se preparan por un lado, en la especialidad Técnico en Electrónica incorporando conocimientos en neumática, electroneumática y PLC (muy utilizado en la industria).</p>
+
+        <div class="extra-content">
+          <p>Por otro lado, adquieren capacidades de desarrollo en diversos lenguajes de programación (Assembler, C, C++), todo ello acompañado de un complejo proceso de utilización del instrumental analógico y digital para llevar a cabo proyectos electrónicos de pequeña y gran envergadura según su nivel de conocimiento. Por último el Técnico en Electrónica en todos los años de cursado realiza viajes de estudio (Instituto Balseiro - Bariloche), visitas a empresas (ARCOR, WEG entre otras), pasantías y presentaciones de proyectos en congresos y ferias de ciencias, participaciones en competencias de Sumo de Robots, y Desafío Eco. Todos quehaceres que dan forma al Perfil del Egresado en esta especialidad.</p>
+        </div>
+
+        <button class="read-more-btn">
+          <span class="btn-text">Leer más</span>
+          <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Nuestro Trabajo con hover effects -->
+  <section id="nuestro-trabajo" class="trabajo-section">
+    <div class="contenedor">
+      <h2 class="section-title">NUESTRO TRABAJO <span class="title-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></span></h2>
+
+      <div class="trabajo-grid">
+        <div class="trabajo-card">
+          <div class="card-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+          <div class="card-image">
+            <img src="../img/ALTIUM.jpg" alt="Diseño de plaquetas" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3>DISEÑO DE PLAQUETAS</h3>
+            <p>El diseño de placas de circuito impreso (PCB) es un proceso crucial en la industria electrónica, donde se crea el esquema físico que interconecta componentes electrónicos en dispositivos.</p>
+          </div>
+        </div>
+
+        <div class="trabajo-card">
+          <div class="card-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+          <div class="card-image">
+            <img src="../img/programacion.jfif" alt="Programación" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3>PROGRAMACIÓN</h3>
+            <p>La programación es el proceso de diseño y escribir instrucciones en un lenguaje que una computadora o sistema pueda entender y ejecutar.</p>
+          </div>
+        </div>
+
+        <div class="trabajo-card">
+          <div class="card-icon"><i class="fas fa-industry" aria-hidden="true"></i></div>
+          <div class="card-image">
+            <img src="../img/EI.jpg" alt="Electrónica industrial" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3>ELECTRÓNICA INDUSTRIAL</h3>
+            <p>Su aplicación abarca desde el control de máquinas y sistemas complejos hasta la implementación de sensores y actuadores para mejorar la eficiencia y la seguridad en la industria.</p>
+          </div>
+        </div>
+
+        <div class="trabajo-card">
+          <div class="card-icon"><i class="fas fa-satellite-dish" aria-hidden="true"></i></div>
+          <div class="card-image">
+            <img src="../img/TELECOMUNICACIONES.jpg" alt="Telecomunicaciones" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3>TELECOMUNICACIONES</h3>
+            <p>Las telecomunicaciones se basan en la transmisión de señales a través de diversos medios como cables, fibras ópticas y ondas electromagnéticas.</p>
+          </div>
+        </div>
+
+        <div class="trabajo-card">
+          <div class="card-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+          <div class="card-image">
+            <img src="../img/SUMO.jpg" alt="Robótica" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3>ROBÓTICA</h3>
+            <p>La robótica de sumo consiste en el diseño y programación de robots autónomos para enfrentarse en combates dentro de una arena circular.</p>
+          </div>
+        </div>
+
+        <div class="trabajo-card">
+          <div class="card-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+          <div class="card-image">
+            <img src="../img/ARDUINO.jpg" alt="Proyectos con Arduino" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3>PROYECTOS CON ARDUINO</h3>
+            <p>Permiten explorar la electrónica y la programación de forma creativa y accesible. Ideal para desarrollar aplicaciones como sistemas de automatización, robots y sensores ambientales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Eventos con timeline -->
+  <section id="microevento" class="evento-section">
+    <div class="contenedor">
+      <div class="section-header">
+        <h2 class="section-title">
+          EVENTOS DEL DEPARTAMENTO
+          <span class="title-icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
+        </h2>
+      </div>
+
+      <div class="evento-content">
+        <div class="evento-proyectos-container">
+          <div class="proyectos-card">
+            <h3 class="evento-subtitle">Proyectos Destacados</h3>
+            <ul class="evento-proyectos">
+              <li><i class="fas fa-microchip" aria-hidden="true"></i> Consola experimentora digital</li>
+              <li><i class="fas fa-robot" aria-hidden="true"></i> Robots Sumo</li>
+              <li><i class="fas fa-hand-paper" aria-hidden="true"></i> Brazo robótico</li>
+              <li><i class="fas fa-tint" aria-hidden="true"></i> Riego artificial automatizado</li>
+              <li><i class="fas fa-bolt" aria-hidden="true"></i> Fuente de alimentación regulada</li>
+              <li><i class="fas fa-volume-up" aria-hidden="true"></i> Amplificador de 50W</li>
+              <li><i class="fas fa-cloud-sun" aria-hidden="true"></i> Estación meteorológica</li>
+              <li><i class="fas fa-mobile-alt" aria-hidden="true"></i> Comando de amplificador usando celular</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="evento-gallery">
+          <div class="evento-slider">
+            <div class="evento-slide active">
+              <img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Evento de electrónica" loading="lazy">
+            </div>
+            <div class="evento-slide">
+              <img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg/v1/fill/w_560,h_314,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Presentación de proyectos" loading="lazy">
+            </div>
+            <div class="evento-slide">
+              <img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Demostraciones prácticas" loading="lazy">
+            </div>
+          </div>
+
+          <button class="evento-nav evento-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+          <button class="evento-nav evento-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+
+          <div class="evento-controls">
+            <div class="evento-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento-description">
+        <p>Para este evento, se realizó una exposición de diversos trabajos prácticos y proyectos desarrollados por los estudiantes de nuestra institución. Los proyectos mostraron un alto nivel de innovación y aplicación práctica de los conocimientos técnicos adquiridos. La exposición fue visitada por los alumnos de 2do y 3er año, quienes pudieron interactuar con los creadores de los proyectos y comprender el potencial de la especialidad. Los visitantes mostraron gran interés en las soluciones tecnológicas presentadas, especialmente en los sistemas de automatización y control.</p>
+        <p>Este tipo de eventos fortalece la integración entre los diferentes cursos y promueve el intercambio de conocimientos entre estudiantes, fomentando la creatividad y el espíritu innovador que caracteriza a nuestra institución.</p>
+
+        <a href="galeria.html" class="evento-link">Ver galería completa <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!--<section id="Testimonios" class="testimonios-section">
+      <div class="section-header section-header-testimonios">
+        <h2 class="section-title-testimonios">Testimonios Estudiantiles</h2>
+      </div>
+
+      <div class="testimonios-slider">
+        <div class="testimonios-track">
+          <div class="testimonio-card" data-index="0">
+            <div class="testimonio-content">
+              <span class="testimonio-year">2020</span>
+              <p class="testimonio-text">
+                "Durante el año 2020 enfrentamos una serie de cambios en los procesos de enseñanza-aprendizaje.
+                El contacto entre compañeros y profesores nos permitió valorar todo lo hermoso de estudiar
+                y el compromiso de los profesores para que pudiéramos continuar aprendiendo juntos."
+              </p>
+              <div class="testimonio-author">
+                <div class="author-avatar">
+                  <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Estudiante" loading="lazy">
+                </div>
+                <div class="author-info">
+                  <h4>Grupo de Estudiantes</h4>
+                  <p>Varias carreras - Promoción 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card" data-index="1">
+            <div class="testimonio-content">
+              <span class="testimonio-year">2023</span>
+              <p class="testimonio-text">
+                "Cuando comencé a buscar instituciones donde se dicte la carrera no tuve dudas en elegir esta.
+                Es un establecimiento reconocido por su trayectoria y formación académica, pero también
+                por los valores personales que fortalecen nuestra profesión."
+              </p>
+              <div class="testimonio-author">
+                <div class="author-avatar">
+                  <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Julieta Fortaleño" loading="lazy">
+                </div>
+                <div class="author-info">
+                  <h4>Julieta Fortaleño</h4>
+                  <p>Tecnicatura Superior en Enfermería - 3° año</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card" data-index="2">
+            <div class="testimonio-content">
+              <span class="testimonio-year">2023</span>
+              <p class="testimonio-text">
+                "Si bien me costó adaptarme al principio, la experiencia de estudiar aquí ha sido enriquecedora.
+                Los profesores siempre están dispuestos a ayudar y el ambiente entre compañeros es muy acogedor,
+                lo que hace que aprender sea una experiencia realmente valiosa."
+              </p>
+              <div class="testimonio-author">
+                <div class="author-avatar">
+                  <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Agustín Pesaresi" loading="lazy">
+                </div>
+                <div class="author-info">
+                  <h4>Agustín Pesaresi</h4>
+                  <p>Profesorado de inglés - 3° año</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-nav slider-prev"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="slider-nav slider-next"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="slider-dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+      </div>
+    </section>
+  -->
+
+<footer id="footer" class="footer-section">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3 class="footer-title">IPET 50</h3>
+      <p class="footer-description">Con 90 años de trayectoria en formación técnica, la institución es un referente educativo en San Francisco, Córdoba. Comprometida con la excelencia, la innovación y el desarrollo de sus estudiantes.</p>
+      <div class="footer-social-links">
+        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="footer-social-link" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/laefo50/" class="footer-social-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="footer-social-link" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Contacto</h3>
+      <div class="footer-contact-info">
+        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+        <p>Rivadavia 679, San Francisco, Córdoba</p>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-phone-alt footer-contact-icon"></i>
+        <p>+54 03564-443729</p>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-envelope footer-contact-icon"></i>
+        <p>secretariaipet@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Visítenos</h3>
+      <div class="footer-map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.199797716993!2d-62.08998738914672!3d-31.436166074145238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cb281012b8744f%3A0x3b8b50751cc49dcf!2sI.P.E.T.%20N%C2%BA%2050%20-%20Escuela%20de%20Educaci%C3%B3n%20T%C3%A9cnica!5e0!3m2!1ses!2sar!4v1713313787251!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<div class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<!-- Scripts (orden recomendado) -->
+<script src="../scripts/menu_electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_electronica.js') ?>"></script>
+<script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+<script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+<script src="../scripts/electronica.js?v=<?= filemtime(__DIR__ . '/../scripts/electronica.js') ?>" ></script>
+
+</body>
+</html>
