@@ -701,7 +701,7 @@ header {
         background-color: #f5f5f5;
     border-radius: 12px;
     height: 100%;
-    padding: 20px 35px;
+    padding: 20px 0;
   }
   
   .evento-subtitle {
@@ -1496,3 +1496,35 @@ header {
       -webkit-user-drag: none;
     }
   }
+/* === Layout eventos remaquetado === */
+.evento-grid-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* slider grande + prácticas al lado */
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+
+.evento-grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* visitas y proyectos abajo */
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .evento-grid-top {
+    grid-template-columns: 1fr; /* apila: slider arriba, prácticas abajo */
+    gap: 20px;
+  }
+  .evento-grid-bottom {
+    grid-template-columns: 1fr; /* una debajo de la otra */
+    gap: 20px;
+  }
+}
+.evento-proyectos-container{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.evento-gallery{
+  grid-column: 2/3;
+
+}
