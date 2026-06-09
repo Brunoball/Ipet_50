@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPET 50 | Instituto Técnico Profesional</title>
-    <meta name="description" content="Instituto Provincial de Educación Técnica N°50 - Formación técnica profesional en San Francisco, Córdoba">
+
+    <title>IPET 50 San Francisco Córdoba | Instituto Técnico Profesional</title>
+    <meta name="description" content="IPET 50 de San Francisco, Córdoba. Instituto Provincial de Educación Técnica N°50 con formación técnica profesional, especialidades y propuesta académica.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ipet50.edu.ar/">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/web_styles.css?v=<?= filemtime(__DIR__ . '/styles/web_styles.css') ?>">
+    <link rel="stylesheet" href="styles/web_styles.css">
     <link rel="shortcut icon" href="img/efologo.png" type="image/x-icon">
 </head>
 <body>
@@ -75,7 +79,37 @@
             Dar mi testimonio
         </a>
     </aside>
+
     
+    <aside class="ipet-popup-mesas" id="ipetPopupMesas" role="dialog" aria-live="polite" aria-label="Inscripción a mesas de examen" style="display:none">
+        <button class="ipet-popup-mesas__close" id="ipetPopupMesasClose" aria-label="Cerrar aviso">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <h3 class="ipet-popup-mesas__title">¡Anotate a las Mesas de Examen!</h3>
+        <p class="ipet-popup-mesas__text">
+            Gestioná tu inscripción online en pocos pasos.
+        </p>
+        <a class="ipet-popup-mesas__cta" id="ipetMesasCTA"
+            href="https://inscripcion.ipet50.edu.ar/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+            Ir a inscripción
+        </a>
+    </aside>
+
+    <!-- MODAL INVITACIÓN BAILE BOMBEROS -->
+    <div class="baile-overlay" id="baileOverlay" aria-hidden="true">
+        <div class="baile-modal" role="dialog" aria-modal="true" aria-label="Invitación baile bomberos">
+            <button class="baile-close" id="baileClose" aria-label="Cerrar invitación">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img 
+                src="imgnuevas/invitacion_baile_bomberos.jpeg" 
+                alt="Invitación baile bomberos" 
+                class="baile-img"
+            >
+        </div>
+    </div>
 
 
     <!-- Hero Section con imagen HTML img tag -->
@@ -508,6 +542,15 @@
                         <i class="fas fa-envelope contact-icon"></i>
                         <p>secretariaipet50@gmail.com</p>
                     </div>
+
+                    <!-- === CONTADOR DE VISITAS (4 cifras) === -->
+                    <div class="contact-info" title="Visitas únicas (por sesión)">
+                        <i class="fa-solid fa-eye contact-icon" aria-hidden="true"></i>
+                        <p>
+                            Visitas: <strong id="viewCounter">0000</strong>
+                        </p>
+                    </div>
+                    <!-- === /CONTADOR === -->
                 </div>
                 
                 <div class="footer-column">
@@ -529,11 +572,54 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="scripts/slider.js?v=<?= filemtime(__DIR__.'/scripts/slider.js') ?>"></script>
-    <script src="scripts/boton_arriba.js?v=<?= filemtime(__DIR__.'/scripts/boton_arriba.js') ?>"></script>
-    <script src="scripts/menu_web.js?v=<?= filemtime(__DIR__.'/scripts/menu_web.js') ?>"></script>
-    <script src="scripts/electronica.js?v=<?= filemtime(__DIR__.'/scripts/electronica.js') ?>"></script>
-    <script src="scripts/anios_esc.js?v=<?= filemtime(__DIR__.'/scripts/anios_esc.js') ?>"></script>
-    <script src="scripts/popup_invitacion.js?v=<?= filemtime(__DIR__.'/scripts/popup_invitacion.js') ?>"></script>
+    <!-- (Antes usabas PHP filemtime en los scripts; en HTML estático no aplica) -->
+    <script src="scripts/slider.js"></script>
+    <script src="scripts/boton_arriba.js"></script>
+    <script src="scripts/menu_web.js"></script>
+    <script src="scripts/electronica.js"></script>
+    <script src="scripts/anios_esc.js"></script>
+    <script src="scripts/popup_invitacion.js"></script>
+
+    <script>
+        (function () {
+          const el = document.getElementById('viewCounter');
+          if (!el) return;
+
+          // ⚠️ URL REAL EN HOSTINGER (misma que probaste manualmente)
+          const url = 'https://www.ipet50.edu.ar/WEB/backend/visit.php?path=/';
+
+          fetch(url, { cache: 'no-store' })
+            .then(r => r.json())
+            .then(d => {
+              const n = Math.max(0, parseInt(d.total || 0, 10));
+              el.textContent = n.toString().padStart(4, '0');
+            })
+            .catch(() => { el.textContent = '0000'; });
+        })();
+    </script>
+    
+    <script>
+        (function () {
+            const popup = document.getElementById('ipetPopupMesas');
+            const btnX  = document.getElementById('ipetPopupMesasClose');
+            if (!popup) return;
+        
+            fetch('https://www.ipet50.edu.ar/WEB/backend/mesas_status.php', { cache: 'no-store' })
+                .then(r => r.json())
+                .then(d => {
+                    if (d.visible && !sessionStorage.getItem('mesasCerrado')) {
+                        popup.style.display = '';
+                    }
+                })
+                .catch(() => {});
+        
+            btnX?.addEventListener('click', () => {
+                popup.style.display = 'none';
+                sessionStorage.setItem('mesasCerrado', '1');
+            });
+        })();
+    </script>
+
+    <!-- === /Script del contador === -->
 </body>
 </html>
