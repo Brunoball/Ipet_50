@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | Ciencias Naturales</title>
+    <link rel="shortcut icon" href="../../../../public/img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles/web_styles.css">
+    <link rel="stylesheet" href="FA_main.css?v=<?= filemtime(__DIR__ . '/FA_main.css') ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="../../../../public/fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../../../../public/img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../../../../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" style="background-image: url('../../../../public/imgnuevas/cienciasnaturales.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../../../../public/img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Ciencias Naturales</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENFOQUE -->
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide"><img src="../../../../public/imgnuevas/naturales/Naturales_2.jpg" alt="Estudiantes en laboratorio"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/naturales/Naturales_3.jpg" alt="Estudiantes en laboratorio"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/naturales/Naturales_4.jpg" alt="Estudiantes en laboratorio"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Departamento de Ciencias Naturales</h3>
+                                    <p>El Departamento de Ciencias Naturales acompaña la formación integral de los estudiantes, brindando saberes fundamentales para comprender el mundo natural, tecnológico y social.</p>
+                                    <p>Desde Biología, Física y Química buscamos despertar la curiosidad científica, fomentar el pensamiento crítico y promover actitudes responsables frente al cuidado del ambiente y el uso sustentable de los recursos.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Cómo trabajamos</h3>
+                                    <p>Articulamos proyectos interdisciplinarios, feria de ciencias, charlas, visitas y experiencias de laboratorio que vinculan teoría y práctica, fortaleciendo competencias clave para estudios superiores y el mundo laboral.</p>
+                                    <p>Como equipo docente, entendemos a las ciencias como herramienta de innovación, creatividad y formación de ciudadanos comprometidos con los desafíos del presente y del futuro.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-vials"></i>
+                            </div>
+                            <h3>Laboratorio de Ciencias Naturales</h3>
+                            <p>Las experiencias de laboratorio desarrollan habilidades clave: observación, pensamiento crítico, resolución de problemas, trabajo en equipo, manejo de instrumentos y aplicación del método científico; además, fortalecen la autonomía y la toma de decisiones basada en evidencias.</p>
+                            <p>Cuando se articulan con los contenidos teóricos, estas prácticas favorecen un aprendizaje más profundo y significativo.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3>Cultura digital</h3>
+                            <p>El uso de TIC —procesadores de texto, planillas de cálculo, presentaciones y simuladores— complementa los aprendizajes específicos de cada espacio curricular. Facilitar el acceso a estas herramientas abre oportunidades de desarrollo personal y profesional, promueve la inclusión digital y reduce brechas de acceso al conocimiento.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FERIA DE CIENCIAS -->
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Feria de Ciencias</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide"><img src="../../../../public/imgnuevas/naturales/Naturales_7.jpg" alt="Feria de ciencias - Comunidad"></div>
+                                        <div class="slide active"><img src="../../../../public/imgnuevas/naturales/Naturales_6.jpg" alt="Feria de ciencias - Presentaciones"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/naturales/Naturales_8.jpg" alt="Feria de ciencias - Comunidad"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Protagonismo estudiantil</h3>
+                                    <p>La Feria de Ciencias es un espacio donde los estudiantes se convierten en protagonistas: presentan proyectos y propuestas creativas que ponen en juego lo aprendido a lo largo de su trayectoria educativa.</p>
+                                    <p>La participación fomenta la curiosidad, la investigación y el trabajo en equipo, y fortalece la capacidad de comunicar ideas y compartirlas con la comunidad educativa.</p>
+                                </div>
+
+                                <div class="content-block">
+                                    <h3>Aprendizaje lúdico y significativo</h3>
+                                    <p>A través del juego y de dinámicas lúdicas, los estudiantes desarrollan autoconfianza, autonomía y habilidades que enriquecen su aprendizaje. Descubren que la ciencia puede ser práctica, cercana y divertida, y reconocen la importancia de cada materia en su vida diaria y en el contexto social.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>“El juego favorece el aprendizaje significativo y ayuda a descubrir en las ciencias naturales una experiencia práctica, cercana y reflexiva.”</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../../../../public/img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="../scripts/form_ac_slider.js?v=<?= filemtime(__DIR__ . '/../scripts/form_ac_slider.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+</body>
+</html>

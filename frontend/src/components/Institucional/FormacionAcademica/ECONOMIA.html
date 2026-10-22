@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | Economía</title>
+    <link rel="shortcut icon" href="../../../../public/img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles/web_styles.css">
+    <link rel="stylesheet" href="FA_main.css?v=<?= filemtime(__DIR__ . '/FA_main.css') ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="../../../../public/fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../../../../public/img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../../../../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" style="background-image: url('../../../../public/imgnuevas/economia.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../../../../public/img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Economía</span></h1>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+                    
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Instalaciones IPET 50"></div>
+                                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Actividades académicas"></div>
+                                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Estudiantes trabajando"></div>
+                                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Eventos escolares"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Educación con Sentido Crítico</h3>
+                                    <p>Entendemos que la educación humana es el principal eslabón para formar personas razonables y reflexivas. Día a día, paso a paso, la educación define al ser racional que crece, se fortalece y desarrolla valores fundamentales.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Valores y Conocimiento</h3>
+                                    <p>Nuestros proyectos están orientados a que el alumno descubra y asimile conocimientos, madure y comprenda tanto los contenidos académicos como los valores indispensables para una formación integral.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Proyectos con Enfoque Laboral</h3>
+                            <p>A través del análisis de la actualidad y actividades con películas, nuestros estudiantes conectan la economía con el mundo real y reflexionan sobre la importancia del trabajo digno.</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h3>Derechos Laborales</h3>
+                            <p>En el análisis de obras como "El Patrón", los estudiantes detectan y reflexionan sobre los derechos vulnerados en contextos laborales reales, desarrollando conciencia crítica y empática.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Microevento del Departamento</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/ipet-50-660x330.jpg" alt="Microevento 1"></div>
+                                        <div class="slide"><img src="https://static.wixstatic.com/media/1484e5_da9fae3ca5414403b92d93800ad713b6~mv2_d_3072_1728_s_2.jpg" alt="Microevento 2"></div>
+                                        <div class="slide"><img src="https://www.radioestacion.com.ar/wp-content/uploads/2020/10/Ipet-50-Emilio-F.-Olmos-660x330.jpg" alt="Microevento 3"></div>
+                                        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQpEFF32kPg2dOEJ0I8RTl5UXcditZLSzlVS9K-DHckA&s" alt="Microevento 4"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Debate sobre la Película "El Patrón"</h3>
+                                    <p>Los estudiantes reflexionan sobre la historia de explotación laboral que se presenta en la película, analizando en grupo los derechos vulnerados y proponiendo ideas para mejorar las condiciones laborales.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Preguntas y Análisis</h3>
+                                    <p>Se guía al alumnado con preguntas como: ¿qué condiciones inseguras observás?, ¿qué derechos fueron vulnerados?, ¿cómo afecta la falta de higiene?, y una reflexión personal final sobre lo visto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Este tipo de proyectos nos permite comprender que los valores y los derechos laborales son fundamentales para la construcción de una sociedad justa y consciente.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../../../../public/img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="../scripts/form_ac_slider.js?v=<?= filemtime(__DIR__ . '/../scripts/form_ac_slider.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+</body>
+</html>

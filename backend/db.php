@@ -13,5 +13,6 @@ try {
   ]);
 } catch (PDOException $e) {
   http_response_code(500);
-  die('DB error: '.htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8'));
+  error_log('DB: '.$e->getMessage());
+  die('No se pudo conectar con la base de datos.');
 }

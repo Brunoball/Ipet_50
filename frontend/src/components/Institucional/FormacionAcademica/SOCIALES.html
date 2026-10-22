@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPET 50 | Ciencias Sociales</title>
+    <link rel="shortcut icon" href="../../../../public/img/efologo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles/web_styles.css">
+    <link rel="stylesheet" href="FA_main.css?v=<?= filemtime(__DIR__ . '/FA_main.css') ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="../../../../public/fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../../../../public/img/Escudo.png" alt="Escudo IPET 50">
+                <div class="logo-text">
+                    IPET 50
+                    <span>Ing. Emilio F. Olmos</span>
+                </div>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../../../../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#academica')" class="nav-link">Formación Académica</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#nosotros')" class="nav-link">Nosotros</a></li>
+                    <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#contacto')" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-section" style="background-image: url('../../../../public/imgnuevas/cienciassociales.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <img class="escudo" src="../../../../public/img/Escudo.png" alt="Escudo IPET 50">
+                <div class="hero-text">
+                    <h1>Departamento de <span>Ciencias Sociales</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENFOQUE (fiel al texto real) -->
+        <section class="content-section">
+            <div class="main-content">
+                <article class="content-article-nf">
+                    <h2 class="article-title">Nuestro Enfoque Educativo</h2>
+
+                    <div class="content-container">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="../../../../public/imgnuevas/sociales/sociales1.jpg" alt="Actividades del departamento de sociales"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/sociales2.jpg" alt="Estudiantes trabajando en proyectos"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/sociales3.jpg" alt="Presentación de trabajos"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/sociales4.jpg" alt="Actividad grupal"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/sociales5.jpg" alt="Exposición de estudiantes"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                        <span class="dot" data-slide="4"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Formación general y conocimiento crítico</h3>
+                                    <p>Con la enseñanza de las Ciencias Sociales se promueve la formación general del estudiante y se propicia el conocimiento crítico de la realidad con sus posibilidades de participación, modificación y transformación, atendiendo a la perspectiva proyectual en la formación de su propia sensibilidad y pensamiento.</p>
+                                </div>
+
+                                <div class="content-block">
+                                    <h3>Propuestas del área</h3>
+                                    <p>Desde el área de Ciencias Sociales se vienen realizando diversas propuestas educativas para que el estudiante logre una formación integral como futuro ciudadano: salidas educativas al Archivo Gráfico y Museo Histórico de nuestra ciudad y a diferentes organismos que enriquezcan los saberes y los contenidos trabajados en el aula, como así también trabajos de investigación de campo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjetas informativas fieles al texto real -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>Salidas educativas</h3>
+                            <p>Archivo Gráfico y Museo Histórico, y visitas a organismos que enriquecen los contenidos del aula, junto con investigaciones de campo.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3>Patrimonio natural e IA</h3>
+                            <p>Desde Geografía, estudiantes de 3º “D” trabajaron sobre ecorregiones y humedales de Argentina, enfatizando su preservación. Utilizaron pizarras digitales para afiches digitales y crearon canciones (aplicación SUNO) invitando a reflexionar sobre la realidad actual de los humedales en nuestro país.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PROYECTOS (fiel al texto real) -->
+        <section class="activities-section">
+            <div class="main-content">
+                <h2 class="section-title">Propuestas y Proyectos del Área</h2>
+
+                <article class="content-article">
+                    <div class="content-container reverse">
+                        <div class="content-wrapper">
+                            <div class="slider-container">
+                                <div class="slider">
+                                    <div class="slides">
+                                        <div class="slide active"><img src="../../../../public/imgnuevas/sociales/ddsociales.jpg" alt="Salida educativa y trabajo de campo"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/ddsociales2.jpg" alt="Proyecto con herramientas digitales"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/ddsociales4.jpg" alt="Trabajo colaborativo interdisciplinario"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/sociales6.png" alt="Trabajo colaborativo interdisciplinario"></div>
+                                        <div class="slide"><img src="../../../../public/imgnuevas/sociales/sociales7.png" alt="Trabajo colaborativo interdisciplinario"></div>
+                                    </div>
+                                    <button class="slider-nav prev" aria-label="Imagen anterior">❮</button>
+                                    <button class="slider-nav next" aria-label="Imagen siguiente">❯</button>
+                                    <div class="slider-dots">
+                                        <span class="dot active" data-slide="0"></span>
+                                        <span class="dot" data-slide="1"></span>
+                                        <span class="dot" data-slide="2"></span>
+                                        <span class="dot" data-slide="3"></span>
+                                        <span class="dot" data-slide="4"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-content">
+                                <div class="content-block">
+                                    <h3>Preservación del patrimonio natural</h3>
+                                    <p>Desde el espacio curricular Geografía, estudiantes de 3º “D” construyeron aprendizajes sobre ecorregiones y humedales de Argentina, haciendo hincapié en su preservación y cuidado por su importancia para los distintos ecosistemas. Se usaron pizarras digitales para plasmar afiches digitales y se crearon canciones (aplicación SUNO) que invitan a la reflexión sobre la realidad actual de los humedales.</p>
+                                </div>
+                                <div class="content-block">
+                                    <h3>Participación en el Modelo de Naciones Unidas</h3>
+                                    <p>Estudiantes de 3º a 6º año simulan ser delegados de un país. La preparación consiste en un trabajo previo de investigación donde se ejercita la oratoria y el debate. En esas jornadas se ponen en práctica el pensamiento crítico, la escucha activa y la resolución de conflictos sobre temas de actualidad a nivel mundial.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detalle de actividades (sin agregar contenido nuevo) -->
+                    <div class="event-details">
+                        <div class="detail-header">
+                            <h3>Actividades destacadas</h3>
+                            <p class="subtitle">Experiencias significativas del Departamento</p>
+                        </div>
+
+                        <div class="activities-grid three-columns">
+                            <div class="activity-card">
+                                <div class="activity-icon"><i class="fas fa-landmark"></i></div>
+                                <h4>Salidas educativas</h4>
+                                <p>Archivo Gráfico y Museo Histórico; visitas a organismos locales; investigaciones de campo.</p>
+                            </div>
+
+                            <div class="activity-card">
+                                <div class="activity-icon"><i class="fas fa-water"></i></div>
+                                <h4>Ecorregiones y humedales</h4>
+                                <p>Afiches digitales y canciones con SUNO para concientizar sobre el cuidado de los humedales.</p>
+                            </div>
+
+                            <div class="activity-card">
+                                <div class="activity-icon"><i class="fas fa-globe"></i></div>
+                                <h4>Modelo de Naciones Unidas</h4>
+                                <p>Investigación previa, oratoria y debate; pensamiento crítico, escucha activa y resolución de conflictos.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>“La enseñanza de las Ciencias Sociales promueve la formación general, el conocimiento crítico de la realidad y la participación transformadora.”</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-decoration">
+                        <img src="../../../../public/img/Escudo.png" alt="Logo IPET 50" class="footer-logo">
+                    </div>
+                    <div class="footer-brand-info">
+                        <h3 class="footer-title">IPET 50</h3>
+                        <p class="footer-slogan">Formando profesionales desde 1935</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="social-title">Síguenos en redes</h4>
+                    <div class="social-links">
+                        <a href="https://m.facebook.com/profile.php?id=100065580576231" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/laefo50/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ESCUELAIPETINGEMILIOFOLMOS" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="../scripts/form_ac_slider.js?v=<?= filemtime(__DIR__ . '/../scripts/form_ac_slider.js') ?>"></script>
+    <script src="../scripts/menu_web.js?v=<?= filemtime(__DIR__ . '/../scripts/menu_web.js') ?>"></script>
+    <script src="../scripts/boton_arriba.js?v=<?= filemtime(__DIR__ . '/../scripts/boton_arriba.js') ?>"></script>
+</body>
+</html>
