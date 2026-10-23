@@ -13,7 +13,7 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: linear-gradient(120deg, rgba(15, 25, 37, .79), rgba(15, 25, 37, .52)), url("../../../public/img/img_menu_fondo.png") center / cover no-repeat;
+    background: linear-gradient(120deg, rgba(15, 25, 37, .79), rgba(15, 25, 37, .52)), url("../../../../public/img/img_menu_fondo.png") center / cover no-repeat;
 }
 .mem-create .mem-shell { max-width: 900px; padding: 30px 24px 64px; }
 .mem-create .mem-back { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: .82rem; padding: 9px 0; }

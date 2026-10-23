@@ -3,7 +3,7 @@
  const grid = document.querySelector('.recuerdos-gallery .recuerdos-grid');
  if (!grid) return;
 
- const endpoint = new URL('../../../backend/recuerdos.php', document.baseURI);
+ const endpoint = window.IPETApi.url('recuerdos');
  const status = document.createElement('p');
  status.className = 'recuerdos-note';
  status.setAttribute('role', 'status');
@@ -22,7 +22,7 @@
   try {
    // Se obtienen todas las páginas automáticamente, sin botón "Cargar más recuerdos".
    while (true) {
-    const response = await fetch(endpoint + '?pagina=' + page);
+    const response = await fetch(endpoint + '&pagina=' + page);
     if (!response.ok) throw new Error('Error al obtener recuerdos');
     const data = await response.json();
     if (!Array.isArray(data.recuerdos)) throw new Error('Respuesta inválida');
@@ -31,7 +31,7 @@
      const card = el('article', 'recuerdo-card');
      const photo = el('div', 'recuerdo-photo');
      const img = el('img', '');
-     img.src = endpoint + '?imagen=' + item.id;
+     img.src = endpoint + '&imagen=' + item.id;
      img.alt = item.titulo;
      img.loading = 'lazy';
      photo.append(img);

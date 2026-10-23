@@ -1,0 +1,17 @@
+Options -Indexes
+RewriteEngine On
+# Bloquear secretos, directorios internos y archivos no públicos.
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^(modules|storage)(/|$) - [F,L,NC]
+RewriteRule ^db\.php$ - [F,L,NC]
+RewriteRule \.(sql|md|log|ini|bak|old|zip)$ - [F,L,NC]
+
+# Compatibilidad con páginas en caché / URLs históricas del IPET 50.
+RewriteRule ^visit\.php$ routes.php?route=visitas [QSA,L,NC]
+RewriteRule ^mesas_status\.php$ routes.php?route=mesas/estado [QSA,L,NC]
+RewriteRule ^recuerdos\.php$ routes.php?route=recuerdos [QSA,L,NC]
+RewriteRule ^recuerdos_admin\.php$ routes.php?route=recuerdos/admin [QSA,L,NC]
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+</IfModule>

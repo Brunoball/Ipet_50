@@ -1,0 +1,5 @@
+/.env
+/storage/recuerdos/*
+!/storage/recuerdos/.gitkeep
+/storage/ratelimit/*
+!/storage/ratelimit/.gitkeep

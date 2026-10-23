@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="src/styles/web_styles.css">
-    <link rel="stylesheet" href="src/components/Inicio/Recuerdos/Recuerdos.css">
+    <link rel="stylesheet" href="src/components/Inicio/Recuerdos/styles/Recuerdos.css">
     <link rel="shortcut icon" href="public/img/efologo.png" type="image/x-icon">
 </head>
 <body>
@@ -409,73 +409,24 @@
 
 
 
-    <!-- Recuerdos de ejemplo: conservar 3 hasta integrar las publicaciones reales. -->
+    <!-- Los recuerdos publicados se cargan exclusivamente desde web_recuerdos. -->
     <section class="recuerdos-section" id="recuerdos" aria-labelledby="recuerdos-title">
         <div class="container">
             <div class="recuerdos-heading">
                 <h2 class="section-title" id="recuerdos-title">Memorias y recuerdos</h2>
             </div>
-            <div class="recuerdos-carousel" aria-roledescription="carrusel" aria-label="Recuerdos de la comunidad IPET 50">
+            <div class="recuerdos-carousel" aria-roledescription="carrusel" aria-label="Recuerdos de la comunidad IPET 50" style="display:none">
                 <div class="recuerdos-viewport" id="recuerdosViewport">
-                    <div class="recuerdos-grid recuerdos-track" id="recuerdosTrack">
-                    <article class="recuerdo-card" role="group" aria-roledescription="recuerdo" aria-label="1 de 3: La escuela que nos une">
-                        <div class="recuerdo-identity">
-                            <div class="recuerdo-photo"><img src="public/imgnuevas/escuela/escuela2.jpg" alt="La escuela que nos une — fotografía de la comunidad del IPET 50" loading="lazy" width="500" height="500"></div>
-                            <div class="recuerdo-author">
-                                <span class="recuerdo-name">Comunidad IPET 50</span>
-                                <span class="recuerdo-detail">Recuerdo de ejemplo</span>
-                            </div>
-                        </div>
-                        <div class="recuerdo-body">
-                            <span class="recuerdo-tag">Nuestra escuela</span>
-                            <h3>La escuela que nos une</h3>
-                            <p>Esos lugares que guardan historias, encuentros y momentos que siempre vuelven.</p>
-                            <i class="fa-solid fa-quote-right recuerdo-quote" aria-hidden="true"></i>
-                        </div>
-                    </article>
-                    <article class="recuerdo-card" role="group" aria-roledescription="recuerdo" aria-label="2 de 3: Aprender haciendo" aria-hidden="true" inert>
-                        <div class="recuerdo-identity">
-                            <div class="recuerdo-photo"><img src="public/imgnuevas/automotores/aut1.jpg" alt="Aprender haciendo — fotografía de la comunidad del IPET 50" loading="lazy" width="500" height="500"></div>
-                            <div class="recuerdo-author">
-                                <span class="recuerdo-name">Comunidad IPET 50</span>
-                                <span class="recuerdo-detail">Recuerdo de ejemplo</span>
-                            </div>
-                        </div>
-                        <div class="recuerdo-body">
-                            <span class="recuerdo-tag">En el taller</span>
-                            <h3>Aprender haciendo</h3>
-                            <p>Un proyecto, muchas ideas y el recuerdo de haberlo construido entre todos.</p>
-                            <i class="fa-solid fa-quote-right recuerdo-quote" aria-hidden="true"></i>
-                        </div>
-                    </article>
-                    <article class="recuerdo-card" role="group" aria-roledescription="recuerdo" aria-label="3 de 3: Ideas que toman forma" aria-hidden="true" inert>
-                        <div class="recuerdo-identity">
-                            <div class="recuerdo-photo"><img src="public/imgnuevas/electronica/electronica.jpg" alt="Ideas que toman forma — fotografía de la comunidad del IPET 50" loading="lazy" width="500" height="500"></div>
-                            <div class="recuerdo-author">
-                                <span class="recuerdo-name">Comunidad IPET 50</span>
-                                <span class="recuerdo-detail">Recuerdo de ejemplo</span>
-                            </div>
-                        </div>
-                        <div class="recuerdo-body">
-                            <span class="recuerdo-tag">Aprendizajes</span>
-                            <h3>Ideas que toman forma</h3>
-                            <p>Las primeras pruebas y la alegría de ver que aquello que imaginamos funciona.</p>
-                            <i class="fa-solid fa-quote-right recuerdo-quote" aria-hidden="true"></i>
-                        </div>
-                    </article>
-                    </div>
+                    <div class="recuerdos-grid recuerdos-track" id="recuerdosTrack"></div>
                 </div>
-                <div class="recuerdos-navigation" aria-label="Navegación de recuerdos">
+                <div class="recuerdos-navigation" id="recuerdosNavigation" aria-label="Navegación de recuerdos" style="display:none">
                     <button class="recuerdos-arrow" type="button" id="recuerdosPrev" aria-label="Recuerdo anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
-                    <div class="recuerdos-dots" aria-label="Elegir recuerdo">
-                        <button class="recuerdos-dot is-active" type="button" data-recuerdo-index="0" aria-label="Ver recuerdo 1 de 3" aria-current="true"></button>
-                        <button class="recuerdos-dot" type="button" data-recuerdo-index="1" aria-label="Ver recuerdo 2 de 3"></button>
-                        <button class="recuerdos-dot" type="button" data-recuerdo-index="2" aria-label="Ver recuerdo 3 de 3"></button>
-                    </div>
+                    <div class="recuerdos-dots" id="recuerdosDots" aria-label="Elegir recuerdo"></div>
                     <button class="recuerdos-arrow" type="button" id="recuerdosNext" aria-label="Recuerdo siguiente"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
                 </div>
                 <span id="recuerdosStatus" class="recuerdos-sr-only" role="status" aria-live="polite" aria-atomic="true"></span>
             </div>
+            <p class="recuerdos-note" id="recuerdosMensaje" role="status" aria-live="polite">Cargando recuerdos…</p>
             <div class="recuerdos-actions"><a class="recuerdos-more" href="src/components/Galeria/Galeria.html">Ver más recuerdos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
             <p class="recuerdos-note"><i class="fa-regular fa-heart" aria-hidden="true"></i> Un espacio para volver a esos momentos.</p>
         </div>
@@ -544,55 +495,20 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- (Antes usabas PHP filemtime en los scripts; en HTML estático no aplica) -->
-    <script src="src/components/Inicio/slider.js"></script>
-    <script src="src/components/Inicio/Recuerdos/recuerdos_inicio.js" defer></script>
-    <script src="src/components/UI/boton_arriba.js"></script>
-    <script src="src/components/Global/Navbar/menu_web.js"></script>
-    <script src="src/components/Especialidades/electronica.js"></script>
-    <script src="src/components/Inicio/anios_esc.js"></script>
-    <script src="src/components/Inicio/popup_invitacion.js"></script>
+    <!-- Scripts organizados por módulo; API compartida. -->
+    <script src="src/api/client.js"></script>
+    <script src="src/components/Inicio/scripts/slider.js"></script>
+    <script src="src/components/Inicio/Recuerdos/scripts/recuerdos_inicio.js" defer></script>
+    <script src="src/components/UI/scripts/boton_arriba.js"></script>
+    <script src="src/components/Global/Navbar/scripts/menu_web.js"></script>
+    <script src="src/components/Especialidades/scripts/electronica.js"></script>
+    <script src="src/components/Inicio/scripts/anios_esc.js"></script>
+    <script src="src/components/Inicio/modales/popup_invitacion.js"></script>
 
-    <script>
-        (function () {
-          const el = document.getElementById('viewCounter');
-          if (!el) return;
-
-          // ⚠️ URL REAL EN HOSTINGER (misma que probaste manualmente)
-          const url = 'https://www.ipet50.edu.ar/WEB/backend/visit.php?path=/';
-
-          fetch(url, { cache: 'no-store' })
-            .then(r => r.json())
-            .then(d => {
-              const n = Math.max(0, parseInt(d.total || 0, 10));
-              el.textContent = n.toString().padStart(4, '0');
-            })
-            .catch(() => { el.textContent = '0000'; });
-        })();
-    </script>
+    <script src="src/components/Inicio/scripts/contador_visitas.js"></script>
     
-    <script>
-        (function () {
-            const popup = document.getElementById('ipetPopupMesas');
-            const btnX  = document.getElementById('ipetPopupMesasClose');
-            if (!popup) return;
-        
-            fetch('https://www.ipet50.edu.ar/WEB/backend/mesas_status.php', { cache: 'no-store' })
-                .then(r => r.json())
-                .then(d => {
-                    if (d.visible && !sessionStorage.getItem('mesasCerrado')) {
-                        popup.style.display = '';
-                    }
-                })
-                .catch(() => {});
-        
-            btnX?.addEventListener('click', () => {
-                popup.style.display = 'none';
-                sessionStorage.setItem('mesasCerrado', '1');
-            });
-        })();
-    </script>
+    <script src="src/components/Inicio/scripts/mesas_estado.js"></script>
 
-    <!-- === /Script del contador === -->
+
 </body>
 </html>

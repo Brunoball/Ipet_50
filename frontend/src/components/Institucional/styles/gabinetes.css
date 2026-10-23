@@ -753,7 +753,7 @@ header {
 /* ===== FOOTER ===== */
 .footer {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-                url('../../../public/imgnuevas/escuela/escuela3.jpg');
+                url('../../../../public/imgnuevas/escuela/escuela3.jpg');
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;

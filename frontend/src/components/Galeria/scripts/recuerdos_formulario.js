@@ -1,7 +1,7 @@
 (() => {
  'use strict';
  const form=document.getElementById('recuerdoForm'), button=document.getElementById('enviarRecuerdo'), status=document.getElementById('formStatus');
- const endpoint=new URL('../../../backend/recuerdos.php',document.baseURI);
+ const endpoint = window.IPETApi.url('recuerdos');
  let csrf='', previewURL;
  // Keep select labels floating for selections, restored values and form resets.
  const floatingSelects = form.querySelectorAll('.mem-floating select');
@@ -23,7 +23,7 @@
   button.disabled=true;
   status.textContent='Preparando formulario…';
   try{
-   const r=await fetch(endpoint+'?sesion=1',{credentials:'same-origin'});
+   const r=await fetch(endpoint+'&sesion=1',{credentials:'include'});
    const data=await r.json();
    if(!r.ok || !data.csrf)throw Error();
    csrf=data.csrf;
@@ -53,7 +53,7 @@
   const data=new FormData(form);
   data.set('anio', fechaRecuerdo.value ? fechaRecuerdo.value.slice(0,4) : '');
   data.set('csrf',csrf);
-  try{const r=await fetch(endpoint,{method:'POST',body:data,credentials:'same-origin'});const result=await r.json();if(!r.ok)throw Error(result.error||'No se pudo enviar.');
+  try{const r=await fetch(endpoint,{method:'POST',body:data,credentials:'include'});const result=await r.json();if(!r.ok)throw Error(result.error||'No se pudo enviar.');
    form.reset();document.getElementById('fotoPreview').hidden=true;if(previewURL)URL.revokeObjectURL(previewURL);status.textContent=result.mensaje;button.textContent='Recuerdo enviado';
   }catch(error){status.dataset.error='true';status.textContent=error.message==='Failed to fetch'?'No se pudo confirmar el envío. Revisá tu conexión.':error.message;button.disabled=false;}
  });
