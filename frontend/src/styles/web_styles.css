@@ -1865,3 +1865,12 @@ body.baile-modal-abierto {
         font-size: 18px;
     }
 }
+/* Link "Aviso legal y privacidad" del footer */
+.footer-bottom .footer-legal-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.footer-bottom .footer-legal-link:hover {
+    color: #fff;
+}

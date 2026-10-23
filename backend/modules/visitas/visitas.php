@@ -1,6 +1,14 @@
 <?php
 declare(strict_types=1);
 
+/**
+ * Contador de visitas.
+ *
+ * Solo suma +1 al total de la ruta. NO guarda datos de las personas
+ * (ni IP, ni navegador, ni página de origen, ni ID de sesión).
+ * La cookie de sesión se usa únicamente para no contar dos veces
+ * la misma visita y se borra al cerrar el navegador.
+ */
 function visitas(): never
 {
     only('GET');
@@ -10,28 +18,15 @@ function visitas(): never
         throw new ApiError('Ruta inválida.');
     }
     $key = 'visit_' . hash('sha256', $path);
-    $unique = true;
     $pdo = db();
     if (empty($_SESSION[$key])) {
         try {
-            $pdo->beginTransaction();
             $stmt = $pdo->prepare('INSERT INTO analytics_counters (path, views) VALUES (:path, 1) ON DUPLICATE KEY UPDATE views = views + 1');
             $stmt->execute(['path' => $path]);
-            $stmt = $pdo->prepare('INSERT INTO analytics_page_views (path, ip, user_agent, referrer, session_id) VALUES (:path, :ip, :agent, :referrer, :session)');
-            $ip = $_SERVER['REMOTE_ADDR'] ?? '';
-            $stmt->execute([
-                'path' => $path,
-                'ip' => filter_var($ip, FILTER_VALIDATE_IP) ? inet_pton($ip) : null,
-                'agent' => substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 255) ?: null,
-                'referrer' => substr($_SERVER['HTTP_REFERER'] ?? '', 0, 255) ?: null,
-                'session' => session_id() ?: null,
-            ]);
-            $pdo->commit();
             $_SESSION[$key] = true;
         } catch (Throwable $exception) {
-            if ($pdo->inTransaction()) $pdo->rollBack();
-            error_log('IPET50 analytics: ' . $exception->getMessage());
-            // Sigue mostrando el total persistido sin confirmar falsamente una visita.
+            error_log('IPET50 contador: ' . $exception->getMessage());
+            // Sigue mostrando el total guardado sin confirmar falsamente una visita.
         }
     }
     $stmt = $pdo->prepare('SELECT views FROM analytics_counters WHERE path = :path');
