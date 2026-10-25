@@ -15,10 +15,13 @@
 
     <link rel="stylesheet" href="../../styles/web_styles.css">
     <link rel="stylesheet" href="../Inicio/Recuerdos/styles/Recuerdos.css">
+    <link rel="stylesheet" href="../../styles/privacidad.css">
+    <link rel="stylesheet" href="styles/recuerdos_header.css">
+    <link rel="stylesheet" href="../../styles/entrada_sutil.css">
     <link rel="shortcut icon" href="../../../public/img/efologo.png" type="image/x-icon">
 </head>
 <body>
-    <header>
+    <header class="recuerdos-site-header recuerdos-site-header--minimal">
         <div class="container header-container">
             <div class="logo">
                 <img src="../../../public/img/Escudo.png" alt="Escudo IPET 50">
@@ -27,49 +30,21 @@
                     <span>Ing. Emilio F. Olmos</span>
                 </div>
             </div>
-            
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="../../../index.html#especialidades" class="nav-link">Formación Técnica</a></li>
-                    <li><a href="../../../index.html#academica" class="nav-link">Formación Académica</a></li>
-                    <li><a href="../../../index.html#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#recuerdos" class="nav-link">Recuerdos</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li class="dropdown-container">
-                        <button class="dropdown-btn" id="moreBtn">
-                            Más <i class="fas fa-chevron-down dropdown-icon"></i>
-                        </button>
-                        <ul class="submenu" id="subMenu">
-                            <li><a href="../Institucional/INTERNADO.html" class="nav-link">Albergue</a></li>
-                            <li><a href="../Institucional/BIBLIOTECA.html" class="nav-link">Biblioteca</a></li>
-                            <li><a href="../Institucional/CENTRO.html" class="nav-link">Centro de Estudiantes</a></li>
-                            <li><a href="../Institucional/COORDINACION.html" class="nav-link">Coordinación de Cursos</a></li>
-                            <li><a href="../Institucional/GABINETES.html" class="nav-link">Gabinetes</a></li>
-                            <li><a href="../Institucional/GABINETE_PSICOPEDAGOGICO.HTML" class="nav-link">Gabinete Psicopedagógico</a></li>
-                            <li><a href="../Institucional/LAB_INFORMATICA.html" class="nav-link">Laboratorio de Informática</a></li>
-                            <li><a href="../Institucional/LAB_NATURALES.html" class="nav-link">Laboratorio de Naturales</a></li>
-                            <li><a href="../Institucional/OFICINAS.html" class="nav-link">Oficinas</a></li>
-                            <li><a href="../Institucional/PRECEPTORIA.html" class="nav-link">Preceptorías</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <a class="legal-back recuerdos-header-back" href="../../../index.html#recuerdos" aria-label="Volver al inicio">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span>Volver</span>
+            </a>
         </div>
     </header>
 <main>
     <section class="recuerdos-section recuerdos-gallery" id="recuerdos" aria-labelledby="recuerdos-title">
         <div class="container">
-            <a class="recuerdos-back" href="../../../index.html#recuerdos"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al inicio</a>
-            <div class="recuerdos-heading">
+            <div class="recuerdos-heading ipet-entrada-sutil">
                 <span class="recuerdos-eyebrow"><i class="fa-regular fa-images" aria-hidden="true"></i> Galería de nuestra comunidad</span>
                 <h2 class="section-title" id="recuerdos-title">Memorias y recuerdos</h2>
             </div>
-            <div class="recuerdos-actions" style="margin:0 0 32px"><a class="recuerdos-more" href="AgregarRecuerdo.html"><i class="fa-solid fa-plus" aria-hidden="true"></i> Agregá tu recuerdo</a></div>
-            <div class="recuerdos-grid"></div>
+            <div class="recuerdos-actions ipet-entrada-sutil ipet-entrada-sutil--segundo" style="margin:0 0 32px"><a class="recuerdos-more" href="AgregarRecuerdo.html"><i class="fa-solid fa-plus" aria-hidden="true"></i> Agregá tu recuerdo</a></div>
+            <div class="recuerdos-grid ipet-entrada-sutil ipet-entrada-sutil--tercero"></div>
             <p class="recuerdos-note"><i class="fa-regular fa-heart" aria-hidden="true"></i> Un espacio para volver a esos momentos.</p>
         </div>
     </section>

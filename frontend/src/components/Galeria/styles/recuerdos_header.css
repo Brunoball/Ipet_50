@@ -1,0 +1,77 @@
+/* Encabezado de Memorias y Formulario.
+   Mantiene la estética del header principal, pero simplificado:
+   identidad institucional + botón Volver. */
+.recuerdos-site-header--minimal .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.recuerdos-site-header--minimal .logo {
+    min-width: 0;
+}
+
+.recuerdos-site-header--minimal .logo-text {
+    line-height: 1.1;
+}
+
+.recuerdos-site-header--minimal .recuerdos-header-back {
+    padding: 10px 16px;
+    font-size: .86rem;
+    line-height: 1.4;
+    box-shadow: 0 8px 18px rgba(227, 6, 19, 0.16);
+}
+
+.recuerdos-site-header--minimal .recuerdos-header-back:hover,
+.recuerdos-site-header--minimal .recuerdos-header-back:focus-visible {
+    color: #fff;
+}
+
+.recuerdos-site-header--minimal .recuerdos-header-back:focus-visible {
+    outline: 3px solid rgba(29, 66, 138, .24);
+    outline-offset: 3px;
+}
+
+.mem-create main.mem-shell {
+    padding-top: 112px;
+}
+
+@media (max-width: 640px) {
+    .recuerdos-site-header--minimal .header-container {
+        gap: 10px;
+        padding-inline: 14px;
+    }
+
+    .recuerdos-site-header--minimal .logo {
+        gap: 9px;
+    }
+
+    .recuerdos-site-header--minimal .logo img {
+        height: 44px;
+    }
+
+    .recuerdos-site-header--minimal .logo-text {
+        font-size: 1.05rem;
+    }
+
+    .recuerdos-site-header--minimal .logo-text span {
+        font-size: .64rem;
+        letter-spacing: 0;
+    }
+
+    .recuerdos-site-header--minimal .recuerdos-header-back {
+        min-width: 40px;
+        min-height: 40px;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .recuerdos-site-header--minimal .recuerdos-header-back span {
+        display: none;
+    }
+
+    .mem-create main.mem-shell {
+        padding-top: 98px;
+    }
+}

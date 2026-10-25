@@ -1874,3 +1874,33 @@ body.baile-modal-abierto {
 .footer-bottom .footer-legal-link:hover {
     color: #fff;
 }
+
+
+/* Novedad de Memorias: solo portada.
+   Desktop a la derecha para no tapar los otros anuncios de la izquierda. */
+.ipet-popup.ipet-popup--memorias {
+  left: auto;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1195;
+  border-top: 3px solid var(--primary);
+  box-shadow: 0 12px 30px rgba(17, 24, 39, .16);
+}
+
+.ipet-popup--memorias .ipet-popup__title { padding-right: 22px; }
+
+@media (max-width: 768px) {
+  /* En móvil la novedad va debajo del header, sin superponerse
+     a Tu voz suma o al aviso de Mesas, que se ubican abajo. */
+  .ipet-popup.ipet-popup--memorias {
+    left: 12px;
+    right: 12px;
+    top: 92px;
+    bottom: auto;
+    width: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ipet-popup.ipet-popup--memorias { transition: none; }
+}

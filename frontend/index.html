@@ -83,6 +83,21 @@
     </aside>
 
     
+    <!-- Novedad de Memorias: solo se muestra en la portada. -->
+    <aside class="ipet-popup ipet-popup--memorias" id="ipetMemoriasPopup" role="region" aria-label="Novedad: memorias y recuerdos">
+        <button type="button" class="ipet-popup__close" id="ipetMemoriasPopupClose" aria-label="Cerrar aviso de memorias">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <h3 class="ipet-popup__title">¡Nueva sección de memorias!</h3>
+        <p class="ipet-popup__text">
+            Reviví momentos de la escuela, recorré los <strong>recuerdos de nuestra comunidad</strong> y compartí el tuyo.
+        </p>
+        <a class="ipet-popup__cta" href="src/components/Galeria/Galeria.html">
+            <i class="fa-regular fa-images" aria-hidden="true"></i>
+            Ver memorias y recuerdos
+        </a>
+    </aside>
+
     <aside class="ipet-popup-mesas" id="ipetPopupMesas" role="dialog" aria-live="polite" aria-label="Inscripción a mesas de examen" style="display:none">
         <button class="ipet-popup-mesas__close" id="ipetPopupMesasClose" aria-label="Cerrar aviso">
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -499,6 +514,7 @@
     <script src="src/api/client.js"></script>
     <script src="src/components/Inicio/scripts/slider.js"></script>
     <script src="src/components/Inicio/Recuerdos/scripts/recuerdos_inicio.js" defer></script>
+    <script src="src/components/Inicio/Recuerdos/scripts/popup_memorias.js" defer></script>
     <script src="src/components/UI/scripts/boton_arriba.js"></script>
     <script src="src/components/Global/Navbar/scripts/menu_web.js"></script>
     <script src="src/components/Especialidades/scripts/electronica.js"></script>

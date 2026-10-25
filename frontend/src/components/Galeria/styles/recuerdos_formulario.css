@@ -270,3 +270,35 @@
     .mem-create .mem-panel .mem-check,
     .mem-create .mem-panel .mem-check input[type=checkbox] { transition: none; }
 }
+
+
+/* Ajustes visuales del hero del formulario: solo escudo principal a la izquierda. */
+.mem-create .mem-intro {
+    grid-template-columns: minmax(260px, .82fr) minmax(0, 1.18fr);
+    gap: 34px;
+}
+
+.mem-create .mem-brand {
+    align-items: center;
+    gap: 18px;
+}
+
+.mem-create .mem-crest {
+    width: 68px;
+    height: 82px;
+}
+
+.mem-create .mem-brand-name strong {
+    display: block;
+}
+
+@media (max-width: 760px) {
+    .mem-create .mem-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .mem-create .mem-brand {
+        justify-content: flex-start;
+    }
+}

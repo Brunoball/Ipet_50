@@ -1,0 +1,24 @@
+/* Animación de entrada compartida con la portada.
+   Reutiliza el @keyframes fadeInUp de web_styles.css (20px + opacidad).
+   Solo afecta los contenedores marcados en Galería, Formulario y Aviso legal. */
+.ipet-entrada-sutil {
+    animation: fadeInUp 1s ease both;
+}
+
+.ipet-entrada-sutil--segundo {
+    animation-duration: 1.2s;
+    animation-delay: .09s;
+}
+
+.ipet-entrada-sutil--tercero {
+    animation-duration: 1.2s;
+    animation-delay: .17s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ipet-entrada-sutil,
+    .ipet-entrada-sutil--segundo,
+    .ipet-entrada-sutil--tercero {
+        animation: none;
+    }
+}
