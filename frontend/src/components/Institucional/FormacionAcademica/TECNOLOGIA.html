@@ -15,9 +15,10 @@
     rel="stylesheet"
   />
   <link href="../../../../public/fontawesome/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../src/components/Global/Navbar/styles_menu_responsive.css">
 </head>
 
-<body>
+<body class="ipet-subnav">
   <header>
     <div class="container header-container">
       <div class="logo">
@@ -27,10 +28,10 @@
           <span>Ing. Emilio F. Olmos</span>
         </div>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-      <nav class="nav-menu" id="navMenu">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu"><span class="hamburger"></span></button>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-drawer-heading" aria-hidden="true">Explorá el sitio</div>
         <ul>
           <li><a href="../../../../index.html" class="nav-link">Inicio</a></li>
           <li><a href="../../../../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>

@@ -1,128 +1,165 @@
-// scripts/menu_web.js
+// Menú principal: apertura discreta, accesible y sin recorte circular.
 'use strict';
 
-/* ============================
-   MENÚ RESPONSIVE / SUBMENÚ
-============================ */
 document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.getElementById('navToggle');
-  const navMenu   = document.getElementById('navMenu');
-  const moreBtn   = document.getElementById('moreBtn');
-  const subMenu   = document.getElementById('subMenu');
-  const navLinks  = document.querySelectorAll('.nav-link');
+  // Portada: menú lateral autónomo; las páginas internas conservan su navegación.
+  if (document.body.classList.contains('ipet-inicio')) {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    const backdrop = document.getElementById('navBackdrop');
+    const more = document.getElementById('moreBtn');
+    const submenu = document.getElementById('subMenu');
+    const header = toggle?.closest('header');
+    if (!toggle || !menu) return;
 
-  // Toggle del menú hamburguesa
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      if (navMenu) navMenu.classList.toggle('open');
+    const small = window.matchMedia('(max-width: 930px)');
+    let open = false;
 
-      // Cerrar submenú si está abierto
-      if (subMenu && subMenu.classList.contains('open')) {
-        if (moreBtn) moreBtn.classList.remove('open');
-        subMenu.classList.remove('open');
+    const syncHeaderHeight = () => {
+      if (header) document.documentElement.style.setProperty('--ipet-header-height', `${Math.round(header.getBoundingClientRect().height)}px`);
+    };
+
+    const changeSubmenu = (expand) => {
+      if (!submenu || !more) return;
+      const value = Boolean(expand && small.matches && open);
+      if (value) submenu.style.setProperty('--ipet-submenu-height', `${submenu.scrollHeight}px`);
+      submenu.classList.toggle('open', value);
+      more.classList.toggle('open', value);
+      more.setAttribute('aria-expanded', String(value));
+    };
+
+    const changeMenu = (expand, returnFocus = false) => {
+      open = Boolean(expand && small.matches);
+      if (!open) changeSubmenu(false);
+      menu.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      backdrop?.classList.toggle('open', open);
+      document.body.classList.toggle('nav-mobile-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      menu.inert = small.matches && !open;
+      menu.setAttribute('aria-hidden', String(small.matches && !open));
+      if (returnFocus && !open) toggle.focus();
+    };
+
+    const updateResponsive = () => {
+      syncHeaderHeight();
+      if (!small.matches) changeMenu(false);
+      else {
+        menu.inert = !open;
+        menu.setAttribute('aria-hidden', String(!open));
+        if (submenu?.classList.contains('open')) submenu.style.setProperty('--ipet-submenu-height', `${submenu.scrollHeight}px`);
       }
+    };
+
+    toggle.setAttribute('aria-controls', 'navMenu');
+    toggle.addEventListener('click', () => changeMenu(!open));
+    more?.addEventListener('click', event => {
+      if (!small.matches) return;
+      event.preventDefault();
+      changeSubmenu(!submenu?.classList.contains('open'));
     });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      if (small.matches) changeMenu(false);
+    }));
+    backdrop?.addEventListener('click', () => changeMenu(false));
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !open) return;
+      event.preventDefault();
+      changeMenu(false, true);
+    });
+
+    window.addEventListener('resize', updateResponsive, { passive: true });
+    small.addEventListener('change', updateResponsive);
+    if (header && 'ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(header);
+    updateResponsive();
+    return;
   }
 
-  // Toggle del submenu (solo <= 930px)
-  if (moreBtn) {
-    moreBtn.addEventListener('click', (e) => {
-      if (window.innerWidth <= 930) {
-        e.preventDefault();
-        e.stopPropagation();
-        moreBtn.classList.toggle('open');
-        if (subMenu) subMenu.classList.toggle('open');
+  // El mismo panel lateral de la portada, adaptado a todos los headers internos.
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  if (!toggle || !menu) return;
+
+  const backdrop = document.getElementById('navBackdrop');
+  const more = document.getElementById('moreBtn');
+  const submenu = document.getElementById('subMenu');
+  // En Especialidades el header contiene el hero; medimos solo la barra fija.
+  const menuBar = toggle.closest('.menu-container-header') || toggle.closest('header');
+  const mobile = window.matchMedia('(max-width: 996px)');
+  let isOpen = false;
+
+  const measureMenuTop = () => {
+    if (!menuBar) return;
+    const bottom = Math.max(0, Math.round(menuBar.getBoundingClientRect().bottom));
+    document.documentElement.style.setProperty('--ipet-shared-menu-top', `${bottom}px`);
+  };
+
+  const setSubmenu = (expand) => {
+    if (!submenu || !more) return;
+    const show = Boolean(expand && isOpen && mobile.matches);
+    if (show) submenu.style.setProperty('--ipet-submenu-height', `${submenu.scrollHeight}px`);
+    submenu.classList.toggle('open', show);
+    more.classList.toggle('open', show);
+    more.setAttribute('aria-expanded', String(show));
+  };
+
+  const setMenu = (expand, restoreFocus = false) => {
+    isOpen = Boolean(expand && mobile.matches);
+    if (!isOpen) setSubmenu(false);
+    if (isOpen) measureMenuTop();
+    menu.classList.toggle('open', isOpen);
+    toggle.classList.toggle('open', isOpen);
+    backdrop?.classList.toggle('open', isOpen);
+    document.body.classList.toggle('nav-mobile-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    menu.inert = mobile.matches && !isOpen;
+    menu.setAttribute('aria-hidden', String(mobile.matches && !isOpen));
+    if (!isOpen) menu.scrollTop = 0;
+    if (restoreFocus && !isOpen) toggle.focus();
+  };
+
+  const syncResponsive = () => {
+    measureMenuTop();
+    if (!mobile.matches) setMenu(false);
+    else {
+      menu.inert = !isOpen;
+      menu.setAttribute('aria-hidden', String(!isOpen));
+      if (submenu?.classList.contains('open')) {
+        submenu.style.setProperty('--ipet-submenu-height', `${submenu.scrollHeight}px`);
       }
-    });
-  }
-
-  // Cerrar menú al hacer clic en cualquier enlace (modo móvil)
-  if (navLinks && navLinks.length) {
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 930) {
-          if (navToggle) navToggle.classList.remove('open');
-          if (navMenu)   navMenu.classList.remove('open');
-          if (moreBtn)   moreBtn.classList.remove('open');
-          if (subMenu)   subMenu.classList.remove('open');
-        }
-      });
-    });
-  }
-
-  // Cerrar el menú al hacer clic fuera (solo móvil)
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth > 930) return;
-
-    const clickEnMenu   = navMenu   && navMenu.contains(e.target);
-    const clickEnToggle = navToggle && navToggle.contains(e.target);
-    const isClickInside = !!(clickEnMenu || clickEnToggle);
-
-    if (!isClickInside && navMenu && navMenu.classList.contains('open')) {
-      if (navToggle) navToggle.classList.remove('open');
-      navMenu.classList.remove('open');
-      if (moreBtn) moreBtn.classList.remove('open');
-      if (subMenu) subMenu.classList.remove('open');
     }
-  });
+  };
 
-  // Resetear menú al agrandar ventana
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 930) {
-      if (navToggle) navToggle.classList.remove('open');
-      if (navMenu)   navMenu.classList.remove('open');
-      if (moreBtn)   moreBtn.classList.remove('open');
-      if (subMenu)   subMenu.classList.remove('open');
-    }
+  toggle.setAttribute('aria-controls', 'navMenu');
+  toggle.setAttribute('aria-expanded', 'false');
+  more?.setAttribute('aria-controls', 'subMenu');
+  more?.setAttribute('aria-expanded', 'false');
+  toggle.addEventListener('click', () => setMenu(!isOpen));
+  more?.addEventListener('click', event => {
+    if (!mobile.matches) return;
+    event.preventDefault();
+    setSubmenu(!submenu?.classList.contains('open'));
   });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    if (mobile.matches) setMenu(false);
+  }));
+  backdrop?.addEventListener('click', () => setMenu(false));
+  document.addEventListener('pointerdown', event => {
+    if (!isOpen || !mobile.matches) return;
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) setMenu(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !isOpen) return;
+    event.preventDefault();
+    setMenu(false, true);
+  });
+  window.addEventListener('resize', syncResponsive, { passive: true });
+  mobile.addEventListener('change', syncResponsive);
+  if (menuBar && 'ResizeObserver' in window) new ResizeObserver(syncResponsive).observe(menuBar);
+  syncResponsive();
 });
-
-
-/* ============================
-   POPUP (bloqueo 24h)
-   - Dejar UNA sola lógica
-============================ */
-document.addEventListener('DOMContentLoaded', () => {
-  const popup    = document.getElementById('ipetPopup');
-  const btnClose = document.getElementById('ipetPopupClose');
-  if (!popup) return; // si no existe el popup en esta página, salgo
-
-  const KEY = 'ipet50_popup_testimonios_closed_until'; // timestamp límite
-  const HOURS_TO_HIDE = 24;
-
-  const now = Date.now();
-  const stored = Number(localStorage.getItem(KEY) || 0);
-  const isBlocked = stored && now < stored;
-
-  // Mostrar sólo si NO está bloqueado
-  if (!isBlocked) {
-    setTimeout(() => popup.classList.add('ipet-popup--visible'), 500);
-  }
-
-  // Cerrar y bloquear por X horas
-  if (btnClose) {
-    btnClose.addEventListener('click', () => {
-      popup.classList.remove('ipet-popup--visible');
-      popup.classList.add('ipet-popup--hide');
-
-      const until = now + HOURS_TO_HIDE * 60 * 60 * 1000;
-      localStorage.setItem(KEY, String(until));
-
-      setTimeout(() => {
-        if (popup && popup.parentNode) popup.parentNode.removeChild(popup);
-      }, 220);
-    });
-  }
-
-  // Accesibilidad: cerrar con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.classList.contains('ipet-popup--visible')) {
-      if (btnClose) btnClose.click();
-    }
-  });
-});
-
 
 /* ============================
    CARRUSEL DE TESTIMONIOS

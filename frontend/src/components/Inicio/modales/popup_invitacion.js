@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.classList.remove('baile-overlay--visible');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('baile-modal-abierto');
+    document.dispatchEvent(new CustomEvent('ipet:baile-cerrado'));
   };
 
   // Mostrar al entrar a la página principal
@@ -49,29 +50,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // =====================================================
-// POPUP TESTIMONIOS
+// POPUP «TU VOZ SUMA» — un solo controlador, pausa de 24 horas
 // =====================================================
 document.addEventListener('DOMContentLoaded', () => {
-  const popup   = document.getElementById('ipetPopup');
+  const popup = document.getElementById('ipetPopup');
   const closeBt = document.getElementById('ipetPopupClose');
-  if (!popup) return;
+  if (!popup || !closeBt) return;
 
-  popup.hidden = false;
-  popup.classList.remove('ipet-popup--hide');
+  const key = 'ipet50_popup_testimonios_closed_until';
+  let hiddenUntil = 0;
+  try { hiddenUntil = Number(localStorage.getItem(key) || 0); }
+  catch (_) { /* El popup también funciona sin almacenamiento local. */ }
 
-  setTimeout(() => popup.classList.add('ipet-popup--visible'), 30);
+  if (Date.now() < hiddenUntil) {
+    popup.remove();
+    return;
+  }
 
+  let closed = false;
+  let hideTimer;
   const closePopup = () => {
+    if (closed) return;
+    closed = true;
+    clearTimeout(hideTimer);
+    if (popup.contains(document.activeElement)) document.activeElement.blur();
     popup.classList.remove('ipet-popup--visible');
     popup.classList.add('ipet-popup--hide');
-    setTimeout(() => popup.remove(), 220);
+    try { localStorage.setItem(key, String(Date.now() + 24 * 60 * 60 * 1000)); }
+    catch (_) { /* El cierre no depende de localStorage. */ }
+    window.setTimeout(() => popup.remove(), 250);
   };
 
-  if (closeBt) closeBt.addEventListener('click', closePopup);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.isConnected) closePopup();
+  closeBt.addEventListener('click', closePopup);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && popup.classList.contains('ipet-popup--visible')) closePopup();
   });
+  hideTimer = window.setTimeout(() => {
+    if (!closed && popup.isConnected) popup.classList.add('ipet-popup--visible');
+  }, 500);
 });
 
 

@@ -1,50 +1,50 @@
-/* Aviso de la nueva sección de Memorias. Exclusivo de index.html. */
+/* Memorias: visible en cada nueva visita a la portada.
+   Si está abierta la invitación principal, se presenta después de cerrarla. */
 (() => {
   'use strict';
 
-  const showPopup = () => {
+  function init() {
     const popup = document.getElementById('ipetMemoriasPopup');
     const close = document.getElementById('ipetMemoriasPopupClose');
     if (!popup || !close) return;
 
-    const key = 'ipet50_popup_memorias_index_closed_until';
-    const hoursToHide = 24;
-    let closedUntil = 0;
-    try {
-      closedUntil = Number(window.localStorage.getItem(key) || 0);
-    } catch (_) { /* Navegación sin almacenamiento local: funciona igualmente. */ }
+    let dismissed = false;
+    let opened = false;
+    let showTimer;
 
-    if (Date.now() < closedUntil) {
-      popup.remove();
-      return;
+    const invitationIsOpen = () => document.getElementById('baileOverlay')?.classList.contains('baile-overlay--visible') === true;
+
+    function show() {
+      if (dismissed || opened || invitationIsOpen()) return;
+      opened = true;
+      popup.classList.remove('ipet-popup--hide');
+      popup.classList.add('ipet-popup--visible');
     }
 
-    let closed = false;
-    const hide = () => {
-      if (closed) return;
-      closed = true;
+    function dismiss() {
+      if (dismissed) return;
+      dismissed = true;
+      clearTimeout(showTimer);
       popup.classList.remove('ipet-popup--visible');
       popup.classList.add('ipet-popup--hide');
-      try {
-        window.localStorage.setItem(key, String(Date.now() + hoursToHide * 60 * 60 * 1000));
-      } catch (_) { /* No bloquear el cierre si storage está deshabilitado. */ }
-      if (popup.contains(document.activeElement)) close.blur();
-      window.setTimeout(() => popup.remove(), 250);
-    };
+      if (popup.contains(document.activeElement)) document.activeElement.blur();
+      window.setTimeout(() => popup.remove(), 260);
+    }
 
-    close.addEventListener('click', hide);
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && popup.classList.contains('ipet-popup--visible')) hide();
+    close.addEventListener('click', dismiss);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && popup.classList.contains('ipet-popup--visible')) dismiss();
     });
 
-    window.setTimeout(() => {
-      if (!closed && popup.isConnected) popup.classList.add('ipet-popup--visible');
-    }, 500);
-  };
+    // No guardamos una pausa de 24 horas: la novedad se puede ver siempre al volver.
+    // El evento lo envía el cierre del modal de invitación, que está por encima de los avisos.
+    document.addEventListener('ipet:baile-cerrado', () => window.setTimeout(show, 180));
+    showTimer = window.setTimeout(show, 750);
+  }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', showPopup, { once: true });
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
-    showPopup();
+    init();
   }
 })();

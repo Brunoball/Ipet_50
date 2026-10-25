@@ -14,9 +14,10 @@
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../../src/components/Global/Navbar/styles_menu_responsive.css">
 </head>
 
-<body>
+<body class="ipet-subnav">
    <header>
     <div class="container header-container">
         <div class="logo">
@@ -27,11 +28,11 @@
             </div>
         </div>
         
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <span class="hamburger"></span>
-        </button>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu"><span class="hamburger"></span></button>
         
-        <nav class="nav-menu" id="navMenu">
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-drawer-heading" aria-hidden="true">Explorá el sitio</div>
             <ul>
                 <li><a href="../../../index.html" class="nav-link">inicio</a></li>
                 <li><a href="../../../index.html" onclick="localStorage.setItem('seccionScroll', '#especialidades')" class="nav-link">Formación Técnica</a></li>

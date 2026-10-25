@@ -1,0 +1,196 @@
+/* Menú responsive unificado para las páginas internas del IPET 50.
+   Reutiliza el aspecto del inicio sin modificar los menús de escritorio ni
+   las páginas que deliberadamente muestran solamente «Volver». */
+/* Los sitios de especialidad usaban <button class="hamburger"> y no tenían
+   un estilo base para nav-toggle: ocultarlo expresamente en desktop. */
+body.ipet-subnav .nav-toggle,
+body.ipet-subnav .nav-backdrop,
+body.ipet-subnav .nav-drawer-heading { display: none; }
+
+@media (max-width: 996px) {
+  body.ipet-subnav .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background: #e30613;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1102;
+    transition: background-color .18s ease;
+  }
+  body.ipet-subnav .nav-toggle:hover { background-color: #920000; }
+  body.ipet-subnav .nav-toggle:focus-visible,
+  body.ipet-subnav .nav-menu a:focus-visible {
+    outline: 2px solid #1d428a;
+    outline-offset: 2px;
+  }
+  body.ipet-subnav .nav-toggle .hamburger,
+  body.ipet-subnav .nav-toggle .hamburger::before,
+  body.ipet-subnav .nav-toggle .hamburger::after {
+    position: absolute;
+    display: block;
+    width: 21px;
+    height: 2px;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 1;
+    box-shadow: none;
+    transition: transform .25s ease, opacity .15s ease;
+  }
+  body.ipet-subnav .nav-toggle .hamburger::before,
+  body.ipet-subnav .nav-toggle .hamburger::after {
+    content: '';
+    left: 0;
+  }
+  body.ipet-subnav .nav-toggle .hamburger::before { transform: translateY(-6px); }
+  body.ipet-subnav .nav-toggle .hamburger::after { transform: translateY(6px); }
+  body.ipet-subnav .nav-toggle.open .hamburger { background: transparent; }
+  body.ipet-subnav .nav-toggle.open .hamburger::before {
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  body.ipet-subnav .nav-toggle.open .hamburger::after {
+    background: #fff;
+    transform: rotate(-45deg);
+  }
+
+  body.ipet-subnav .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: var(--ipet-shared-menu-top, 80px) 0 0;
+    z-index: 1098;
+    background: rgba(16, 24, 32, .38);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s ease, visibility 0s linear .3s;
+  }
+  body.ipet-subnav .nav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity .3s ease, visibility 0s;
+  }
+  body.ipet-subnav .nav-menu,
+  body.ipet-subnav .nav-menu.open {
+    position: fixed;
+    display: block;
+    top: var(--ipet-shared-menu-top, 80px);
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: min(360px, 88vw);
+    height: auto;
+    max-height: calc(100vh - var(--ipet-shared-menu-top, 80px) - 12px);
+    max-height: calc(100dvh - var(--ipet-shared-menu-top, 80px) - 12px);
+    margin: 0;
+    padding: 0 0 12px;
+    border: 0;
+    border-top: 3px solid #e30613;
+    border-radius: 0 0 0 12px;
+    background: #fff !important; /* Neutraliza el azul forzado en Formación Académica. */
+    color: #2d2926;
+    box-shadow: -12px 4px 36px rgba(12, 22, 34, .16);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    clip-path: none;
+    -webkit-clip-path: none;
+    opacity: 1;
+    z-index: 1099;
+    transform: translate3d(102%, 0, 0);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .36s cubic-bezier(.25,.80,.25,1), visibility 0s linear .36s;
+  }
+  body.ipet-subnav .nav-menu.open {
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition: transform .36s cubic-bezier(.25,.80,.25,1), visibility 0s;
+  }
+  body.ipet-subnav.nav-mobile-open { overflow: hidden; }
+
+  body.ipet-subnav .nav-drawer-heading {
+    display: block;
+    margin: 0;
+    padding: 24px 24px 16px;
+    color: #920000;
+    font: 700 .78rem/1.45 'Open Sans', sans-serif;
+    letter-spacing: .095em;
+    text-transform: uppercase;
+  }
+  body.ipet-subnav .nav-menu > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 12px;
+    list-style: none;
+  }
+  body.ipet-subnav .nav-menu > ul > li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #f0eeee;
+    list-style: none;
+  }
+  body.ipet-subnav .nav-menu > ul > li:first-child { border-top: 0; }
+  body.ipet-subnav .nav-menu > ul > li > a,
+  body.ipet-subnav .nav-menu > ul > li > button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 51px;
+    margin: 0;
+    padding: 12px 13px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #383332 !important; /* También vence #menu a en Especialidades. */
+    font: 600 .91rem/1.5 'Open Sans', sans-serif;
+    text-align: left;
+    text-decoration: none;
+    box-shadow: none;
+    transform: none;
+    transition: background-color .17s ease, color .17s ease;
+  }
+  body.ipet-subnav .nav-menu > ul > li > a:hover,
+  body.ipet-subnav .nav-menu > ul > li > a:focus-visible,
+  body.ipet-subnav .nav-menu > ul > li > button:hover,
+  body.ipet-subnav .nav-menu > ul > li > button:focus-visible {
+    background: rgba(227, 6, 19, .055);
+    color: #920000 !important;
+  }
+}
+@media (min-width: 997px) {
+  body.ipet-subnav .nav-backdrop,
+  body.ipet-subnav .nav-drawer-heading { display: none; }
+  body.ipet-subnav .nav-menu { visibility: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.ipet-subnav .nav-menu,
+  body.ipet-subnav .nav-backdrop,
+  body.ipet-subnav .nav-toggle .hamburger,
+  body.ipet-subnav .nav-toggle .hamburger::before,
+  body.ipet-subnav .nav-toggle .hamburger::after { transition: none !important; }
+}

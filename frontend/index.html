@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="src/components/Inicio/Recuerdos/styles/Recuerdos.css">
     <link rel="shortcut icon" href="public/img/efologo.png" type="image/x-icon">
 </head>
-<body>
+<body class="ipet-inicio">
 
     <!-- Header -->
     <header>
@@ -31,11 +31,13 @@
                 </div>
             </div>
             
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
                 <span class="hamburger"></span>
             </button>
             
-            <nav class="nav-menu" id="navMenu">
+            <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+            <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+                <div class="nav-drawer-heading" aria-hidden="true">Explorá el sitio</div>
                 <ul>
                     <li><a href="#especialidades" class="nav-link">Formación Técnica</a></li>
                     <li><a href="#academica" class="nav-link">Formación Académica</a></li>
@@ -43,7 +45,7 @@
                     <li><a href="#recuerdos" class="nav-link">Recuerdos</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                     <li class="dropdown-container">
-                        <button class="dropdown-btn" id="moreBtn">
+                        <button type="button" class="dropdown-btn" id="moreBtn" aria-expanded="false" aria-controls="subMenu">
                             Más <i class="fas fa-chevron-down dropdown-icon"></i>
                         </button>
                         <ul class="submenu" id="subMenu">
@@ -68,7 +70,7 @@
 
     <aside class="ipet-popup" id="ipetPopup" role="dialog" aria-live="polite" aria-label="Convocatoria de testimonios">
         <button class="ipet-popup__close" id="ipetPopupClose" aria-label="Cerrar aviso">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span aria-hidden="true">&times;</span>
         </button>
 
         <h3 class="ipet-popup__title">¡Tu voz suma!</h3>
@@ -83,18 +85,18 @@
     </aside>
 
     
-    <!-- Novedad de Memorias: solo se muestra en la portada. -->
-    <aside class="ipet-popup ipet-popup--memorias" id="ipetMemoriasPopup" role="region" aria-label="Novedad: memorias y recuerdos">
+    <!-- Novedad de Memorias: solo portada, diseño compartido con «Tu voz suma». -->
+    <aside class="ipet-popup ipet-popup--memorias" id="ipetMemoriasPopup" role="region" aria-live="polite" aria-label="Novedad: memorias y recuerdos">
         <button type="button" class="ipet-popup__close" id="ipetMemoriasPopupClose" aria-label="Cerrar aviso de memorias">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span aria-hidden="true">&times;</span>
         </button>
-        <h3 class="ipet-popup__title">¡Nueva sección de memorias!</h3>
+        <h3 class="ipet-popup__title">¡Tus recuerdos también cuentan!</h3>
         <p class="ipet-popup__text">
-            Reviví momentos de la escuela, recorré los <strong>recuerdos de nuestra comunidad</strong> y compartí el tuyo.
+            Estrenamos <strong>Memorias y recuerdos</strong>, un espacio para compartir historias y momentos de nuestra escuela.
         </p>
-        <a class="ipet-popup__cta" href="src/components/Galeria/Galeria.html">
+        <a class="ipet-popup__cta" href="src/components/Galeria/AgregarRecuerdo.html">
             <i class="fa-regular fa-images" aria-hidden="true"></i>
-            Ver memorias y recuerdos
+            Agregá tu recuerdo
         </a>
     </aside>
 
