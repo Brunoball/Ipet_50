@@ -1876,28 +1876,59 @@ body.baile-modal-abierto {
 }
 
 
-/* Memorias comparte componentes de Tu voz suma; ventana visible tras la invitación. */
+/* Apilado de avisos: «Tu voz suma» abajo, «Memorias» inmediatamente arriba.
+   El desplazamiento se ajusta a la altura real del aviso inferior. */
 .ipet-popup.ipet-popup--memorias {
-  left: auto;
-  right: 16px;
-  bottom: 16px;
-  z-index: 1195;
+  left: 16px;
+  right: auto;
+  bottom: calc(16px + var(--ipet-memorias-offset, 0px));
+  z-index: 1205;
 }
 
 .ipet-popup--memorias .ipet-popup__title { padding-right: 22px; }
 
 @media (max-width: 768px) {
-  /* En móvil la novedad va debajo del header, sin superponerse
-     a Tu voz suma o al aviso de Mesas, que se ubican abajo. */
   .ipet-popup.ipet-popup--memorias {
     left: 12px;
     right: 12px;
-    top: 92px;
-    bottom: auto;
+    top: auto;
+    bottom: calc(12px + var(--ipet-memorias-offset, 0px));
     width: auto;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ipet-popup.ipet-popup--memorias { transition: none; }
+}
+
+
+/* Avisos informativos en celulares: arriba del contenido, debajo del encabezado.
+   Se apilan hacia abajo (Testimonios -> Memorias -> Mesas), dejando libres los
+   controles y botones del borde inferior. En escritorio no se altera su posición. */
+@media (max-width: 768px) {
+  .ipet-popup,
+  .ipet-popup-mesas {
+    top: calc(var(--ipet-header-height, 80px) + 10px);
+    bottom: auto;
+    max-height: calc(100dvh - var(--ipet-header-height, 80px) - 20px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translateY(-10px);
+    transition: transform .22s ease, opacity .22s ease, box-shadow .22s ease, top .22s ease;
+  }
+
+  .ipet-popup.ipet-popup--memorias {
+    top: calc(var(--ipet-header-height, 80px) + 10px + var(--ipet-memorias-offset, 0px));
+    bottom: auto;
+  }
+
+  .ipet-popup-mesas {
+    top: calc(var(--ipet-header-height, 80px) + 10px + var(--stack-offset, 0px));
+    bottom: auto;
+  }
+
+  .ipet-popup.ipet-popup--hide,
+  .ipet-popup-mesas.ipet-popup-mesas--hide {
+    transform: translateY(-10px);
+  }
 }

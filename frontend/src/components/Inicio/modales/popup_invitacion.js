@@ -99,17 +99,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const mesas = document.getElementById('ipetPopupMesas');
   const close = document.getElementById('ipetPopupMesasClose');
   const testimonios = document.getElementById('ipetPopup');
+  const memorias = document.getElementById('ipetMemoriasPopup');
   const testimoniosClose = document.getElementById('ipetPopupClose');
   if (!mesas) return;
 
   let closingTimer = null;
+  // Orden fijo de los avisos: Testimonios -> Memorias -> Mesas.
+  // Usamos alturas reales: funciona aunque cambien el texto o el ancho de pantalla.
+  const popupHeight = (element, visibleClass) =>
+    element && element.isConnected && element.classList.contains(visibleClass) &&
+    !element.classList.contains('ipet-popup--hide') &&
+    !element.classList.contains('ipet-popup-mesas--hide')
+      ? element.offsetHeight || 0 : 0;
+
   const updateStack = () => {
-    const visible = testimonios &&
-      testimonios.classList.contains('ipet-popup--visible') &&
-      !testimonios.classList.contains('ipet-popup--hide');
-    const alto = visible ? (testimonios.offsetHeight || 0) : 0;
-    mesas.style.setProperty('--stack-offset', visible
-      ? `calc(${alto}px + var(--ipet-stack-gap, 12px))` : '0px');
+    const gap = 12;
+    const testimoniosHeight = popupHeight(testimonios, 'ipet-popup--visible');
+    const memoriasHeight = popupHeight(memorias, 'ipet-popup--visible');
+    if (memorias) {
+      memorias.style.setProperty('--ipet-memorias-offset',
+        testimoniosHeight ? `${testimoniosHeight + gap}px` : '0px');
+    }
+    const lowerStackHeight =
+      (testimoniosHeight ? testimoniosHeight + gap : 0) +
+      (memoriasHeight ? memoriasHeight + gap : 0);
+    mesas.style.setProperty('--stack-offset', `${lowerStackHeight}px`);
   };
 
   function hide(immediate = false) {
@@ -147,11 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
     hide();
   });
   testimoniosClose?.addEventListener('click', () => setTimeout(updateStack, 260));
-  if (testimonios && 'MutationObserver' in window) {
-    new MutationObserver(updateStack).observe(testimonios, {
-      attributes: true, attributeFilter: ['class']
-    });
+  if ('MutationObserver' in window) {
+    const visibilityObserver = new MutationObserver(updateStack);
+    [testimonios, memorias].filter(Boolean).forEach(element =>
+      visibilityObserver.observe(element, { attributes: true, attributeFilter: ['class'] })
+    );
+  }
+  if ('ResizeObserver' in window) {
+    const heightsObserver = new ResizeObserver(updateStack);
+    [testimonios, memorias].filter(Boolean).forEach(element => heightsObserver.observe(element));
   }
   window.addEventListener('resize', updateStack);
   hide(true); // El popup permanece oculto hasta que la API informe 'visible': true.
+  updateStack();
 })();

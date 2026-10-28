@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="src/styles/web_styles.css">
     <link rel="stylesheet" href="src/components/Inicio/Recuerdos/styles/Recuerdos.css">
+    <link rel="stylesheet" href="src/components/Inicio/BotWhatsApp/styles/bot_promocion.css">
     <link rel="shortcut icon" href="public/img/efologo.png" type="image/x-icon">
 </head>
 <body class="ipet-inicio">
@@ -186,7 +187,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Specialties Section -->
     <section class="specialties" id="especialidades">
         <div class="container">
@@ -507,6 +508,70 @@
         </div>
     </footer>
 
+    <!-- Lanzador persistente: abre una presentación interactiva, NO WhatsApp directamente. -->
+    <button type="button" class="ipet-bot-launcher" data-ipet-bot-open aria-haspopup="dialog" aria-controls="ipetBotOverlay" aria-label="Conocé el bot de WhatsApp de la Cooperadora">
+        <span class="ipet-bot-launcher__symbol" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+        <span class="ipet-bot-launcher__copy"><strong>Conocé nuestro bot</strong><small>Cooperadora IPET 50</small></span>
+        <i class="fa-solid fa-chevron-right ipet-bot-launcher__arrow" aria-hidden="true"></i>
+    </button>
+
+    <div class="ipet-bot-overlay" id="ipetBotOverlay" hidden>
+        <section class="ipet-bot-dialog" role="dialog" aria-modal="true" aria-labelledby="ipetBotTitle" aria-describedby="ipetBotDescription">
+            <div class="ipet-bot-dialog__head">
+                <span class="ipet-bot-dialog__brand" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+                <div class="ipet-bot-dialog__headcopy">
+                    <strong>Asistente de la Cooperadora</strong>
+                    <span>Asistente escolar · Video de presentación</span>
+                </div>
+                <button class="ipet-bot-dialog__close" id="ipetBotClose" type="button" aria-label="Cerrar presentación del asistente"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            </div>
+            <div class="ipet-bot-dialog__body">
+                <div class="ipet-bot-dialog__intro">
+                    <span class="ipet-bot-dialog__eyebrow"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Un mensaje, muchas posibilidades</span>
+                    <h2 class="ipet-bot-dialog__title" id="ipetBotTitle">La Cooperadora, a un mensaje de distancia.</h2>
+                    <p class="ipet-bot-dialog__text" id="ipetBotDescription">Conocé el asistente de WhatsApp del IPET 50. Una manera práctica de encontrar las opciones de la Cooperadora sin buscar enlaces ni formularios.</p>
+                    <ul class="ipet-bot-dialog__benefits">
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Ventas escolares</strong> Conocé los pasos para acceder a las ventas disponibles.</span></li>
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Cuotas de Cooperadora</strong> Encontrá las opciones relacionadas con la Cooperadora.</span></li>
+                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span><strong>Menú guiado</strong> Escribí «Hola», elegí una opción y seguí las instrucciones.</span></li>
+                    </ul>
+                    <!-- Configurar número real en bot_promocion.js para habilitar el enlace. -->
+                    <a class="ipet-bot-dialog__cta" id="ipetBotWhatsAppLink" target="_blank" rel="noopener noreferrer" hidden>
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Empezar a usar el bot <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                    <p class="ipet-bot-dialog__unconfigured" id="ipetBotLinkMissing" hidden>El acceso directo al chat estará disponible cuando se configure el número oficial de WhatsApp del bot.</p>
+                    <p class="ipet-bot-dialog__hint">Mirá el video para conocer el funcionamiento del bot, paso a paso.</p>
+                </div>
+                <!-- Video tutorial real del bot, publicado en public/video/tutorial_bot.mp4. -->
+                <div class="ipet-bot-video" aria-label="Presentación del asistente en video">
+                    <div class="ipet-bot-video__head">
+                        <span class="ipet-bot-video__avatar" aria-hidden="true"><i class="fa-solid fa-school"></i></span>
+                        <span><strong>Cooperadora IPET 50</strong><small>Conocé nuestro asistente</small></span>
+                        <i class="fa-brands fa-whatsapp ipet-bot-video__badge" aria-hidden="true"></i>
+                    </div>
+                    <div class="ipet-bot-video__area">
+                        <div class="ipet-bot-video__frame">
+                            <video id="ipetBotVideo" class="ipet-bot-video__player" data-src="public/video/tutorial_bot.mp4" playsinline controls preload="none" aria-label="Video demostrativo del bot con controles de reproducción, volumen, avance y pantalla completa." hidden>
+                                Tu navegador no admite la reproducción de videos HTML5.
+                            </video>
+                            <!-- Controles nativos habilitados y botón central personalizado de reproducir/pausar. -->
+                            <button type="button" class="ipet-bot-video__toggle" id="ipetBotVideoToggle" aria-label="Reproducir el video" hidden>
+                                <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            </button>
+                            <div class="ipet-bot-video__placeholder" id="ipetBotVideoPlaceholder">
+                                <span class="ipet-bot-video__play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                                <strong>Así funciona nuestro bot</strong>
+                                <p>Estamos preparando el video de presentación.</p>
+                                <span class="ipet-bot-video__status"><i class="fa-solid fa-video" aria-hidden="true"></i> Cargando video</span>
+                            </div>
+                        </div>
+                        <p class="ipet-bot-video__caption"><i class="fa-solid fa-circle-play" aria-hidden="true"></i> Todo el recorrido en un solo video.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- Back to top button -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
@@ -517,6 +582,7 @@
     <script src="src/components/Inicio/scripts/slider.js"></script>
     <script src="src/components/Inicio/Recuerdos/scripts/recuerdos_inicio.js" defer></script>
     <script src="src/components/Inicio/Recuerdos/scripts/popup_memorias.js" defer></script>
+    <script src="src/components/Inicio/BotWhatsApp/scripts/bot_promocion.js" defer></script>
     <script src="src/components/UI/scripts/boton_arriba.js"></script>
     <script src="src/components/Global/Navbar/scripts/menu_web.js"></script>
     <script src="src/components/Especialidades/scripts/electronica.js"></script>

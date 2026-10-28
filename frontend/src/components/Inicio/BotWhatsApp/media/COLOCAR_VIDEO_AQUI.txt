@@ -1,0 +1,12 @@
+Video tutorial del bot de WhatsApp (IPET 50)
+
+El video se encuentra integrado en:
+  public/video/tutorial_bot.mp4
+
+La portada index.html utiliza:
+  data-src="public/video/tutorial_bot.mp4"
+
+No hay que colocar nada en esta carpeta media. Se conserva únicamente para compatibilidad con la estructura anterior.
+
+Para reemplazar el tutorial, sustituí public/video/tutorial_bot.mp4 por otro MP4 con el mismo nombre.
+El enlace directo al WhatsApp oficial se configura aparte en bot_promocion.js.

@@ -71,6 +71,16 @@
         display: none;
     }
 
+    /* privacidad.css oculta los iconos de .legal-back en celulares.
+       En el formulario de recuerdos, el botón compacto debe conservar la flecha. */
+    .mem-create .recuerdos-site-header--minimal .recuerdos-header-back i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        line-height: 1;
+    }
+
     .mem-create main.mem-shell {
         padding-top: 98px;
     }

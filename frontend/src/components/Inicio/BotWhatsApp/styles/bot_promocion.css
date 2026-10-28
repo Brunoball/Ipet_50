@@ -1,0 +1,257 @@
+/* Promoción del bot: interfaz inspirada en WhatsApp, aislada de los estilos de la web. */
+.ipet-bot-overlay,
+.ipet-bot-launcher { --bot-green: #075e54; --bot-dark-green: #064c44; --bot-action: #128c7e; --bot-lime: #25d366; --bot-ink: #20372e; }
+
+/* Botón de acceso fijo: muestra la presentación, no abre WhatsApp. */
+.ipet-bot-launcher {
+    position: fixed; right: 22px; bottom: 22px; z-index: 1220;
+    display: inline-flex; align-items: center; gap: 11px; max-width: calc(100vw - 24px);
+    padding: 7px 18px 7px 7px; border: 1px solid #c5e8d1; border-radius: 999px;
+    background: white; box-shadow: 0 10px 30px rgba(10, 56, 40, .2);
+    color: var(--bot-ink); cursor: pointer; text-align: left;
+    transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.ipet-bot-launcher:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(10, 56, 40, .27); }
+.ipet-bot-launcher:focus-visible { outline: 3px solid var(--bot-lime); outline-offset: 3px; }
+.ipet-bot-launcher__symbol {
+    position: relative; display: grid; flex: 0 0 42px; height: 42px; place-items: center;
+    border-radius: 50%; color: white; background: var(--bot-lime); font-size: 23px;
+}
+.ipet-bot-launcher__symbol::after {
+    content: ''; position: absolute; top: 0; right: -1px; width: 10px; height: 10px;
+    border: 2px solid white; border-radius: 50%; background: var(--bot-green);
+}
+.ipet-bot-launcher__copy { display: flex; flex-direction: column; gap: 0; }
+.ipet-bot-launcher__copy strong { color: #174a34; font: 750 12.8px/1.45 'Montserrat', sans-serif; }
+.ipet-bot-launcher__copy small { color: #60806c; font: 500 11px 'Open Sans', sans-serif; }
+.ipet-bot-launcher__arrow { margin-left: 3px; color: var(--bot-action); font-size: 11px; }
+body.nav-mobile-open .ipet-bot-launcher { opacity: 0; pointer-events: none; }
+body.ipet-bot-modal-open .ipet-bot-launcher { visibility: hidden; }
+/* Bot y flecha «Volver arriba» comparten la misma fila, nunca se apilan.
+   Cuando no hay scroll, el bot conserva su posición original a la derecha. */
+body.ipet-inicio .back-to-top {
+    left: auto; right: 22px; bottom: 26px;
+    width: 50px; height: 50px; z-index: 1221;
+}
+body.ipet-inicio.ipet-has-back-to-top .ipet-bot-launcher {
+    right: 84px; /* 22px de margen + 50px de flecha + 12px de separación */
+}
+
+/* Presentación con encabezado al estilo WhatsApp y reproductor de video. */
+.ipet-bot-overlay[hidden] { display: none !important; }
+.ipet-bot-overlay {
+    position: fixed; inset: 0; z-index: 1300;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; background: rgba(6, 36, 30, .67);
+    opacity: 0; transition: opacity .23s ease;
+}
+.ipet-bot-overlay.is-visible { opacity: 1; }
+.ipet-bot-dialog {
+    position: relative; display: flex; flex-direction: column;
+    width: min(880px, 100%); max-height: min(93dvh, 775px); min-height: 0;
+    overflow: hidden; border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 18px; background: #f7faf8;
+    box-shadow: 0 24px 80px rgba(0, 22, 16, .32);
+    transform: translateY(12px) scale(.985); transition: transform .23s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+.ipet-bot-overlay.is-visible .ipet-bot-dialog { transform: translateY(0) scale(1); }
+.ipet-bot-dialog__head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 15px 21px; background: var(--bot-green); color: white;
+}
+.ipet-bot-dialog__brand {
+    display: grid; flex: 0 0 45px; height: 45px; place-items: center;
+    border: 1px solid rgba(255,255,255,.4); border-radius: 50%;
+    background: #fff; color: var(--bot-action); font-size: 26px;
+}
+.ipet-bot-dialog__headcopy { min-width: 0; }
+.ipet-bot-dialog__headcopy strong { display: block; font: 700 14px/1.4 'Montserrat', sans-serif; }
+.ipet-bot-dialog__headcopy span { display: block; color: #c8eee1; font-size: 11.5px; }
+.ipet-bot-dialog__close {
+    display: grid; flex: 0 0 34px; height: 34px; place-items: center;
+    margin-left: auto; border: 1px solid rgba(255,255,255,.23);
+    border-radius: 50%; background: rgba(255,255,255,.11);
+    color: #fff; font-size: 16px; cursor: pointer;
+    transition: background .17s ease;
+}
+.ipet-bot-dialog__close:hover { background: rgba(255,255,255,.24); }
+.ipet-bot-dialog__close:focus-visible { outline: 2px solid #9ee5be; outline-offset: 2px; }
+.ipet-bot-dialog__body {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 355px);
+    gap: 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+}
+.ipet-bot-dialog__intro {
+    display: flex; flex-direction: column; align-self: stretch; min-width: 0;
+    padding: 29px 26px 23px; background: #fff;
+}
+.ipet-bot-dialog__eyebrow {
+    display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
+    margin-bottom: 13px; padding: 5px 10px;
+    border: 1px solid #cbebd8; border-radius: 999px; background: #ecfbf2;
+    color: #12754c; font: 750 10px 'Montserrat', sans-serif;
+}
+.ipet-bot-dialog__eyebrow i { color: var(--bot-lime); }
+.ipet-bot-dialog__title {
+    margin: 0 0 12px; color: #173c2e;
+    font: 750 clamp(21px, 2.3vw, 28px)/1.22 'Montserrat', sans-serif;
+    letter-spacing: -.035em;
+}
+.ipet-bot-dialog__text { margin: 0 0 22px; color: #597065; font-size: 12.8px; line-height: 1.8; }
+.ipet-bot-dialog__benefits { display: grid; gap: 12px; margin: 0 0 22px; padding: 0; list-style: none; }
+.ipet-bot-dialog__benefits li {
+    display: flex; align-items: flex-start; gap: 11px;
+    color: #546b5e; font-size: 12px; line-height: 1.5;
+}
+.ipet-bot-dialog__benefits i {
+    display: grid; flex: 0 0 25px; height: 25px; place-items: center;
+    margin-top: 0; border-radius: 8px; background: #e8f8ee; color: #168b57; font-size: 11px;
+}
+.ipet-bot-dialog__benefits strong { display: block; margin-bottom: 1px; color: #214634; }
+.ipet-bot-dialog__cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    width: 100%; min-height: 44px; margin-top: auto;
+    padding: 12px 16px; border: 0; border-radius: 999px;
+    background: var(--bot-action); color: #fff;
+    font: 750 12.5px 'Montserrat', sans-serif; text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+.ipet-bot-dialog__cta:hover { background: var(--bot-green); color: white; transform: translateY(-1px); }
+.ipet-bot-dialog__cta:focus-visible { outline: 3px solid var(--bot-lime); outline-offset: 3px; }
+.ipet-bot-dialog__cta[hidden], .ipet-bot-dialog__unconfigured[hidden] { display: none !important; }
+.ipet-bot-dialog__unconfigured {
+    padding: 11px 12px; border: 1px solid #d3ebe0; border-radius: 10px;
+    background: #effaf4; color: #497562; font-size: 11.5px; line-height: 1.55;
+}
+.ipet-bot-dialog__hint {
+    margin: 11px 0 0; color: #84948d; font-size: 10.5px;
+    line-height: 1.5; text-align: center;
+}
+
+/* Vista del video: sustituye los antiguos flujos de chat y sus botones. */
+.ipet-bot-video {
+    display: flex; flex-direction: column; min-width: 0; align-self: stretch;
+    overflow: hidden; border-left: 1px solid #d9e4dc; background: #efeae2;
+}
+.ipet-bot-video__head {
+    display: flex; flex: 0 0 auto; align-items: center; gap: 10px;
+    padding: 12px 16px; border-bottom: 1px solid #e1e5e2;
+    background: #f0f2f5;
+}
+.ipet-bot-video__avatar {
+    display: grid; flex: 0 0 39px; height: 39px; place-items: center;
+    border-radius: 50%; background: #cde9d5; color: #177a50; font-size: 17px;
+}
+.ipet-bot-video__head strong { display: block; color: #23352c; font-size: 12px; line-height: 1.5; }
+.ipet-bot-video__head small { display: block; color: #73857a; font-size: 10px; }
+.ipet-bot-video__badge { margin-left: auto; color: var(--bot-action); font-size: 17px; }
+.ipet-bot-video__area {
+    display: flex; flex: 1 1 auto; flex-direction: column; justify-content: center;
+    align-items: center; min-height: 0; padding: 12px 10px;
+    background-color: #efeae2;
+    background-image: radial-gradient(rgba(126, 139, 120, .11) 1px, transparent 1px),
+      radial-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px);
+    background-size: 24px 24px; background-position: 0 0, 12px 12px;
+}
+.ipet-bot-video__frame {
+    position: relative; display: grid; place-items: center;
+    /* El tutorial real es vertical (720 x 1280), como una pantalla de WhatsApp. */
+    width: min(100%, 325px, 37dvh); aspect-ratio: 9 / 16;
+    overflow: hidden; border: 3px solid #fff; border-radius: 15px;
+    background: #142e25; box-shadow: 0 9px 26px rgba(23, 48, 32, .19);
+}
+.ipet-bot-video__player { display: block; width: 100%; height: 100%; object-fit: contain; background: #10241d; }
+.ipet-bot-video__player[hidden], .ipet-bot-video__placeholder[hidden] { display: none !important; }
+/* Controles HTML5 nativos, sin interceptar sus interacciones. */
+.ipet-bot-video__player:focus-visible { outline: 3px solid #25d366; outline-offset: -5px; }
+.ipet-bot-video__toggle {
+    position: absolute; top: 50%; left: 50%; z-index: 2;
+    display: grid; place-items: center; width: 58px; height: 58px;
+    padding: 0 0 0 3px; transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, .65); border-radius: 50%;
+    background: rgba(7, 94, 84, .82); box-shadow: 0 5px 22px rgba(0,0,0,.22);
+    backdrop-filter: blur(6px); color: #fff; font-size: 21px; cursor: pointer;
+    transition: background .18s ease, transform .18s ease;
+}
+.ipet-bot-video__toggle:hover { background: #075e54; transform: translate(-50%, -50%) scale(1.07); }
+.ipet-bot-video__toggle:focus-visible { outline: 3px solid #25d366; outline-offset: 3px; }
+/* El botón central conserva su diseño; durante la reproducción, aparece
+   al pasar el mouse para pausar sin tapar permanentemente el tutorial. */
+.ipet-bot-video__toggle.is-playing { opacity: 0; pointer-events: none; }
+.ipet-bot-video__frame:hover .ipet-bot-video__toggle.is-playing,
+.ipet-bot-video__toggle.is-playing:focus-visible { opacity: 1; pointer-events: auto; }
+.ipet-bot-video__toggle[hidden] { display: none !important; }
+@media (hover: none) {
+    /* En pantallas táctiles se usa el botón de pausa de la barra nativa. */
+    .ipet-bot-video__toggle.is-playing { opacity: 0; pointer-events: none; }
+}
+
+.ipet-bot-video__placeholder {
+    display: flex; position: absolute; inset: 0; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    padding: 22px; color: #fff; text-align: center;
+    background: radial-gradient(circle at 50% 0, #22634c 0, #0d362b 72%);
+}
+.ipet-bot-video__play {
+    display: grid; place-items: center; width: 55px; height: 55px;
+    padding-left: 3px; border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%; background: rgba(255,255,255,.16);
+    font-size: 20px; color: #fff;
+}
+.ipet-bot-video__placeholder strong { font: 750 15px/1.35 'Montserrat', sans-serif; }
+.ipet-bot-video__placeholder p { max-width: 270px; margin: 0; color: #d5eae1; font-size: 11.5px; line-height: 1.6; }
+.ipet-bot-video__status {
+    padding: 6px 10px; border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px; color: #d0efdc; background: rgba(255,255,255,.08);
+    font-size: 10.5px;
+}
+.ipet-bot-video__status i { margin-right: 4px; }
+.ipet-bot-video__caption { margin: 8px 0 0; color: #64796e; font-size: 11px; text-align: center; }
+.ipet-bot-video__caption i { margin-right: 5px; color: #178b61; }
+body.ipet-bot-modal-open { overflow: hidden; }
+
+@media (max-width: 830px) {
+    .ipet-bot-dialog__intro { padding: 22px 20px; }
+    .ipet-bot-video__area { padding: 10px 8px; }
+}
+@media (max-width: 680px) {
+    .ipet-bot-launcher { right: 12px; bottom: 13px; gap: 8px; padding: 6px 11px 6px 6px; }
+    body.ipet-inicio .back-to-top { left: auto; right: 12px; bottom: 16px; width: 44px; height: 44px; }
+    body.ipet-inicio.ipet-has-back-to-top .ipet-bot-launcher { right: 66px; }
+    .ipet-bot-launcher__symbol { flex-basis: 37px; height: 37px; font-size: 20px; }
+    .ipet-bot-launcher__copy strong { font-size: 11px; }
+    .ipet-bot-launcher__copy small { font-size: 10px; }
+    .ipet-bot-launcher__arrow { display: none; }
+    .ipet-bot-overlay { align-items: center; padding: 9px; }
+    .ipet-bot-dialog { width: 100%; max-height: calc(100dvh - 18px); border-radius: 14px; }
+    .ipet-bot-dialog__head { padding: 11px 14px; }
+    .ipet-bot-dialog__brand { flex-basis: 39px; height: 39px; font-size: 23px; }
+    .ipet-bot-dialog__headcopy strong { font-size: 12px; }
+    .ipet-bot-dialog__headcopy span { font-size: 10.5px; }
+    .ipet-bot-dialog__body { display: flex; flex-direction: column; }
+    .ipet-bot-dialog__intro { flex: 0 0 auto; padding: 19px 18px 15px; }
+    .ipet-bot-dialog__title { font-size: 22px; }
+    .ipet-bot-dialog__text { margin-bottom: 14px; }
+    .ipet-bot-dialog__benefits { gap: 10px; margin-bottom: 16px; }
+    /* En móviles la información queda arriba y el tutorial se muestra al final. */
+    .ipet-bot-video { order: 1; flex: 0 0 auto; border-top: 1px solid #d9e4dc; border-bottom: 0; border-left: 0; }
+    .ipet-bot-video__area { padding: 10px 12px 14px; }
+    .ipet-bot-video__frame { width: min(100%, 275px, 33dvh); aspect-ratio: 9 / 16; }
+    .ipet-bot-video__placeholder { gap: 6px; padding: 10px; }
+    .ipet-bot-video__play { width: 38px; height: 38px; font-size: 14px; }
+    .ipet-bot-video__placeholder strong { font-size: 12px; }
+    .ipet-bot-video__placeholder p { font-size: 10px; }
+    .ipet-bot-video__status { padding: 4px 8px; font-size: 9px; }
+    .ipet-bot-video__caption { margin-top: 8px; font-size: 10px; }
+}
+/* En celulares, los avisos tienen prioridad: no taparlos con botones flotantes. */
+@media (max-width: 768px) {
+    body.ipet-inicio:has(.ipet-popup--visible, .ipet-popup-mesas--visible) .ipet-bot-launcher,
+    body.ipet-inicio:has(.ipet-popup--visible, .ipet-popup-mesas--visible) .back-to-top {
+        opacity: 0; visibility: hidden; pointer-events: none;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ipet-bot-launcher, .ipet-bot-overlay, .ipet-bot-dialog,
+    .ipet-bot-dialog__cta { transition: none; }
+}

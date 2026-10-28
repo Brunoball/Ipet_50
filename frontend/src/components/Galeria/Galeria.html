@@ -16,26 +16,38 @@
     <link rel="stylesheet" href="../../styles/web_styles.css">
     <link rel="stylesheet" href="../Inicio/Recuerdos/styles/Recuerdos.css">
     <link rel="stylesheet" href="../../styles/privacidad.css">
-    <link rel="stylesheet" href="styles/recuerdos_header.css">
+    <link rel="stylesheet" href="../Global/Navbar/styles_menu_responsive.css">
     <link rel="stylesheet" href="../../styles/entrada_sutil.css">
     <link rel="shortcut icon" href="../../../public/img/efologo.png" type="image/x-icon">
 </head>
-<body>
-    <header class="recuerdos-site-header recuerdos-site-header--minimal">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="../../../public/img/Escudo.png" alt="Escudo IPET 50">
-                <div class="logo-text">
-                    IPET 50
-                    <span>Ing. Emilio F. Olmos</span>
-                </div>
+<body class="ipet-subnav">
+    <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="../../../public/img/Escudo.png" alt="Escudo IPET 50">
+            <div class="logo-text">
+                IPET 50
+                <span>Ing. Emilio F. Olmos</span>
             </div>
-            <a class="legal-back recuerdos-header-back" href="../../../index.html#recuerdos" aria-label="Volver al inicio">
-                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                <span>Volver</span>
-            </a>
         </div>
-    </header>
+
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+            <span class="hamburger"></span>
+        </button>
+
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+        <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+            <div class="nav-drawer-heading" aria-hidden="true">Explorá el sitio</div>
+            <ul>
+                <li><a href="../../../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="../../../index.html#especialidades" class="nav-link">Formación Técnica</a></li>
+                <li><a href="../../../index.html#academica" class="nav-link">Formación Académica</a></li>
+                <li><a href="../../../index.html#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="../../../index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <main>
     <section class="recuerdos-section recuerdos-gallery" id="recuerdos" aria-labelledby="recuerdos-title">
         <div class="container">

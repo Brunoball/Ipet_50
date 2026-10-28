@@ -23,10 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Botón nuevo con clase .active (controlás visibilidad desde CSS)
     if (backToTop) {
       backToTop.classList.toggle('active', show);
-      // Si además querés forzar interacción/visibilidad sin depender solo de CSS:
       backToTop.style.pointerEvents = show ? 'auto' : 'none';
-      backToTop.style.opacity = backToTop.classList.contains('active') ? backToTop.style.opacity : backToTop.style.opacity;
-      // (Las dos líneas de arriba son opcionales; dejalas si tu CSS no maneja pointer-events)
+      // Reacomodar «Conocé nuestro bot» a su izquierda solo cuando aparece la flecha.
+      if (document.body.classList.contains('ipet-inicio')) {
+        document.body.classList.toggle('ipet-has-back-to-top', show);
+      }
     }
 
     // Botón legado que usa display block/none
