@@ -15,6 +15,15 @@
  const fechaRecuerdo = form.elements.anio;
  const hoy = new Date();
  fechaRecuerdo.max = `${hoy.getFullYear()}-${String(hoy.getMonth()+1).padStart(2,'0')}-${String(hoy.getDate()).padStart(2,'0')}`;
+ // Abre el calendario nativo al hacer clic en cualquier zona del campo,
+ // no solamente en el icono. En navegadores sin showPicker se conserva
+ // el funcionamiento original del input date.
+ fechaRecuerdo.closest('.mem-floating--date').addEventListener('click', () => {
+  fechaRecuerdo.focus();
+  if (typeof fechaRecuerdo.showPicker === 'function') {
+   try { fechaRecuerdo.showPicker(); } catch { /* Se conserva el selector nativo. */ }
+  }
+ });
  // El token de seguridad se solicita automáticamente: no se muestra un botón de reintento.
  let conectandoSesion=false;
  async function sesion(){

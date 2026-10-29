@@ -139,7 +139,8 @@
 .mem-create .mem-field {
     margin-bottom: 17px;
 }
-.mem-create .mem-panel .mem-floating > :is(input:not([type=checkbox]),select,textarea) {
+/* Limitar la altura de 44px solo a inputs y selects: nunca al textarea. */
+.mem-create .mem-panel .mem-floating > :is(input:not([type=checkbox]), select) {
     min-height: 44px;
     height: 44px;
     padding: 11px 13px 9px;
@@ -147,10 +148,15 @@
     font-size: 13px;
     line-height: 1.4;
 }
-.mem-create .mem-panel .mem-floating > textarea {
-    height: auto;
-    min-height: 108px;
-    padding-top: 15px;
+/* Área de relato amplia: selector específico para evitar reglas de inputs. */
+.mem-create .mem-panel .mem-floating > textarea#recuerdo-relato {
+    display: block;
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+    padding: 15px 13px;
+    font-size: 14px;
+    line-height: 1.55;
     resize: vertical;
 }
 .mem-create .mem-floating > label {
@@ -265,6 +271,7 @@
     .mem-create .mem-panel { padding: 20px 16px; }
     .mem-create .mem-fields { grid-template-columns: minmax(0, 1fr); }
     .mem-create .mem-panel .mem-check { padding: 12px; }
+    .mem-create .mem-panel .mem-floating > textarea#recuerdo-relato { height: 150px; min-height: 150px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .mem-create .mem-panel .mem-check,
