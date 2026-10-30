@@ -1,0 +1,82 @@
+/* Adaptación del Toast global de LALCEC, aislado para la web pública. */
+.ipet-toast.toast-container {
+  position: fixed;
+  top: calc(18px + env(safe-area-inset-top, 0px));
+  left: 50%;
+  z-index: 2147483647;
+  isolation: isolate;
+  box-sizing: border-box;
+  min-width: 280px;
+  max-width: min(90vw, 680px);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 14px 20px;
+  transform: translateX(-50%);
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+  color: #111827;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  animation: ipetToastSlideDown .4s ease-out;
+}
+.ipet-toast .toast-icon { flex-shrink: 0; margin-right: 10px; font-size: 1.4rem; }
+.ipet-toast.toast-exito .toast-icon { color: #10b981; }
+.ipet-toast.toast-error .toast-icon { color: #ef4444; }
+.ipet-toast.toast-advertencia .toast-icon,
+.ipet-toast.toast-alerta .toast-icon { color: #f59e0b; }
+.ipet-toast.toast-cargando .toast-icon,
+.ipet-toast.toast-info .toast-icon { color: #1d428a; }
+.ipet-toast .toast-message { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.ipet-toast .toast-close {
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  margin: 0 0 0 12px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #111827;
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+.ipet-toast .toast-close:hover { transform: translateY(-1px); background: #e5e7eb; }
+.ipet-toast .toast-close:focus-visible { outline: 2px solid #90b1d9; outline-offset: 2px; }
+.ipet-toast.desaparecer { animation: ipetToastFadeOutUp .28s ease forwards; }
+.ipet-toast .spin { animation: ipetToastSpin 1s linear infinite; }
+@keyframes ipetToastSlideDown {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+@keyframes ipetToastFadeOutUp {
+  from { opacity: 1; transform: translate(-50%, 0); }
+  to { opacity: 0; transform: translate(-50%, -30px); }
+}
+@keyframes ipetToastSpin { to { transform: rotate(360deg); } }
+@media (max-width: 680px) {
+  .ipet-toast.toast-container {
+    align-items: flex-start;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+    padding: 13px 16px;
+    font-size: .875rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ipet-toast.toast-container,
+  .ipet-toast.desaparecer,
+  .ipet-toast .spin { animation: none; }
+}

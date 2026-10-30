@@ -309,3 +309,26 @@
         justify-content: flex-start;
     }
 }
+
+/* Los avisos de validación/envío se muestran con el Toast global de LALCEC.
+   El estado se conserva accesible para lectores de pantalla, sin cartel duplicado. */
+.mem-create .mem-status-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+.mem-create .mem-panel .mem-floating > :is(input, select, textarea)[aria-invalid="true"] {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 2px rgb(239 68 68 / .12);
+}
+.mem-create .mem-panel .mem-upload:has(input[aria-invalid="true"]),
+.mem-create .mem-panel .mem-check:has(input[aria-invalid="true"]) {
+    border-color: #ef4444;
+    background: #fff7f7;
+}

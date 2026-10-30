@@ -1,69 +1,193 @@
 (() => {
- 'use strict';
- const form=document.getElementById('recuerdoForm'), button=document.getElementById('enviarRecuerdo'), status=document.getElementById('formStatus');
- const endpoint = window.IPETApi.url('recuerdos');
- let csrf='', previewURL;
- // Keep select labels floating for selections, restored values and form resets.
- const floatingSelects = form.querySelectorAll('.mem-floating select');
- const syncLabels = () => floatingSelects.forEach(select => select.parentElement.classList.toggle('has-value', select.value !== ''));
- floatingSelects.forEach(select => select.addEventListener('change', syncLabels));
- form.addEventListener('reset', () => setTimeout(syncLabels, 0));
- window.addEventListener('pageshow', syncLabels);
- syncLabels();
- // El backend actual recibe «anio» como número. El campo visual usa un calendario,
- // pero se envía únicamente el año para mantener compatible la API existente.
- const fechaRecuerdo = form.elements.anio;
- const hoy = new Date();
- fechaRecuerdo.max = `${hoy.getFullYear()}-${String(hoy.getMonth()+1).padStart(2,'0')}-${String(hoy.getDate()).padStart(2,'0')}`;
- // Abre el calendario nativo al hacer clic en cualquier zona del campo,
- // no solamente en el icono. En navegadores sin showPicker se conserva
- // el funcionamiento original del input date.
- fechaRecuerdo.closest('.mem-floating--date').addEventListener('click', () => {
-  fechaRecuerdo.focus();
-  if (typeof fechaRecuerdo.showPicker === 'function') {
-   try { fechaRecuerdo.showPicker(); } catch { /* Se conserva el selector nativo. */ }
+  'use strict';
+
+  const form = document.getElementById('recuerdoForm');
+  if (!form) return;
+
+  const button = document.getElementById('enviarRecuerdo');
+  const status = document.getElementById('formStatus');
+  const foto = form.elements.foto;
+  const preview = document.getElementById('fotoPreview');
+  const fechaRecuerdo = form.elements.anio;
+  const endpoint = window.IPETApi.url('recuerdos');
+  const toast = (tipo, mensaje, opciones) => window.IPETToast.mostrar(tipo, mensaje, opciones);
+  const textoBoton = button.textContent;
+  let csrf = '';
+  let previewURL;
+  let conectandoSesion = false;
+  let enviando = false;
+
+  // Mantener las etiquetas flotantes al seleccionar, restaurar y limpiar campos.
+  const selects = form.querySelectorAll('.mem-floating select');
+  const syncLabels = () => selects.forEach(select => {
+    select.parentElement.classList.toggle('has-value', select.value !== '');
+  });
+  selects.forEach(select => select.addEventListener('change', syncLabels));
+  form.addEventListener('reset', () => {
+    form.querySelectorAll('[aria-invalid="true"]').forEach(campo => campo.removeAttribute('aria-invalid'));
+    foto.setCustomValidity('');
+    window.setTimeout(syncLabels, 0);
+  });
+  window.addEventListener('pageshow', syncLabels);
+  syncLabels();
+
+  // El backend recibe solo el año aunque se elija una fecha en el calendario.
+  const hoy = new Date();
+  fechaRecuerdo.max = `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, '0')}-${String(hoy.getDate()).padStart(2, '0')}`;
+  fechaRecuerdo.closest('.mem-floating--date').addEventListener('click', () => {
+    fechaRecuerdo.focus();
+    if (typeof fechaRecuerdo.showPicker === 'function') {
+      try { fechaRecuerdo.showPicker(); } catch { /* Se mantiene el calendario nativo. */ }
+    }
+  });
+
+  function marcarError(campo, mensaje, { enfocar = true } = {}) {
+    campo.setAttribute('aria-invalid', 'true');
+    toast('advertencia', mensaje);
+    if (enfocar) campo.focus();
+    return false;
   }
- });
- // El token de seguridad se solicita automáticamente: no se muestra un botón de reintento.
- let conectandoSesion=false;
- async function sesion(){
-  if(conectandoSesion || csrf)return;
-  conectandoSesion=true;
-  button.disabled=true;
-  status.textContent='Preparando formulario…';
-  try{
-   const r=await fetch(endpoint+'&sesion=1',{credentials:'include'});
-   const data=await r.json();
-   if(!r.ok || !data.csrf)throw Error();
-   csrf=data.csrf;
-   delete status.dataset.error;
-   button.disabled=false;
-   status.textContent='';
-  }catch{
-   status.dataset.error='true';
-   status.textContent='No se pudo conectar con el servidor. El formulario se habilitará al recuperar la conexión.';
-  }finally{conectandoSesion=false;}
- }
- // Si la conexión falla al entrar, se recupera al volver a la página o tener Internet.
- window.addEventListener('online',sesion);
- document.addEventListener('visibilitychange',()=>{if(!document.hidden)sesion();});
- sesion();
- form.elements.foto.addEventListener('change',()=>{
-  const f=form.elements.foto.files[0], img=document.getElementById('fotoPreview');
-  if(previewURL)URL.revokeObjectURL(previewURL);img.hidden=true;
-  form.elements.foto.setCustomValidity('');
-  if(!f)return;
-  if(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>3*1024*1024){form.elements.foto.setCustomValidity('Elegí una imagen JPG, PNG o WebP de hasta 3 MB.');form.elements.foto.reportValidity();return;}
-  previewURL=URL.createObjectURL(f);img.src=previewURL;img.hidden=false;
- });
- form.addEventListener('submit',async e=>{
-  e.preventDefault();if(button.disabled||!form.reportValidity())return;
-  button.disabled=true;status.dataset.error='false';status.textContent='Enviando tu recuerdo…';
-  const data=new FormData(form);
-  data.set('anio', fechaRecuerdo.value ? fechaRecuerdo.value.slice(0,4) : '');
-  data.set('csrf',csrf);
-  try{const r=await fetch(endpoint,{method:'POST',body:data,credentials:'include'});const result=await r.json();if(!r.ok)throw Error(result.error||'No se pudo enviar.');
-   form.reset();document.getElementById('fotoPreview').hidden=true;if(previewURL)URL.revokeObjectURL(previewURL);status.textContent=result.mensaje;button.textContent='Recuerdo enviado';
-  }catch(error){status.dataset.error='true';status.textContent=error.message==='Failed to fetch'?'No se pudo confirmar el envío. Revisá tu conexión.':error.message;button.disabled=false;}
- });
+
+  // Quitar la marca de error en cuanto la persona corrige el campo.
+  form.querySelectorAll('input, select, textarea').forEach(campo => {
+    const limpiar = () => {
+      campo.removeAttribute('aria-invalid');
+      if (campo === foto) foto.setCustomValidity('');
+    };
+    campo.addEventListener('input', limpiar);
+    campo.addEventListener('change', limpiar);
+  });
+
+  const formatosPermitidos = new Set(['image/jpeg', 'image/png', 'image/webp']);
+  function errorArchivo(archivo) {
+    if (!archivo) return 'Seleccioná una fotografía para acompañar tu recuerdo.';
+    if (!formatosPermitidos.has(archivo.type)) return 'La fotografía debe ser JPG, PNG o WebP.';
+    if (archivo.size > 3 * 1024 * 1024) return 'La fotografía no puede superar los 3 MB.';
+    return '';
+  }
+
+  function limpiarPreview() {
+    preview.hidden = true;
+    preview.removeAttribute('src');
+    if (previewURL) URL.revokeObjectURL(previewURL);
+    previewURL = undefined;
+  }
+
+  foto.addEventListener('change', () => {
+    limpiarPreview();
+    const archivo = foto.files[0];
+    if (!archivo) return;
+    const error = errorArchivo(archivo);
+    if (error) {
+      marcarError(foto, error, { enfocar: false });
+      return;
+    }
+    previewURL = URL.createObjectURL(archivo);
+    preview.src = previewURL;
+    preview.hidden = false;
+  });
+
+  function validarCampos() {
+    const nombre = form.elements.nombre;
+    if (!nombre.value.trim()) return marcarError(nombre, 'Ingresá tu nombre y apellido.');
+    if (nombre.value.trim().length < 2) return marcarError(nombre, 'El nombre debe tener al menos 2 caracteres.');
+
+    const email = form.elements.email;
+    if (!email.value.trim()) return marcarError(email, 'Ingresá tu correo electrónico.');
+    if (!email.validity.valid) return marcarError(email, 'Ingresá un correo electrónico válido.');
+
+    const vinculo = form.elements.vinculo;
+    if (!vinculo.value) return marcarError(vinculo, 'Seleccioná tu vínculo con la escuela.');
+
+    if (fechaRecuerdo.value && !fechaRecuerdo.validity.valid) {
+      return marcarError(fechaRecuerdo, 'Seleccioná una fecha válida que no sea futura.');
+    }
+
+    const titulo = form.elements.titulo;
+    if (!titulo.value.trim()) return marcarError(titulo, 'Escribí un título para tu recuerdo.');
+    if (titulo.value.trim().length < 3) return marcarError(titulo, 'El título debe tener al menos 3 caracteres.');
+
+    const relato = form.elements.relato;
+    if (!relato.value.trim()) return marcarError(relato, 'Contanos tu historia para completar el recuerdo.');
+    if (relato.value.trim().length < 20) return marcarError(relato, 'Tu historia debe tener al menos 20 caracteres.');
+
+    const errorFoto = errorArchivo(foto.files[0]);
+    if (errorFoto) return marcarError(foto, errorFoto);
+
+    const consentimiento = form.elements.consentimiento;
+    if (!consentimiento.checked) {
+      return marcarError(consentimiento, 'Tenés que aceptar la autorización para publicar tu recuerdo.');
+    }
+    return true;
+  }
+
+  // No se muestran botones de reintento: la sesión se recupera sola.
+  async function sesion() {
+    if (conectandoSesion || csrf || enviando) return;
+    conectandoSesion = true;
+    button.disabled = true;
+    status.textContent = 'Preparando formulario…';
+    try {
+      const respuesta = await fetch(endpoint + '&sesion=1', { credentials: 'include' });
+      const datos = await respuesta.json();
+      if (!respuesta.ok || !datos.csrf) throw new Error('No se pudo preparar el formulario.');
+      csrf = datos.csrf;
+      status.textContent = '';
+      button.disabled = false;
+    } catch {
+      status.textContent = 'No se pudo conectar con el servidor.';
+      toast('error', 'No se pudo conectar con el servidor. El formulario se habilitará cuando vuelva la conexión.');
+    } finally {
+      conectandoSesion = false;
+    }
+  }
+
+  window.addEventListener('online', sesion);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) sesion();
+  });
+  sesion();
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (enviando) return;
+    if (!validarCampos()) return;
+    if (!csrf) {
+      toast('error', 'Todavía no hay conexión con el servidor. Intentá nuevamente cuando se restablezca.');
+      sesion();
+      return;
+    }
+
+    enviando = true;
+    button.disabled = true;
+    button.textContent = 'Enviando…';
+    status.textContent = 'Enviando tu recuerdo…';
+    toast('cargando', 'Enviando tu recuerdo…', { persistente: true, mostrarCerrar: false, cerrarConInteraccion: false });
+
+    const datos = new FormData(form);
+    datos.set('anio', fechaRecuerdo.value ? fechaRecuerdo.value.slice(0, 4) : '');
+    datos.set('csrf', csrf);
+
+    try {
+      const respuesta = await fetch(endpoint, { method: 'POST', body: datos, credentials: 'include' });
+      const resultado = await respuesta.json().catch(() => ({}));
+      if (!respuesta.ok || resultado.error) {
+        throw new Error(resultado.error || 'No se pudo enviar tu recuerdo. Intentá nuevamente.');
+      }
+      form.reset();
+      limpiarPreview();
+      status.textContent = 'Recuerdo enviado para revisión.';
+      toast('exito', resultado.mensaje || 'Tu recuerdo se envió correctamente y quedó pendiente de revisión.');
+    } catch (error) {
+      status.textContent = 'No se pudo confirmar el envío.';
+      const sinConexion = /Failed to fetch|NetworkError|Network error|Load failed/i.test(String(error.message));
+      toast('error', sinConexion
+        ? 'No se pudo confirmar el envío. Revisá tu conexión e intentá nuevamente.'
+        : error.message || 'No se pudo enviar el recuerdo. Intentá nuevamente.');
+    } finally {
+      enviando = false;
+      button.textContent = textoBoton;
+      button.disabled = !csrf;
+    }
+  });
 })();
